@@ -144,4 +144,4 @@ font-family: 'Play', sans-serif;
 * `cd compare-angular`
 * `ng g c home`
 * `ng g c faq`
->>>>>>> Initial Commit
+
