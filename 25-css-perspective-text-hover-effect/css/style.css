@@ -1,0 +1,72 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: #78e0dc;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.perspective-text {
+  color: #006e90;
+  font-family: raleway, sans-serif;
+  font-size: 58px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.perspective-text:hover p {
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+}
+
+.perspective-text .perspective-line {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.perspective-text .perspective-line p {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.perspective-text .perspective-line:nth-child(odd) {
+  -webkit-transform: skew(60deg, -30deg) scaleY(0.667);
+          transform: skew(60deg, -30deg) scaleY(0.667);
+}
+
+.perspective-text .perspective-line:nth-child(even) {
+  -webkit-transform: skew(0deg, -30deg) scaleY(1.333);
+          transform: skew(0deg, -30deg) scaleY(1.333);
+}
+
+.perspective-text .perspective-line:nth-child(1) {
+  left: 29px;
+}
+
+.perspective-text .perspective-line:nth-child(2) {
+  left: 58px;
+}
+
+.perspective-text .perspective-line:nth-child(3) {
+  left: 87px;
+}
+
+.perspective-text .perspective-line:nth-child(4) {
+  left: 116px;
+}
+
+.perspective-text .perspective-line:nth-child(5) {
+  left: 145px;
+}
+/*# sourceMappingURL=style.css.map */

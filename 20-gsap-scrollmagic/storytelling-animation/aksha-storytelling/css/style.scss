@@ -1,0 +1,44 @@
+@import 'svg';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  #scroll-down {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #AD8CFF, #679EF5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+      width: 100px;
+    }
+
+    p {
+      color: #fff;
+      font-weight: 100;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      max-width: 80vw;
+      text-align: center;
+    }
+    hr{
+      border: 2px solid #fff;
+      width: 40%;
+    }
+  }
+}
+
+
+

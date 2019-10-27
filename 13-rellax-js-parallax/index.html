@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>RellaxJs - Parallax Scrolling Effect</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente magnam
+        ipsam libero quia quaerat est?
+      </p>
+      <button>Lorem, ipsum dolor.</button>
+      <img src="assets/guitar.png" class="rellax guitar" data-rellax-speed="5" />
+      <img src="assets/crowd.png" class="rellax crowd" data-rellax-speed="-1"  data-rellax-percentage="-.3" />
+      <img src="assets/crowd-bg.png" class="rellax crowd-bg"  data-rellax-speed="1" data-rellax-percentage="0.9" />
+    </section>
+
+    <section>
+      <h2 class="fall-down" data-scroll data-splitting>Lorem ipsum dolor sit.</h2>
+      <p data-scroll data-splitting>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam vel
+        delectus eius alias dolorem magni et at exercitationem repudiandae,
+        tenetur fugiat praesentium reprehenderit laudantium saepe soluta ex
+        debitis corrupti assumenda!
+      </p>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      Splitting(); 
+
+      ScrollOut({
+        threshold: .6
+      });
+
+      var rellax = new Rellax(".rellax");
+
+    </script>
+  </body>
+</html>

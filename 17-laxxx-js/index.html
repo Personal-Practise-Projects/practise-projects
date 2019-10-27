@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Laxxx Js - Scroll Effect Library</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="intro">
+      <p class="scroll-text">Scroll down</p>
+    </section>
+    <section class="anim">
+      <h1 class="lax" data-lax-preset="rightToLeft-.1 fadeInOut">Animation</h1>
+      <p class="lax" data-lax-preset="leftToRight-.1 blurInOut fadeInOut">Check out nifty little scroll based animation with laxxx.js</p>
+      <div class="box1 lax" data-lax-preset="spin-100"></div>
+      <!-- <div class="box2 lax" data-lax-preset="zoomIn blurIn"></div> -->
+      <div class="box2 lax" data-lax-scale="700 0, 500 1, 200 1, 0 0" data-lax-anchor="self"></div>
+    </section>
+    <section class="third">
+      <h1>After Section</h1>
+    </section>
+
+    <!-- <script src="js/lax.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      window.onload = function() {
+        lax.setup(); // init
+
+        const updateLax = () => {
+          lax.update(window.scrollY);
+          window.requestAnimationFrame(updateLax);
+        };
+
+        window.requestAnimationFrame(updateLax);
+      };
+    </script>
+  </body>
+</html>
+
+<!-- data-lax-scale="0 0, 600 1, 800 0" -->

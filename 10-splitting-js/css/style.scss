@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Play:400,700");
+$primary: #f564a9;
+$secondary: #533b4d;
+$ternary: #faa4bdbb;
+$quad: #fae3c6;
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  font-family: Play, sans-serif;
+  background: $quad;
+
+  .container {
+    header {
+      display: grid;
+      grid-template-columns: 20% auto;
+      padding: 20px;
+      background: $primary;
+      #logo {
+        width: 100px;
+      }
+
+      nav {
+        justify-self: right;
+        align-self: center;
+        ul {
+          list-style-type: none;
+          margin: 0;
+          li {
+            display: inline;
+            a {
+              padding: 8px 20px;
+              text-transform: uppercase;
+              text-decoration: none;
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+
+    #hero {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      object-fit: scale-down;
+      -webkit-clip-path: polygon(
+        100% 0,
+        100% 90%,
+        45% 100%,
+        50% 90%,
+        0 100%,
+        0 0
+      );
+      clip-path: polygon(100% 0, 100% 90%, 45% 100%, 50% 90%, 0 100%, 0 0);
+
+      video {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+      }
+      #content {
+        padding: 4em;
+        color: $secondary;
+        background: $ternary;
+        -webkit-clip-path: polygon(0 0, 50% 0, 30% 100%, 0% 100%);
+        clip-path: polygon(0 0, 50% 0, 30% 100%, 0% 100%);
+
+        h1 {
+          margin: 0;
+          text-transform: uppercase;
+          font-size: 5em;
+          letter-spacing: 5px;
+        }
+
+        p {
+          font-size: 1.5em;
+          margin-top: 0px;
+          transform: rotateZ(7deg);
+          transform-origin: 0%;
+          animation: fadeIn 1s linear 1.3s forwards;
+          opacity: 0;
+
+          @keyframes fadeIn {
+            to{
+              opacity: 1;
+            }
+          }
+        }
+        .btn {
+          background: $primary;
+          padding: 15px 60px 15px 30px;
+          color: $secondary;
+          font-size: 1.5em;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-decoration: none;
+          margin-top: 1.2em;
+          display: inline-block;
+          margin-bottom: 1em;
+          -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        }
+      }
+    }
+  }
+}
+
+// Fall down words
+.fall-down.words {
+  transform: rotateZ(-7deg);
+  transform-origin: 0%;
+
+  .char {
+    animation: slide-down 2s forwards cubic-bezier(0,.53,0,1.05);
+    animation-delay: calc(0.5s + (0.1s * var(--char-index)));
+    opacity: 0;
+
+    @keyframes slide-down {
+      from {
+        transform: translateY(-125%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0%);
+        opacity: 1;
+        font-size: 0.5em;
+        background: $primary;
+        color: $quad;
+      }
+    }
+  }
+}

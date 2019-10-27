@@ -1,0 +1,472 @@
+// 1) Production View SubHeader
+.subheader {
+  // 1) title
+  .production-view {
+    height: 28px;
+    width: 155px;
+    color: #2F2F36;
+    font-family: "Source Sans Pro";
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  // 2) subtitle
+  .subtitle {
+    height: 15px;
+    width: 148px;
+    color: #80838F;
+    font-family: "Source Sans Pro";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+  }
+
+  .leftchildren {
+    .avatargroup-filter {
+      .avatar {
+        height: 32px;
+        width: 32px;
+
+        .border {
+          box-sizing: border-box;
+          height: 36px;
+          width: 36px;
+          border: 2px solid #F0EDF1;
+          background-color: #D3A3FF;
+        }
+
+        .tooltip {
+          height: 29px;
+          width: 160px;
+          border-radius: 2px;
+          background-color: #FFFFFF;
+          box-shadow: 0 0 8px 0 rgba(62, 53, 104, 0.16);
+
+          .text {
+            height: 16px;
+            width: 143.8px;
+            color: #63636F;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            line-height: 16px;
+
+            .bold {
+              color: #2F2F36;
+              font-weight: 600;
+            }
+          }
+        }
+
+        &-selected {
+          height: 36px;
+          width: 36px;
+
+          .border {
+            box-sizing: border-box;
+            height: 40px;
+            width: 40px;
+            border: 2px solid #8169EA;
+            background-color: #D3A3FF;
+          }
+        }
+
+        &-more-circle {
+          height: 32px;
+          width: 32px;
+          background-color: #FFFFFF;
+
+          .text {
+            height: 18px;
+            width: 15px;
+            color: #63636F;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .rightchildren {
+    .print-icon {
+      color: #8169EA;
+      height: 13px;
+      width: 13px;
+    }
+
+    .filter-icon {
+      box-sizing: border-box;
+      height: 12.3px;
+      width: 13.5px;
+      border: 1.5px solid #8872EA;
+    }
+
+    .button-group {
+      height: 32px;
+      width: 196px;
+      border-radius: 5px;
+      background-color: #FFFFFF;
+
+      .button-color {
+        height: 32px;
+        width: 79px;
+        border-radius: 5px 0 0 5px;
+        background: linear-gradient(135deg, #8169EA 0%, #6349D6 100%);
+
+        .text {
+          color: #FFFFFF;
+          font-family: "Source Sans Pro";
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+        }
+      }
+
+      .text {
+        color: #878A96;
+        font-family: "Source Sans Pro";
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+// 2) Production View Body
+
+.accordian-wrapper {
+  .accordian-list {
+    height: 910px;
+    width: 1784px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 16px 0 rgba(213, 213, 220, 0.3);
+
+    .accordian-header {
+      border: 1px solid #F0EDF1;
+
+      .leftchildren {
+        // Up/Down Arrow
+        .chrevon-icon {
+          box-sizing: border-box;
+          height: 5.5px;
+          width: 9.5px;
+          transform: scaleY(-1);
+          border: 1.5px solid #63636F;
+
+          .active {
+            border: 1.5px solid #8169EA;
+          }
+        }
+
+        // Checkbox
+        .checkbox {
+          &-unchecked {
+            height: 18px;
+            width: 18px;
+            border: 1px solid #B9BDCC;
+            border-radius: 3px;
+            background-color: #FFFFFF;
+          }
+
+          &-checked {
+            height: 18px;
+            width: 18px;
+            border: 1px solid #8169EA;
+            border-radius: 3px;
+            background-color: #8169EA;
+            box-shadow: 0 0 8px 0 rgba(129, 105, 234, 0.2);
+
+            .icon {
+              box-sizing: border-box;
+              height: 7.32px;
+              width: 9.82px;
+              border: 2px solid #FFFFFF;
+            }
+          }
+        }
+
+        .title {
+          color: #2F2F36;
+          font-family: "Source Sans Pro";
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 23px;
+
+          .subtitle {
+            color: #8169EA;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+          }
+
+          .vertical-seperator {
+            height: 18px;
+            width: 4px;
+            color: #E3DEE6;
+          }
+
+          .shot-tags {
+            color: #63636F;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+          }
+        }
+
+        .badges {
+          border-radius: 14.5px;
+          background-color: #F0EDF1;
+
+          .text {
+            color: #2F2F36;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            line-height: 18px;
+          }
+
+          .count {
+            height: 29px;
+            width: 34px;
+            border-radius: 14.5px;
+            background-color: #F0EDF1;
+          }
+        }
+      }
+
+      .rightchildren {
+        .avatar {
+          height: 36px;
+          width: 36px;
+          background-color: #D3A3FF;
+
+          .text1 {
+            color: #63636F;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            line-height: 18px;
+          }
+
+          .text2 {
+            color: #2F2F36;
+            font-family: "Source Sans Pro";
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+          }
+        }
+
+        .reference-images {
+          height: 32px;
+          width: 32px;
+          border: 1px solid #979797;
+          border-radius: 5px;
+          background-color: #D8D8D8;
+        }
+
+        .vertical-seperator {
+          height: 68px;
+          width: 1px;
+          border: 1px solid #E3DEE6;
+        }
+      }
+    }
+
+    .accordian-body {
+      .leftchildren {
+        .references {
+          .title {
+            color: #2F2F36;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+          }
+
+          .img-size {
+            height: 300px;
+            width: 300px;
+            border: 1px solid #979797;
+            border-radius: 5px;
+            background-color: #D8D8D8;
+
+            .text {
+              color: #63636F;
+              font-family: "Source Sans Pro";
+              font-size: 14px;
+              line-height: 18px;
+            }
+          }
+        }
+
+        .props {
+          height: 95px;
+          width: 130px;
+          border-radius: 5px;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .setup {
+          .text-title {
+            color: #80838F;
+            font-family: "Source Sans Pro";
+            font-size: 14px;
+            line-height: 14px;
+          }
+
+          .text-value {
+            color: #2F2F36;
+            font-family: "Source Sans Pro";
+            font-size: 18px;
+            line-height: 23px;
+          }
+        }
+      }
+
+      .rightchildren {
+        height: 940px;
+        width: 596px;
+        background-color: #FBFAFB;
+
+        .header {
+          height: 1px;
+          width: 596px;
+          border: 1px solid #F0EDF1;
+
+          .text-detail {
+            color: #2F2F36;
+            font-family: "Source Sans Pro";
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 23px;
+          }
+
+          .button-with-icon-and-text[purple] {
+            height: 32px;
+            width: 171px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #8169EA 0%, #6349D6 100%);
+
+            .icon {
+              height: 20px;
+              width: 20px;
+              background-color: #FFFFFF;
+            }
+
+            .text {
+              color: #FFFFFF;
+              font-family: "Source Sans Pro";
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 20px;
+            }
+          }
+
+          .button[grey] {
+            height: 32px;
+            width: 146px;
+            border-radius: 5px;
+            background-color: #B9BDCC;
+          }
+        }
+
+        .body {
+          .shot-notes {
+            .title {
+              color: #2F2F36;
+              font-family: "Source Sans Pro";
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 18px;
+            }
+
+            .description {
+              color: #8169EA;
+              font-family: "Source Sans Pro";
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 18px;
+            }
+          }
+
+          .products {
+            .chrevon-icon {
+              height: 11.12px;
+              width: 5.64px;
+              border: 1.5px solid #80838F;
+
+              &:hover {
+                border: 1.5px solid #8169EA;
+              }
+            }
+          }
+
+          .talents {
+            .title {
+              color: #2F2F36;
+              font-family: "Source Sans Pro";
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 18px;
+            }
+
+            .items {
+              height: 189px;
+              width: 515px;
+              border-radius: 5px;
+              background-color: #F0EDF1;
+
+              .subtitle {
+                color: #2F2F36;
+                font-family: "Source Sans Pro";
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px;
+              }
+
+              .img {
+                height: 95px;
+                width: 130px;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.6);
+
+                .text {
+                  color: #63636F;
+                  font-family: "Source Sans Pro";
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.lightbox {
+  .image{
+    height: 1125px;	width: 1125px;	border: 1px solid #979797;	border-radius: 5px;	background-color: #D8D8D8;
+  }
+
+  .metainfo {
+    height: 101px;
+    width: 1125px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+
+    .text {
+      color: #FFFFFF;
+      font-family: "Source Sans Pro";
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+

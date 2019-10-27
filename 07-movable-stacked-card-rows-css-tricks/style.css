@@ -1,0 +1,74 @@
+body {
+  background: #474a2c;
+  height: 100vh;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  -webkit-animation: bg 1s linear infinite alternate;
+          animation: bg 1s linear infinite alternate;
+}
+
+@-webkit-keyframes bg {
+  from {
+    background: #636940;
+  }
+  to {
+    background: #474a2c;
+  }
+}
+
+@keyframes bg {
+  from {
+    background: #636940;
+  }
+  to {
+    background: #474a2c;
+  }
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  --distance: -4rem;
+}
+
+.cards .card {
+  background: #9bdeac;
+  color: #fff;
+  font-family: sans-serif;
+  border-radius: 1rem;
+  padding: 2rem;
+  -webkit-box-shadow: 4px 4px 15px 2px rgba(0, 0, 0, 0.75);
+          box-shadow: 4px 4px 15px 2px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.cards .card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cards .card a:focus {
+  outline: none;
+}
+
+.cards .card:not(:first-child) {
+  margin-left: var(--distance);
+}
+
+.cards .card:hover, .cards .card:focus-within {
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  background: #59a96a;
+  cursor: pointer;
+}
+
+.cards .card:hover ~ .card, .cards .card:focus-within ~ .card {
+  -webkit-transform: translateX(calc(var(--distance) * -1));
+          transform: translateX(calc(var(--distance) * -1));
+}
+/*# sourceMappingURL=style.css.map */

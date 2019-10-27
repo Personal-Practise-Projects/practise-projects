@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video Background</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+  
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <a href="#0"><img src="assets/vb.svg" alt="logo"></a>
+      <nav>
+        <ul>
+          <li><a href="#0">Home</a></li>
+          <li><a href="#0">Who</a></li>
+          <li><a href="#0">What</a></li>
+          <li><a href="#0">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="hero">
+      <video autoplay muted loop id="video">
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"> 
+      </video>
+      <div id="content">
+        <div class="anim">
+          <h1 class="fall-down" data-splitting>Level Up</h1> 
+        </div>
+        <p>Access backing track, tabs & more for free</p> 
+        <a href="#0" class="btn">Let's Jam</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script> Splitting(); </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "layers": {
+    "vectorLayer": {
+      "id": "93",
+      "name": "vector",
+      "type": "vector",
+      "width": 24,
+      "height": 24,
+      "children": [
+        {
+          "id": "91",
+          "name": "path",
+          "type": "path",
+          "pathData": "M 19.923 17.487 L 6.17 17.487 L 2.781 19.899 L 2.781 5.507 C 2.781 4.731 3.361 4.101 4.077 4.101 L 19.923 4.101 C 20.639 4.101 21.219 4.73 21.219 5.507 L 21.219 16.081 C 21.219 16.857 20.639 17.487 19.923 17.487 Z",
+          "strokeColor": "#000000",
+          "strokeWidth": 2,
+          "strokeMiterLimit": 10
+        },
+        {
+          "id": "30793",
+          "name": "group",
+          "type": "group",
+          "children": [
+            {
+              "id": "1668",
+              "name": "path_2",
+              "type": "mask",
+              "pathData": "M 19.923 17.487 L 6.17 17.487 L 2.781 19.899 L 2.781 5.507 C 2.781 4.731 3.361 4.101 4.077 4.101 L 19.923 4.101 C 20.639 4.101 21.219 4.73 21.219 5.507 L 21.219 16.081 C 21.219 16.857 20.639 17.487 19.923 17.487 Z"
+            },
+            {
+              "id": "113",
+              "name": "path_1",
+              "type": "path",
+              "pathData": "M 1.176 20.646 C 1.176 20.646 3.57 19.348 9.498 20.174 C 9.498 20.174 17.111 21.947 22.848 20.255 C 22.784 20.23 22.848 23.373 22.848 23.373 L 1.176 23.391 L 1.176 20.646 Z",
+              "fillColor": "#000",
+              "strokeWidth": 1
+            }
+          ]
+        },
+        {
+          "id": "30803",
+          "name": "path_3",
+          "type": "path",
+          "pathData": "M 0.883 7.59 L 16.575 7.59",
+          "strokeColor": "#ffffff",
+          "strokeWidth": 2,
+          "strokeMiterLimit": 10,
+          "trimPathEnd": 0
+        },
+        {
+          "id": "30815",
+          "name": "path_4",
+          "type": "path",
+          "pathData": "M 0.883 10.876 L 14.126 10.762",
+          "strokeColor": "#ffffff",
+          "strokeWidth": 2,
+          "strokeMiterLimit": 10,
+          "trimPathEnd": 0
+        },
+        {
+          "id": "30827",
+          "name": "path_5",
+          "type": "path",
+          "pathData": "M 0.883 14.162 L 11.866 14.068",
+          "strokeColor": "#ffffff",
+          "strokeWidth": 2,
+          "strokeMiterLimit": 10,
+          "trimPathEnd": 0
+        }
+      ]
+    },
+    "hiddenLayerIds": []
+  },
+  "timeline": {
+    "animation": {
+      "id": "2",
+      "name": "anim",
+      "duration": 1000,
+      "blocks": [
+        {
+          "id": "121",
+          "layerId": "113",
+          "propertyName": "pathData",
+          "startTime": 0,
+          "endTime": 1000,
+          "interpolator": "FAST_OUT_LINEAR_IN",
+          "type": "path",
+          "fromValue": "M 1.176 20.646 C 1.176 20.646 3.57 19.348 9.498 20.174 C 9.498 20.174 17.111 21.947 22.848 20.255 C 22.784 20.23 22.848 23.373 22.848 23.373 L 1.176 23.391 L 1.176 20.646 Z",
+          "toValue": "M 1.176 1.454 C 1.176 1.454 3.57 -8.925 9.498 -2.32 C 9.498 -2.32 17.111 11.852 22.848 -1.673 C 22.784 -1.871 22.848 23.25 22.848 23.25 L 1.177 23.39 L 1.177 1.454 Z"
+        },
+        {
+          "id": "33371",
+          "layerId": "30803",
+          "propertyName": "trimPathEnd",
+          "startTime": 900,
+          "endTime": 1000,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 0,
+          "toValue": 1
+        },
+        {
+          "id": "33390",
+          "layerId": "30815",
+          "propertyName": "trimPathEnd",
+          "startTime": 926,
+          "endTime": 1000,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 0,
+          "toValue": 1
+        },
+        {
+          "id": "34165",
+          "layerId": "30827",
+          "propertyName": "trimPathEnd",
+          "startTime": 950,
+          "endTime": 1000,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 0,
+          "toValue": 1
+        }
+      ]
+    }
+  }
+}

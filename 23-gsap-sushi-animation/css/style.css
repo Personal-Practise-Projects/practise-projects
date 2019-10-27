@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #ffd23f;
+  text-align: center;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  color: #000;
+  font-family: raleway, sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 10%;
+}
+/*# sourceMappingURL=style.css.map */

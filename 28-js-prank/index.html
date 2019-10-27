@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Responsive CSS Grid with no Media Queries</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>JS Prank</h1>
+      <div class="wrapper">
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://picsum.photos/300/200" alt="" />
+          <div class="info">
+            <strong>My Title</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+              tenetur in excepturi eum consequatur vero voluptas repellat
+              aliquid amet quos?
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // 01 - JS Prank
+
+      Array.prototype.slice
+        .call(document.querySelectorAll("img"))
+        .map(function(el) {
+          el.src = "http://data.whicdn.com/images/208691316/large.jpg";
+        });
+
+      var arr = Array.prototype.slice.call(document.querySelectorAll("img"));
+
+      var arr01 = document.querySelectorAll("img");
+
+      console.log(arr);
+      console.log(arr01);
+
+      arr.map(function(el) {
+        el.src = "http://data.whicdn.com/images/208691316/large.jpg";
+      });
+
+      // Get Own Property Names
+      console.log(Object.getOwnPropertyNames(arr01));
+
+      // 02 - Js Prank
+
+      javascript: R = 0;
+      x1 = 0.1;
+      y1 = 0.05;
+      x2 = 0.25;
+      y2 = 0.24;
+      x3 = 1.6;
+      y3 = 0.24;
+      x4 = 300;
+      y4 = 200;
+      x5 = 300;
+      y5 = 200;
+      DI = document.getElementsByTagName("img");
+      DIL = DI.length;
+      function A() {
+        for (i = 0; i - DIL; i++) {
+          DIS = DI[i].style;
+          DIS.position = "absolute";
+          DIS.left = Math.sin(R * x1 + i * x2 + x3) * x4 + x5 + "px";
+          DIS.top = Math.cos(R * y1 + i * y2 + y3) * y4 + y5 + "px";
+        }
+        R++;
+      }
+      // setInterval("A()", 5);
+      void 0;
+
+      // 03 - Js Fake Aw Snap!
+      setTimeout(function() {
+        $("body")
+          .removeAttr("style")
+          .html('<img src="https://image.ibb.co/byWcEv/rtaImage.jpg">')
+          .css("text-align", "center")
+          .css("margin", "125px")
+          .css('background', 'rgb(251, 251, 251)');
+      }, 2000);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.profile-pic {
+  float: left;
+  width: 250px;
+}
+
+@media only screen and (max-width: 320px) {
+  .profile-pic {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 1023px) {
+  .profile-pic {
+    width: 125px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .profile-pic {
+    float: none;
+  }
+}
+/*# sourceMappingURL=scss-new.css.map */

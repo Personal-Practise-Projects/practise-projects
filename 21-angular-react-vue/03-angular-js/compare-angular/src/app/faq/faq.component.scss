@@ -1,0 +1,52 @@
+@import "../mq.scss";
+
+#faq {
+  padding: 5rem 0rem;
+
+  article {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+
+  .block {
+    margin: 15px 0px;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      background: lighten($c1, 5%);
+      color: $c3;
+      padding: 2em 1.5em;
+      height: 100%;
+
+      h3 {
+        font-size: 1.3em;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+
+      @include respond-to(mobile) {
+        margin-bottom: 2em;
+      }
+    }
+  }
+
+}

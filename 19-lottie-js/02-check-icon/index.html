@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lottie Js</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+   
+
+    <div id="bm"></div>
+
+    <!-- <script src="js/lottie.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.2/lottie.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      btn = document.getElementById("bm");
+
+      var animation = bodymovin.loadAnimation({
+        container: btn,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "check-icon.json"
+      });
+
+      // animation.play();
+
+      // btn.addEventListener("mouseenter", function() {
+      //   animation.play();
+      // });
+
+      // btn.addEventListener("mouseleave", function() {
+      //   animation.stop();
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+// *{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+body {
+  background: #474a2c;
+
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  animation: bg 1s linear infinite alternate;
+}
+
+@keyframes bg {
+  from {
+    background: #636940;
+  }
+  to {
+    background: #474a2c;
+  }
+}
+
+.cards {
+  display: flex;
+  --distance: -4rem;
+
+  .card {
+    background: #9bdeac;
+    color: #fff;
+    font-family: sans-serif;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 4px 4px 15px 2px rgba(black, 0.75);
+    transition: all 0.2s ease;
+
+    a{
+      color: #fff;
+      text-decoration: none;
+      &:focus{
+        outline: none;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: var(--distance);
+    }
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-1rem);
+      background: #59a96a;
+      cursor: pointer;
+      & ~ .card {
+        transform: translateX(calc(var(--distance) * -1));
+      }
+    }
+  }
+}

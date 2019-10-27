@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400,500,700");
+.profile-pic {
+  float: left;
+  width: 250px;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-pic {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .profile-pic {
+    width: 125px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .profile-pic {
+    float: none;
+  }
+}
+
+* p {
+  margin: 0px;
+}
+
+#ng .navbar {
+  background: #1c9282;
+  font-weight: bold;
+}
+
+#ng .navbar .navbar-brand {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 25px;
+  color: #f2fffd;
+}
+
+#ng .navbar .navbar-toggler .navbar-toggler-icon {
+  color: #f2fffd;
+}
+
+#ng .navbar .navbar-nav .nav-item {
+  margin: 0px 10px;
+}
+
+#ng .navbar .navbar-nav .nav-item .nav-link {
+  color: #f2fffd;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+#ng .navbar .navbar-nav .nav-item button {
+  color: #f2fffd;
+  border-color: #49ddc7;
+}
+
+#ng .navbar .navbar-nav .nav-item button:hover {
+  background: #49ddc7;
+}
+
+#ng footer {
+  background: #1c9282;
+  color: #f2fffd;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f2fffd;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+#ng footer a {
+  color: #f2fffd;
+}
+
+#ng footer a:hover {
+  color: #00f2cd;
+}
+
+#ng footer .right .wrapper {
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#ng footer .right .wrapper i {
+  font-size: 20px;
+  margin: 0px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #ng footer {
+    height: auto;
+    padding: 20px;
+  }
+  #ng footer .left {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    text-align: center;
+  }
+  #ng footer .left p {
+    margin: 20px 0px;
+  }
+  #ng footer .right .wrapper {
+    margin: 20px 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=app.component.css.map */

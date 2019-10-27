@@ -1,0 +1,17 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="sprite_60fps.css"/>
+</head>
+<body>
+  <div class="shapeshifter" id="btn" style="background-image: url(sprite_60fps.svg)"></div>
+
+  <script>
+    document.getElementById('btn').addEventListener('mouseenter',function(){
+      this.classList.add('play');
+    })
+    document.getElementById('btn').addEventListener('mouseleave',function(){
+      this.classList.remove('play');
+    })
+  </script>
+</body>
+</html>

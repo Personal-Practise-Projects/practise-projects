@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: #78e0dc;
+  display: grid;
+  place-items: center;
+}
+
+.perspective-text {
+  color: darken(#006e90, 0%);
+  font-family: raleway, sans-serif;
+  font-size: 58px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    p {
+      transform: translate(0, -50px);
+    }
+  }
+
+  .perspective-line {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    p {
+      margin: 0;
+      height: 50px;
+      line-height: 50px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:nth-child(odd) {
+      transform: skew(60deg, -30deg) scaleY(0.667);
+    }
+    &:nth-child(even) {
+      transform: skew(0deg, -30deg) scaleY(1.333);
+    }
+
+    &:nth-child(1) {
+      left: 29px;
+    }
+    &:nth-child(2) {
+      left: 58px;
+    }
+    &:nth-child(3) {
+      left: 87px;
+    }
+    &:nth-child(4) {
+      left: 116px;
+    }
+    &:nth-child(5) {
+      left: 145px;
+    }
+  }
+}

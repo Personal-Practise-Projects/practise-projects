@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: raleway, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+
+  &.logo {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3em;
+    color: #fff;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+
+  nav {
+    background: #449dd1;
+    padding: 0.5em;
+  }
+
+  main {
+    width: 80%;
+    margin: 5em auto;
+    a {
+      display: inline-block;
+      background: #08a4bd;
+      color: #fff;
+      padding: 0.8em;
+      margin-top: 2em;
+    }
+  }
+}
+
+.transition-fade {
+  transition: 1s;
+  opacity: 1;
+}
+html.is-animating .transition-fade {
+  opacity: 0;
+}

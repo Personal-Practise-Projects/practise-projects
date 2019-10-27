@@ -1,0 +1,23 @@
+.profile-pic {
+  float: left;
+  width: 250px;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-pic {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .profile-pic {
+    width: 125px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .profile-pic {
+    float: none;
+  }
+}
+/*# sourceMappingURL=mq.css.map */

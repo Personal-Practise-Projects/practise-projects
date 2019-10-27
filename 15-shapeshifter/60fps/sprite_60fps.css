@@ -1,0 +1,26 @@
+body{
+  padding-top:10em;
+}
+
+
+@keyframes play60 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -1440px 0px;
+  }
+}
+.shapeshifter {
+  margin: auto;
+  animation-duration: 1000ms;
+  animation-timing-function: steps(60);
+  animation-fill-mode: forwards;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.shapeshifter.play {
+  animation-name: play60;
+}

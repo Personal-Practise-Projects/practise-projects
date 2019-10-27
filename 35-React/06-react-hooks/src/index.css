@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: indianred;
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}

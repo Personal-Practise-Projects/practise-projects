@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SVG Text Masking with Video</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <!-- <video autoplay playsinline muted loop preload>
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" />
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+  </video> -->
+
+  <video autoplay playsinline muted loop preload poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/oceanshot.jpg">
+    <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ocean-small.webm" />
+    <source src="http://thenewcode.com/assets/videos/ocean-small.mp4" />
+  </video>
+
+  <svg height="100%" width="100%">
+    <defs>
+      <mask id="mask" x="0" y="0" height="100%" width="100%">
+        <rect x="0" y="0" height="100%" width="100%"/>
+        <text x="50%" y="50%" fill="red" text-anchor="middle">OCEAN</text>
+      </mask>
+    </defs>
+    <rect x="0" y="0" height="100%" width="100%" />
+  </svg>
+
+  <script>
+    // let type= document.querySelector('text');
+
+    // setTimeout(()=>{
+    //   type.innerHTML = 'Cool Masking Effect!';    
+    // }, 2000);
+  </script>
+</body>
+</html>

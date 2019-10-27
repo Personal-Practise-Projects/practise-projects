@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: raleway, sans-serif;
+}
+
+nav {
+  width: 22%;
+  background: #00E0C7;
+  height: 100vh;
+}
+
+nav ul {
+  margin: 0;
+  padding: 2em;
+  list-style-type: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li svg {
+  width: 4rem !important;
+}
+
+nav ul li #search {
+  line-height: 0px;
+  margin-right: 1em;
+}
+/*# sourceMappingURL=style.css.map */

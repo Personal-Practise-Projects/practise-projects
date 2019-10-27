@@ -1,0 +1,98 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  font-family: raleway, sans-serif;
+}
+
+main {
+  margin: 5rem;
+}
+
+main h1 {
+  margin: 5rem 0rem;
+}
+
+main .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-gap: 1rem;
+}
+
+main .wrapper .card {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+}
+
+main .wrapper .card:nth-of-type(1) {
+  background: #9C89B8;
+  color: #503f69;
+}
+
+main .wrapper .card:nth-of-type(2) {
+  background: #F0A6CA;
+  color: #d9247c;
+}
+
+main .wrapper .card:nth-of-type(3) {
+  background: #EFC3E6;
+  color: #cf4ab4;
+}
+
+main .wrapper .card:nth-of-type(4) {
+  background: #F0E6EF;
+  color: #b786b2;
+}
+
+main .wrapper .card:nth-of-type(5) {
+  background: #B8BEDD;
+  color: #5260aa;
+}
+
+main .wrapper .card:nth-of-type(6) {
+  background: #540D6E;
+  color: black;
+}
+
+main .wrapper .card:nth-of-type(7) {
+  background: #EE4266;
+  color: #8b0c27;
+}
+
+main .wrapper .card:nth-of-type(8) {
+  background: #FFD23F;
+  color: #a57e00;
+}
+
+main .wrapper .card:nth-of-type(9) {
+  background: #3BCEAC;
+  color: #165a4a;
+}
+
+main .wrapper .card:nth-of-type(10) {
+  background: #0EAD69;
+  color: #031f13;
+}
+
+main .wrapper .card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+main .wrapper .card .info {
+  padding: 1rem;
+}
+
+main .wrapper .card img {
+  width: 100%;
+  line-height: 0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.nav-list {
+  height: 10vh;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  list-style: none;
+}
+.nav-list .nav-links {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.home, .about, .contact {
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  height: 90vh;
+  position: absolute;
+  width: 100%;
+}
+.home .home-content, .home .about-content, .home .contact-content, .about .home-content, .about .about-content, .about .contact-content, .contact .home-content, .contact .about-content, .contact .contact-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.home .home-content img, .home .about-content img, .home .contact-content img, .about .home-content img, .about .about-content img, .about .contact-content img, .contact .home-content img, .contact .about-content img, .contact .contact-content img {
+  height: 70%;
+}
+.home .home-content h1, .home .about-content h1, .home .contact-content h1, .about .home-content h1, .about .about-content h1, .about .contact-content h1, .contact .home-content h1, .contact .about-content h1, .contact .contact-content h1 {
+  font-size: 50px;
+  margin: 30px 0px;
+}
+.home .home-content p, .home .about-content p, .home .contact-content p, .about .home-content p, .about .about-content p, .about .contact-content p, .contact .home-content p, .contact .about-content p, .contact .contact-content p {
+  font-size: 20px;
+}
+
+.about {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.contact {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+/*# sourceMappingURL=/style.e0c02e61.css.map */

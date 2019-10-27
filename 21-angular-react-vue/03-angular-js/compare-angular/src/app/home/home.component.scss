@@ -1,0 +1,107 @@
+@import "../mq.scss";
+
+
+#home {
+  font-family: 'Roboto', sans-serif;
+
+  #first-section {
+    background: $c2;
+    color: $c3;
+
+    article {
+      margin: 7rem 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 40vh;
+
+      h1{
+        font-family: 'Roboto Slab', serif;
+        font-size: 40px;
+        font-weight: 700;
+      }
+      p{
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    }
+
+    button {
+      background: $c1;
+      width: 200px;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    @include respond-to(mobile){
+      article{
+        height: auto;
+        margin: 5em 0px;
+      }
+    }
+  }
+
+  #second-section {
+    margin-bottom: 10em;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      margin: 5em 0px;
+
+      i {
+        color: $c1;
+        font-size: 50px;
+      }
+
+      h3 {
+        margin: 0px 2em;
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 1.5em;
+      }
+
+      p {
+        margin: 0px 2em;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+
+      @include respond-to(mobile) {
+        flex-direction: column;
+        i {
+          text-align: center;
+          margin: 1rem;
+        }
+        h3 {
+          margin: 1rem;
+          text-align: center;
+        }
+        p {
+          margin: 1rem;
+          text-align: center;
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      background: lighten($c1, 5%);
+      color: $c3;
+      padding: 2em 1.5em;
+
+      p {
+        font-size: 1.3em;
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+
+      @include respond-to(mobile){
+        margin-bottom: 2em;
+      }
+    }
+
+  }
+}

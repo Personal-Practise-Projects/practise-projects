@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Play:400,700");
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Play, sans-serif;
+  background: #fae3c6;
+}
+
+body .container header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% auto;
+      grid-template-columns: 20% auto;
+  padding: 20px;
+  background: #f564a9;
+}
+
+body .container header #logo {
+  width: 100px;
+}
+
+body .container header nav {
+  -ms-grid-column-align: right;
+      justify-self: right;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body .container header nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+body .container header nav ul li {
+  display: inline;
+}
+
+body .container header nav ul li a {
+  padding: 8px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #533b4d;
+}
+
+body .container #hero {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  -webkit-clip-path: polygon(100% 0, 100% 90%, 45% 100%, 50% 90%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 90%, 45% 100%, 50% 90%, 0 100%, 0 0);
+}
+
+body .container #hero video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+body .container #hero #content {
+  padding: 4em;
+  color: #533b4d;
+  background: #faa4bdbb;
+  -webkit-clip-path: polygon(0 0, 50% 0, 30% 100%, 0% 100%);
+  clip-path: polygon(0 0, 50% 0, 30% 100%, 0% 100%);
+}
+
+body .container #hero #content h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 5em;
+  letter-spacing: 5px;
+}
+
+body .container #hero #content p {
+  font-size: 1.5em;
+  margin-top: 0px;
+  -webkit-transform: rotateZ(7deg);
+          transform: rotateZ(7deg);
+  -webkit-transform-origin: 0%;
+          transform-origin: 0%;
+  -webkit-animation: fadeIn 1s linear 1.3s forwards;
+          animation: fadeIn 1s linear 1.3s forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+body .container #hero #content .btn {
+  background: #f564a9;
+  padding: 15px 60px 15px 30px;
+  color: #533b4d;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1.2em;
+  display: inline-block;
+  margin-bottom: 1em;
+  -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+
+.fall-down.words {
+  -webkit-transform: rotateZ(-7deg);
+          transform: rotateZ(-7deg);
+  -webkit-transform-origin: 0%;
+          transform-origin: 0%;
+}
+
+.fall-down.words .char {
+  -webkit-animation: slide-down 2s forwards cubic-bezier(0, 0.53, 0, 1.05);
+          animation: slide-down 2s forwards cubic-bezier(0, 0.53, 0, 1.05);
+  -webkit-animation-delay: calc(0.5s + (0.1s * var(--char-index)));
+          animation-delay: calc(0.5s + (0.1s * var(--char-index)));
+  opacity: 0;
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    -webkit-transform: translateY(-125%);
+            transform: translateY(-125%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+    font-size: 0.5em;
+    background: #f564a9;
+    color: #fae3c6;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    -webkit-transform: translateY(-125%);
+            transform: translateY(-125%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+    font-size: 0.5em;
+    background: #f564a9;
+    color: #fae3c6;
+  }
+}
+/*# sourceMappingURL=style.css.map */

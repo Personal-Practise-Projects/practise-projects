@@ -1,0 +1,87 @@
+.profile-pic {
+  float: left;
+  width: 250px;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-pic {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .profile-pic {
+    width: 125px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .profile-pic {
+    float: none;
+  }
+}
+
+#faq {
+  padding: 5rem 0rem;
+}
+
+#faq article {
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#faq article h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+#faq article p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#faq .block {
+  margin: 15px 0px;
+}
+
+#faq .block .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #20a795;
+  color: #f2fffd;
+  padding: 2em 1.5em;
+  height: 100%;
+}
+
+#faq .block .wrapper h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+#faq .block .wrapper p {
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  #faq .block .wrapper {
+    margin-bottom: 2em;
+  }
+}
+/*# sourceMappingURL=faq.component.css.map */

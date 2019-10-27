@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/20-gsap-scrollmagic/storytelling-animation/aksha-storytelling" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/00-react-boilerplate" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/00-starter-template" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/04-atlaskit-starter/atlaskit-starter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/05-react-gsap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/06-react-hooks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/07-styled-components-architecture" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/starter-react-project/test-project" vcs="Git" />
+  </component>
+</project>

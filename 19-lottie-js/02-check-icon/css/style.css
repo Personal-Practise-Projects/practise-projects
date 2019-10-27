@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: raleway, sans-serif;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+#bm {
+  width: 250px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+.subscribe {
+  margin: 30px 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 400px;
+}
+
+.subscribe .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.subscribe .title h3 {
+  font-size: 20px;
+  font-weight: 700;
+  display: inline-block;
+  border-bottom: 3px solid #20a0ab;
+  padding: 10px 30px 10px 0px;
+  margin-bottom: 0px;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.subscribe label {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.subscribe input[type=text], .subscribe input[type=email] {
+  padding: 10px 15px;
+  border: 1px solid #d3d3d3;
+  width: 100%;
+  display: block;
+  margin: 20px 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.subscribe input[type=text]:focus, .subscribe input[type=email]:focus {
+  border: 1px solid #999;
+  outline: none;
+}
+
+.subscribe input[type=text]::-webkit-input-placeholder, .subscribe input[type=email]::-webkit-input-placeholder {
+  font-size: 13px;
+  font-weight: 300;
+  color: #dfdfdf;
+}
+
+.subscribe input[type=text]:-ms-input-placeholder, .subscribe input[type=email]:-ms-input-placeholder {
+  font-size: 13px;
+  font-weight: 300;
+  color: #dfdfdf;
+}
+
+.subscribe input[type=text]::-ms-input-placeholder, .subscribe input[type=email]::-ms-input-placeholder {
+  font-size: 13px;
+  font-weight: 300;
+  color: #dfdfdf;
+}
+
+.subscribe input[type=text]::placeholder, .subscribe input[type=email]::placeholder {
+  font-size: 13px;
+  font-weight: 300;
+  color: #dfdfdf;
+}
+
+.subscribe .submit {
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  background: #20a0ab;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.subscribe .submit:focus {
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */

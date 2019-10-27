@@ -1,0 +1,29 @@
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+section{
+  position: relative;
+  height: 100vh;
+  &:nth-child(1){
+    background: #DBD4D3;
+  }
+  &:nth-child(2){
+    background: #D2CCA1;
+  }
+}
+
+svg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px){
+  svg{
+    width: 200px;
+  }
+}

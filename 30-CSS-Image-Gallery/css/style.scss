@@ -1,0 +1,38 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0 auto;
+  width: 510px;
+
+  a{
+    display: block;
+    height: 100px;
+    margin: 10px;
+    width: 150px;
+    img{
+      transform: scale(0.5) translate(-50%, -50%);
+      transition: all 200ms;
+    }
+
+    &:focus{
+      img{
+        border: 5px solid #fff;
+        box-shadow: 0 0 10rem 0 black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: scale(1) translate(-50%, -50%);
+        z-index: 1;
+      }
+    }
+
+  }
+}

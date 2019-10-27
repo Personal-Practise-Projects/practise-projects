@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body section {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body section:nth-child(1) {
+  background: #6e0f4d;
+}
+
+body section:nth-child(2) {
+  background: #06D6A0;
+}
+
+body .text {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  font-size: 10rem;
+  background: -webkit-gradient(linear, left top, right top, from(#456990), color-stop(#e5446d), color-stop(15%, #ffe66d));
+  background: linear-gradient(90deg, #456990, #e5446d, #ffe66d 15%);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body .text-img {
+  font-family: Montserrat, sans-serif;
+  font-size: 10rem;
+  background-image: url("https://picsum.photos/id/10/2500/1667");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*# sourceMappingURL=style.css.map */

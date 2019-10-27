@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Bitter");
+body {
+  font-family: 'Bitter', serif;
+  margin: 0;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  scroll-padding-top: 150px;
+}
+
+section {
+  padding: 7em;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+section:nth-child(1) {
+  background: #F4E3B2;
+  color: #050517;
+}
+
+section:nth-child(2) {
+  background: #EFC88B;
+  color: #CF5C36;
+}
+
+section:nth-child(3) {
+  background: #DEA54B;
+  color: #050517;
+}
+
+section h3 {
+  font-size: 3em;
+}
+
+section p {
+  font-size: 1.2em;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,20 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: #011936;
+  color: #465362;
+  font-family: raleway, sans-serif;
+}
+
+body code {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #73869b;
+}
+/*# sourceMappingURL=style.css.map */

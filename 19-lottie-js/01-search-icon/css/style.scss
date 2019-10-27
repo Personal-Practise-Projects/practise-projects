@@ -1,0 +1,36 @@
+body{
+  margin: 0;
+  font-family: raleway, sans-serif;
+}
+
+nav{
+  width: 22%;
+  background: #00E0C7;
+  height: 100vh;
+
+  ul{
+    margin: 0;
+    padding: 2em;
+    list-style-type: none;
+
+    li{
+      cursor: pointer;
+      font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      
+
+      svg{
+        width: 4rem !important;
+      }
+
+      #search{
+        line-height: 0px;
+        margin-right: 1em;
+      }
+    }
+  }
+}

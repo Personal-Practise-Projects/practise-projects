@@ -1,0 +1,22 @@
+<section id="faq">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12">
+        <article>
+          <h1>FAQ</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur culpa cum ducimus ea eligendi eveniet illo incidunt iure, maiores maxime porro praesentium quae quas saepe sint sit temporibus voluptatibus! Atque beatae culpa cum doloremque, enim iusto quasi quisquam ratione vero!</p>
+        </article>
+      </div>
+
+      <div class="w-100"></div>
+      <div class="col-md-4 block" *ngFor="let faq of (faqs ? faqs.slice(0, 10): [])">
+        <div class="wrapper">
+          <h3>{{ faq.title }} ?</h3>
+          <p>{{ faq.body }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

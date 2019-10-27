@@ -1,0 +1,17 @@
+html, body{
+  margin: 0;
+  height: 100%;
+}
+
+body{
+  display: grid;
+  place-items: center;
+  background: #011936;
+  color: #465362;
+  font-family: raleway, sans-serif;
+  code{
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: lighten(#465362, 20%)
+  }
+}
