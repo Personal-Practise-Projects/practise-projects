@@ -9,6 +9,7 @@
     <mapping directory="$PROJECT_DIR$/35-React/05-react-gsap" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/35-React/06-react-hooks" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/35-React/07-styled-components-architecture" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/35-React/08-react-slingshot/react-slingshot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/35-React/starter-react-project/test-project" vcs="Git" />
   </component>
 </project>

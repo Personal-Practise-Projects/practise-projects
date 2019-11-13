@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="4px" height="15px" viewBox="0 0 4 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="talent/widget/shotdetail" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01.4-New-AdminPanel" transform="translate(-1873.000000, -134.000000)" fill="#8169EA" fill-rule="nonzero">
+            <g id="right-shot-detail-drawer" transform="translate(1389.000000, 108.000000)">
+                <g id="drawer-header" transform="translate(59.000000, 22.000000)">
+                    <path d="M426.75,12.8156642 C425.783502,12.8156642 425,12.0321626 425,11.0656642 C425,10.0991659 425.783502,9.31566424 426.75,9.31566424 C427.716498,9.31566424 428.5,10.0991659 428.5,11.0656642 C428.5,12.0321626 427.716498,12.8156642 426.75,12.8156642 Z M426.75,7.5 C425.783502,7.5 425,6.71649831 425,5.75 C425,4.78350169 425.783502,4 426.75,4 C427.716498,4 428.5,4.78350169 428.5,5.75 C428.5,6.71649831 427.716498,7.5 426.75,7.5 Z M426.75,18.25 C425.783502,18.25 425,17.4664983 425,16.5 C425,15.5335017 425.783502,14.75 426.75,14.75 C427.716498,14.75 428.5,15.5335017 428.5,16.5 C428.5,17.4664983 427.716498,18.25 426.75,18.25 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

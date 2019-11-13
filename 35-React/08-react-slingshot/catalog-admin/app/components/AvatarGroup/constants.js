@@ -1,0 +1,1 @@
+export const ON_AVATAR_CLICK = 'ON_AVATAR_CLICK';

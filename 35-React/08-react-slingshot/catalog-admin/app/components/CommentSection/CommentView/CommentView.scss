@@ -1,0 +1,87 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+// Different States
+%accordion-view {
+  &.accordion-view {
+    & > .comment-header {
+      cursor: pointer;
+    }
+
+    & > .comment-body {
+      margin-left: 32px;
+      padding-left: 34px;
+    }
+  }
+}
+
+.comment {
+  @extend %accordion-view;
+  margin-bottom: 28px;
+
+  &-header {
+
+    &:hover {
+      .icon-caret-up,
+      .icon-caret-down {
+        &::before {
+          color: $primary-highlight-color;
+        }
+      }
+    }
+
+    .icon-caret-up,
+    .icon-caret-down {
+      margin-right: 8px;
+      @include font_property('', 6px, 1, '', '');
+    }
+
+    .profile-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 12px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .profile-name {
+      margin-right: 8px;
+      @include font_property($sourceSans, 16px, 20px, 600, '');
+    }
+
+    .profile-date {
+      @include font_property(
+          $sourceSans,
+          12px,
+          16px,
+          400,
+          $secondary-font-color
+      );
+    }
+  }
+
+  &-body {
+    display: none;
+    margin-left: 46px;
+    margin-top: -12px;
+    word-break: break-word;
+
+    @include font_property($sourceSans, 16px, 20px, 400, $primary-font-color);
+
+    .tag {
+      @include font_property('', '', '', '', $primary-highlight-color);
+
+      &:before {
+        content: '@';
+      }
+    }
+  }
+
+  &-expanded {
+    .comment-body {
+      display: block;
+    }
+  }
+}

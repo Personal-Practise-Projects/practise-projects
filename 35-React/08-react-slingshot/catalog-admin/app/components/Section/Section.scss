@@ -1,0 +1,24 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.section-view-component {
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
+
+  .section-title {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+  }
+
+  .input-wrapper {
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+}

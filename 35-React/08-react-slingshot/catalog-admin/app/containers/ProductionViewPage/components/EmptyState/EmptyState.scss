@@ -1,0 +1,39 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+
+.empty-state-component {
+  overflow: auto;
+  height: 76vh;
+  margin: 10px 40px 40px 40px;
+  background: $white;
+  border-radius: $radius-size;
+  display: grid;
+  place-items: center;
+
+  .wrapper {
+    text-align: center;
+
+    &:nth-child(n) {
+      margin-bottom: 16px;
+      max-width: 400px;
+    }
+
+    & > .image {
+      margin-bottom: 10px;
+    }
+
+    & > .title {
+      @include font_property($sourceSans, 20px, 25px, 600, $primary-font-color);
+    }
+
+    & > .subtitle {
+      @include font_property(
+        $sourceSans,
+        16px,
+        20px,
+        '',
+        $secondary-font-color
+      );
+    }
+  }
+}

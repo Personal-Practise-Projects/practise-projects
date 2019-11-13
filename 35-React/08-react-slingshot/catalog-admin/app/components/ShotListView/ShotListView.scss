@@ -1,0 +1,32 @@
+@import '../../styles/Variables';
+
+// Overrides
+%searchable-dropdown-overrides {
+  & > .searchable-dropdown {
+    min-width: 200px;
+  }
+}
+
+// ShotListView Component Styles
+.shot-list-view-component {
+  & > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    & > .header-left {
+      display: flex;
+    }
+
+    & > .header-right {
+      @extend %searchable-dropdown-overrides;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(n) :not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+}

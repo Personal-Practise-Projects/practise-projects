@@ -1,0 +1,86 @@
+@import './Variables';
+@import './Mixins';
+
+// Single line ellipses
+%text-ellipses {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Multiline ellipses
+%block-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+%presets {
+  @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+  @include font_property($sourceSans, 14px, 18px, '', #63636f);
+}
+
+// Use where you need preformatted text
+%nextline {
+  white-space: pre-line;
+}
+
+// TextArea Styles
+%text-area {
+  @extend %show-scrollbar-on-hover;
+  width: 100%;
+  height: 42px;
+  border: 1px solid $initial-state;
+  resize: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background: $white;
+  min-height: unset;
+  transition: height 0.2s ease-in-out;
+  color: #2f2f36;
+  font-family: $sourceSans;
+  font-size: 16px;
+  line-height: 20px;
+  overflow-y: auto;
+
+  &::placeholder {
+    font-family: $sourceSans;
+    color: #b9bdcc;
+    font-size: 16px;
+    line-height: 14px;
+    padding-top: 4px;
+  }
+
+  &:focus {
+    border: 1px solid $focused-state;
+    box-shadow: 0 0 8px 0 $shadow;
+    outline: none;
+    height: 100px;
+  }
+
+  &:not(:focus):not(:placeholder-shown) {
+    height: 100px;
+  }
+}
+
+// Show Scrollbar on hover
+%show-scrollbar-on-hover {
+  &::-webkit-scrollbar {
+    &-thumb {
+      background-color: transparent;
+    }
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      &-thumb {
+        background-color: #e3dee6;
+      }
+    }
+  }
+}

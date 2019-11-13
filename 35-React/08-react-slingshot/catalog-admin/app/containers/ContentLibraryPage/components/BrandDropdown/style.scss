@@ -1,0 +1,102 @@
+@import '../../../../styles/Mixins.scss';
+@import '../../../../styles/Variables.scss';
+
+.brand-dropdown-component {
+  position: relative;
+  max-width: 100%;
+  display: flex;
+
+  .brand-list-section {
+    min-width: 160px;
+
+    .brand-section {
+      display: flex;
+      padding-left: 5px;
+    }
+
+    .brand-button {
+      border: 0;
+      outline: none;
+      overflow: hidden;
+      max-width: 250px;
+      padding-left: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 500;
+      font-family: 'Rubik', sans-serif;
+    }
+  }
+
+  .brand-list-button {
+    border: 0;
+    font-weight: 500;
+    text-align: left;
+    padding: 8px 12px;
+    word-break: break-all;
+    color: #6f757f;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .create-button {
+    margin: 0;
+    padding: 8px 0;
+    overflow: initial;
+    max-height: none;
+    border-top: 1px solid #eceeef;
+    position: relative;
+  }
+  .create-brand-button {
+    border: 0;
+    font-weight: 500;
+    text-align: left;
+    padding: 8px 12px;
+    word-break: break-all;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .list-brands {
+    display: grid;
+    position: relative;
+    max-height: 25vh;
+    overflow-y: auto;
+    margin: 8px 0;
+  }
+  .content-drop {
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 rgba(91, 116, 141, 0.2);
+    position: absolute;
+    top: 20px;
+  }
+
+  .input-box {
+    padding: 1px;
+    position: relative;
+  }
+
+  .input-field {
+    padding: 8px 12px;
+    padding-right: 32px;
+    color: #6f757f;
+    border: 1px solid transparent;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #203149;
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.expanded-search {
+  width: 350px;
+}
+
+.input-search {
+  margin: 0px;
+  padding: 0px;
+  .input-field {
+    padding: 6px 20px;
+    &:focus {
+      border-radius: $radius-size;
+      background-color: $white;
+      border: 1px solid $primary-highlight-color;
+      box-shadow: 0 0 8px 0 rgba(129, 105, 234, 0.2);
+    }
+  }
+  .btn-search {
+    padding: 0px;
+    @include element_position(absolute, 10px, 12px, '', '');
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  .btn-toggle-search {
+    padding: 4px 0px;
+    .icon-search {
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+  .search-label {
+    cursor: pointer;
+    padding: 4px 0px;
+    margin-left: 8px;
+    vertical-align: middle;
+    @include font_property($sourceSans, 16px, 20px, 400, $secondary-font-color);
+  }
+}

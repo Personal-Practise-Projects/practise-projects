@@ -1,0 +1,29 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.tabs-header {
+  z-index: 11;
+  &-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .tab {
+    min-width: 115px;
+    padding: 10px 16px;
+    @include font_property($sourceSans, 16px, 20px, 400, $secondary-font-color);
+    &:active,
+    &:focus,
+    &:hover {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .tab-active {
+    border: 1px solid #f0edf1;
+    border-bottom: none;
+    background-color: #fbfafb;
+    border-radius: $radius-size $radius-size 0px 0px;
+    @include font_property('', '', '', 600, $primary-highlight-color);
+  }
+}

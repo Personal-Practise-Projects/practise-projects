@@ -1,0 +1,258 @@
+@import './Partials';
+
+// Global Input Fields Styling
+.input {
+  &-wrapper {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    &[disabled]{
+      opacity: 0.8;
+      background: #d4d4d4;
+      pointer-events: none;
+    }
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 6px;
+    @include font_property($sourceSans, 14px, 18px, 400, $secondary-font-color);
+  }
+
+  &-field {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: $radius-size;
+    background-color: $white;
+    border: 1px solid #dfe1ea;
+    @include font_property($sourceSans, 16px, 20px, 400, $primary-font-color);
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    &::placeholder {
+      @include font_property($sourceSans, 16px, 20px, 400, #b9bdcc);
+    }
+  }
+
+  &-message {
+    margin-top: 2px;
+    @include font_property($sourceSans, 12px, 16px, 600, red);
+  }
+}
+
+// Global Single Select Dropdown Styling
+.searchable-dropdown {
+  background-color: transparent;
+}
+
+.collapsed-dropdown {
+  .dropdown-drawer {
+    display: none;
+  }
+}
+
+.expanded-dropdown {
+  .dropdown-trigger {
+    z-index: $zIndexXSmall;
+    border: 1px solid $focused-state;
+    box-shadow: 0 0 8px 0 $shadow;
+  }
+
+  .dropdown-drawer {
+    top: 40px;
+    border-radius: 0 0 5px 5px;
+    z-index: 15;
+    display: inline-block;
+    border: 1px solid $focused-state;
+    box-shadow: 0 0 8px 0 $shadow;
+  }
+}
+
+.dropdown-trigger {
+  z-index: 1;
+  border: 1px solid $initial-state;
+  width: 100%;
+  outline: none;
+  overflow: hidden;
+  text-align: left;
+  padding: 6px 20px 6px 14px;
+  border-radius: $radius-size;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: $white;
+  color: $primary-font-color;
+  @include font_property('', 16px, 20px, '', '');
+
+  &::after {
+    top: 52%;
+    width: 0;
+    right: 12px;
+    content: '';
+    height: 0;
+    position: absolute;
+    transform: translateY(-50%);
+    border-top: 4px solid #b9bdcc;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown-drawer {
+  z-index: 15;
+  width: 100%;
+  border: 0;
+  min-width: 80px;
+  overflow-x: auto;
+  max-height: 25vh;
+  background-color: $white;
+  border-radius: $radius-size;
+  box-shadow: 0 2px 16px 0 rgba(213, 213, 220, 0.6);
+  @include element_position(absolute, 32px, '', '', 0px);
+}
+
+.dropdown-item {
+  border: 0;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  word-break: keep-all;
+  word-wrap: break-word;
+  background-color: transparent;
+  @include font_property('', 14px, 18px, 400, $primary-font-color);
+
+  &:hover {
+    color: $white;
+    background-color: $primary-highlight-color;
+  }
+}
+
+.active-item {
+  color: $white;
+  background-color: $primary-highlight-color;
+}
+
+// Global Styling for Application Buttons
+// TODO - Move into Button.scss
+%button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: $radius-size;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.primary-cta {
+  @extend %button;
+  color: $white;
+  background: $fadeBlueGradient;
+
+  &:hover {
+    background: $fadeBlueGradientReversed;
+  }
+}
+
+.secondary-cta {
+  @extend %button;
+  color: $primary-highlight-color;
+  border: 1px solid $primary-highlight-color;
+
+  &:hover {
+    color: #684ddc;
+  }
+}
+
+.ternary-cta {
+  @extend %button;
+  color: $primary-highlight-color;
+  background: transparent;
+  border: 1px solid $primary-highlight-color;
+}
+
+// Styling for Checkbox Component
+.checkbox-wrapper {
+  width: fit-content;
+
+  .input-field {
+    width: 0;
+    height: 0;
+    top: -999999px;
+    position: absolute;
+  }
+
+  .input-label {
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    width: fit-content;
+    align-items: center;
+  }
+
+  .checkbox-checker {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    margin-right: 6px;
+    border-radius: $radius-sm-size;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    border: 1px solid #dfe1ea;
+  }
+
+  .checkbox-content {
+    user-select: none;
+  }
+
+  .input-field:checked + .checkbox-checker {
+    border: 1px solid $primary-highlight-color;
+    background-color: $primary-highlight-color;
+  }
+
+  .input-field:checked + .checkbox-checker::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: url('../images/common/checkmark-white.svg') center no-repeat;
+    background-size: contain;
+  }
+}
+
+// Styling for Global Error Messages
+.error-wrapper {
+  display: block;
+}
+
+.error-message {
+  @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+}
+
+// Various Error Colors
+.red-error {
+  @include font_property('', '', '', '', $primary-red);
+}
+
+// Styling for Input Textarea Application Wide
+.input-wrapper {
+  textarea {
+    @extend %text-area;
+  }
+}

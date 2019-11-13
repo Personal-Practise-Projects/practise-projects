@@ -1,0 +1,97 @@
+// Include Bootstrap 4 from Source SCSS
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+// Include Animate CSS from Source CSS
+@import '../../node_modules/animate.css/animate.css';
+// Import Custom Source SCSS
+@import './Variables.scss';
+@import './Mixins.scss';
+@import './SharedSnippets.scss';
+@import './FormStyles.scss';
+@import './Fonts.scss';
+@import './Overrides.scss';
+@import './SplitPage.scss';
+@import './ScrollBars.scss';
+@import './UploadWidget.scss';
+@import './SidePanel.scss';
+@import './NoBase.scss';
+@import './Status.scss';
+
+// Start Global Styles Declarations
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  padding: 0;
+  min-height: 100vh;
+}
+
+a {
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.scroll-loaded {
+  overflow: hidden !important;
+  // this will make scrolling smooth
+  scroll-behavior: smooth;
+}
+
+.fonts-loaded {
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.application {
+  min-height: 100vh;
+
+  &-container {
+    min-height: 100vh;
+    padding-left: 56px; // For clearing the application navigation on the left
+    background-color: #f0edf1;
+    // TODO: Try using position: fixed instead of relative to fix the shifting issue of application container
+    @include element_position(fixed, 0, 0, 0, 0);
+  }
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+[role] {
+  outline: none;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.react-tooltip-component {
+  z-index: $zIndexMax;
+  @include font_property($sourceSans, 14px, 16px, '', $white);
+
+  &.__react_component_tooltip.type-dark {
+    background-color: #63636f;
+    border-radius: $radius-size;
+
+    &.place-top:after {
+      border-top-color: #63636f;
+    }
+
+    &.place-bottom:after {
+      border-bottom-color: #63636f;
+    }
+  }
+}

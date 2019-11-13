@@ -1,0 +1,8 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.input-wrapper-multiple {
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+}

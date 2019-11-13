@@ -1,0 +1,60 @@
+@import '../../styles/Mixins.scss';
+@import '../../styles/Variables.scss';
+
+.notifications {
+  z-index: 1000;
+  @include element_position(fixed, 0px, 0px, 0px, 0px);
+  &-overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  &-panel {
+    width: 30vw;
+    min-width: 350px;
+    background-color: $white;
+    @include element_position(absolute, 0px, 0px, 0px, '');
+    @media only screen and (max-width: 1440px) {
+      width: 35vw;
+    }
+  }
+  .animated {
+    animation-duration: 0.5s;
+  }
+}
+
+.notifications-panel {
+  &-header {
+    padding: 0px 40px;
+    padding-top: 54px;
+    margin-bottom: 30px;
+    .panel-close {
+      padding: 4px;
+      outline: none;
+      @include element_position(absolute, 24px, 24px, '', '');
+      @include font_property('', 16px, 1, '', $primary-font-color);
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    h3 {
+      margin-right: 8px;
+      @include font_property($sourceSans, 18px, 16px, 600, $primary-font-color);
+    }
+  }
+  &-content {
+    height: calc(100% - 100px);;
+    overflow-x: auto;
+    padding: 0px 40px;
+  }
+}
+
+.notifications-section {
+  margin-bottom: 32px;
+  &-title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    @include font_property($sourceSans, 14px, 18px, 600, $secondary-font-color);
+  }
+}

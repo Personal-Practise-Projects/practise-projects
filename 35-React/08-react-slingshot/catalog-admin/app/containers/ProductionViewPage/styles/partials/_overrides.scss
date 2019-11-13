@@ -1,0 +1,135 @@
+@import '../../../../styles/Mixins';
+
+// Overrides
+%avatar-group-override {
+  .bzpllx {
+    height: 36px;
+
+    button {
+      background: #f0edf1;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+%select-item-component-overrides {
+  .select-item-component {
+    width: 110px;
+  }
+}
+
+%bulk-action-button-component-override {
+  & > .bulk-action-button-component {
+    width: 100%;
+  }
+}
+
+%react-datepicker-override {
+  .input-wrapper {
+    margin-bottom: 0;
+
+    .react-datepicker-wrapper {
+      .react-datepicker__input-container {
+        cursor: pointer;
+
+        input {
+          color: transparent;
+          text-shadow: 0 0 0 #ffffff;
+          cursor: pointer;
+          height: 36px;
+          width: 116px;
+          border-radius: $radius-size;
+          background: linear-gradient(135deg, #8169ea 0%, #6349d6 100%);
+          text-align: center;
+          @include font_property($sourceSans, 16px, 20px, 600, '');
+        }
+      }
+    }
+
+    .react-datepicker-popper {
+      .react-datepicker {
+        &__triangle {
+          margin-left: 64px;
+        }
+      }
+    }
+  }
+}
+
+%subheader-component-override {
+  .subheader-component {
+    & > .title-left {
+      @extend %avatar-group-override;
+      @extend %select-item-component-overrides;
+    }
+
+    & > .title-right {
+      @include ordering-subheader();
+      @extend %bulk-action-button-component-override;
+      @extend %react-datepicker-override;
+    }
+  }
+}
+
+%image-select-component-override {
+  .image-select-component {
+    @extend %cropping-styles;
+    width: 120px;
+  }
+}
+
+%image-wrapper-override {
+  .image-wrapper {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+%cropping-styles {
+  &.wide {
+    @extend %image-wrapper-override;
+    width: 385px;
+    height: 160px;
+
+    .image {
+      width: 385px;
+      height: 160px;
+    }
+  }
+
+  &.tall {
+    @extend %image-wrapper-override;
+    width: 244px;
+    height: 428px;
+
+    .image {
+      width: 244px;
+      height: 428px;
+    }
+  }
+
+  &.vertical {
+    @extend %image-wrapper-override;
+    width: 120px;
+    height: 191px;
+
+    .image {
+      width: 120px;
+      height: 191px;
+    }
+  }
+
+  &.square {
+    @extend %image-wrapper-override;
+    width: 120px;
+    height: 120px;
+
+    .image {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}

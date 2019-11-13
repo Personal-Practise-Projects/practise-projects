@@ -1,0 +1,12 @@
+.icon {
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.icon-wrap {
+  &.disabled {
+    cursor: not-allowed;
+  }
+}

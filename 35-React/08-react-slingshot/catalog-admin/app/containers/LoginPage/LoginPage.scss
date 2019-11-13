@@ -1,0 +1,70 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.login-container {
+  @include element_position(fixed, 0px, 0px, 0px, 0px);
+  &-left,
+  &-right {
+    height: 100%;
+  }
+  &-left {
+    width: 40%;
+    padding: 40px;
+    background-color: #564984;
+  }
+  &-right {
+    width: 60%;
+    background-color: $white;
+  }
+}
+
+.login-container-left {
+  .flex-wrapper {
+    width: 100%;
+    max-width: 450px; // DO NOT CHANGE
+  }
+  .slider-navigation {
+    @include element_position(absolute, '', '', -10em, 0px);
+    @media only screen and (max-width: 1440px) {
+      @include element_position(fixed, '', '', 40px, 40px);
+    }
+    .owl-dot {
+      opacity: 0.4;
+      margin-right: 10px;
+      display: inline-block;
+      span {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        background: url('../../images/login/slider-dot.svg') center no-repeat;
+        background-size: contain;
+      }
+    }
+    .active {
+      opacity: 1;
+      span {
+        height: 22px;
+        background: url('../../images/login/slider-dot-active.svg') bottom
+          no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  .item {
+    img {
+      width: 100%;
+      max-width: 380px;
+      margin-bottom: 24px;
+      @media only screen and (max-width: 1440px) {
+        max-width: 340px;
+      }
+    }
+    h3 {
+      width: 420px; // DO NOT CHANGE
+      @include font_property($sourceSans, 28px, 34px, 400, $white);
+      strong {
+        @include font_property('', 44px, 54px, 800, '');
+      }
+    }
+  }
+}

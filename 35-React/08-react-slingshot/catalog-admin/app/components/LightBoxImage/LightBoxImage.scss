@@ -1,0 +1,26 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.lightbox-image {
+  position: relative;
+  border-radius: $radius-size;
+  overflow: hidden;
+
+  &:hover{
+    .download-overlay{
+      display: flex;
+    }
+  }
+
+  .download-overlay{
+    display: none;
+    flex-direction: column;
+    border-radius: $radius-size;
+    background-color: rgba(0, 0, 0, 0.6);
+    @include element_position(absolute, '', '', '', '');
+    .lightbox-launcher{
+      margin-bottom: 4px;
+    }
+  }
+
+}

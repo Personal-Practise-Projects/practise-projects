@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>check</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Timeline-content-request" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02.1-contentrequest-timeline" transform="translate(-795.000000, -122.000000)" fill="#FFFFFF">
+            <g id="Mid-Content" transform="translate(109.000000, 105.000000)">
+                <g id="timeline" transform="translate(654.000000, 5.000000)">
+                    <path d="M42.3159522,12.4267151 C42.8849057,11.8577616 43.8073615,11.8577616 44.376315,12.4267151 C44.9452685,12.9956686 44.9452685,13.9181245 44.376315,14.487078 L37.5774645,21.2859284 C37.008511,21.8548819 36.0860552,21.8548819 35.5171017,21.2859284 L32.4267151,18.1955419 C31.8577616,17.6265884 31.8577616,16.7041325 32.4267151,16.135179 C32.9956686,15.5662255 33.9181245,15.5662255 34.487078,16.135179 L36.5472831,18.1953842 L42.3159522,12.4267151 Z" id="check"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

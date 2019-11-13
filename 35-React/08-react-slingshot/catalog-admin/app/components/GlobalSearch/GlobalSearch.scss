@@ -1,0 +1,51 @@
+@import '../../styles/Mixins.scss';
+@import '../../styles/Variables.scss';
+
+.search-global {
+  max-height: fit-content;
+  border-radius: $radius-size;
+
+  &:focus-within {
+    box-shadow: 0 2px 6px #e3dee6;
+  }
+
+  .input-search {
+    .icon-search {
+      transform: translateY(-50%);
+      @include font_property('', 12px, 1, '', '');
+      @include element_position(absolute, 50%, '', '', 10px);
+
+      &:before {
+        color: #e3dee6;
+      }
+    }
+
+    &:focus-within {
+      .icon-search {
+        &:before {
+          color: #63636f;
+        }
+      }
+    }
+
+    .input-field {
+      min-width: 300px;
+      padding: 6px 12px 6px 30px;
+      border: 1px solid #e3dee6;
+      border-radius: 5px;
+
+      @include respond-to(desktop) {
+        min-width: 400px;
+      }
+
+      @include respond-to(widescreen) {
+        min-width: 450px;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border: 1px solid #e3dee6;
+      }
+    }
+  }
+}

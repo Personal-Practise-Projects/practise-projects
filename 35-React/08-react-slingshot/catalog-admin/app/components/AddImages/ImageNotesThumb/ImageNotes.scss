@@ -1,0 +1,28 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+
+.reference-area {
+  margin-bottom: 16px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+  .input-label {
+    display: none !important;
+  }
+  .input-field {
+    resize: none;
+    min-height: 80px;
+  }
+}
+.input-thumbnail {
+  width: 100px;
+  height: 100px;
+  margin-right: 18px;
+  border-radius: $radius-size;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: $radius-size;
+  }
+}

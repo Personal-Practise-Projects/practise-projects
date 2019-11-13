@@ -1,0 +1,51 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.content-library-page {
+  padding: 0 40px;
+  overflow: auto;
+
+  #content-library-page {
+    display: none;
+  }
+
+  .top {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding-top: 32px;
+    justify-content: space-between;
+
+    .left {
+      min-width: 160px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    .right {
+      position: absolute;
+      right: 0;
+      min-width: 160px;
+      text-align: right;
+      display: flex;
+    }
+  }
+  .middle {
+    padding-top: 32px;
+  }
+
+  .bottom {
+    width: 100%;
+    display: inline-grid;
+    padding-top: 48px;
+    overflow: auto;
+
+    .photo-section {
+      height: 90vh;
+      overflow: auto;
+      padding-bottom: 100px;
+    }
+  }
+}

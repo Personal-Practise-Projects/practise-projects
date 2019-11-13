@@ -1,0 +1,16 @@
+.avatar-wrapper {
+  display: grid;
+  grid-template-columns: 40px auto;
+  align-items: center;
+
+  .avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: flex-start;
+  }
+  .avatar-text {
+    margin-left: 10px;
+  }
+}

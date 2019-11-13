@@ -1,0 +1,50 @@
+@import '../../styles/Mixins';
+@import '../../styles/Variables';
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &-content {
+    height: auto;
+    width: 400px;
+    border-radius: 5px;
+    padding: 34px 34px 0 34px;
+  }
+
+  &-dialog-centered {
+    justify-content: center;
+  }
+
+  &-title {
+    @include font_property($sourceSans, 18px, 17px, 600, #2f2f36);
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eeebf0;
+  }
+
+  &-body {
+    @include font_property($sourceSans, 20px, 25px, 600, #2f2f36);
+    text-align: center;
+    padding: 0;
+  }
+
+  &-footer {
+    border: none;
+    padding: 0;
+    justify-content: center;
+    padding: 30px 0;
+
+    .secondary-cta {
+      @include font_property($sourceSans, 14px, 18px, 600, $primary-highlight-color);
+      border: none;
+      padding: 8px 32px;
+      width: auto;
+    }
+
+    .primary-cta {
+      padding: 8px 32px;
+      width: auto;
+      @include font_property($sourceSans, 14px, 18px, 600, $white);
+    }
+  }
+}

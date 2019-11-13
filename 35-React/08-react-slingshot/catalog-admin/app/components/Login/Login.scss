@@ -1,0 +1,59 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.login-wrapper {
+  min-width: 26.5vw;
+  @media only screen and (max-width: 1440px) {
+    min-width: 30vw;
+  }
+
+  &-header {
+    margin-bottom: 110px;
+  }
+
+  .catalog-logo {
+    width: 176px;
+    height: 22px;
+    background: url('../../images/login/catalog-logo.svg') center no-repeat;
+    background-size: cover;
+  }
+
+  .input-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .input-field {
+    padding: 18px 16px;
+    @include font_property('', 18px, 24px, '', '');
+  }
+
+  &-content {
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}
+
+// Handling Error State Visibility
+.error-visible {
+  margin-bottom: 28px;
+
+  .catalog-logo {
+    margin-bottom: 38px;
+  }
+}
+
+.login {
+  &-title {
+    @include font_property($sourceSans, 22px, 28px, 600, $primary-font-color);
+  }
+
+  &-action {
+    padding: 18px 16px;
+    @include font_property('', 20px, 24px, '', '');
+
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}

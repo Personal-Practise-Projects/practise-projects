@@ -1,0 +1,106 @@
+@import '../../styles/Partials';
+@import '../../styles/Overrides';
+
+// Local Variables
+$content-comment-component-width: 400px;
+$box-shadow-1: 0 2px 12px 0 rgba(213, 213, 220, 0.2);
+$box-shadow-2: 0 2px 16px 0 rgba(213, 213, 220, 0.6);
+
+// Overrides
+%comment-btn-override {
+  .comment-btn {
+    @include font_property($sourceSans, 14px, '', 600, #8169ea);
+    display: block;
+    background: none;
+    margin-left: auto;
+    padding: 0;
+    text-align: right;
+    cursor: pointer;
+  }
+}
+
+%add-comment-overrides {
+  .add-comment {
+    margin-bottom: 30px;
+
+    &-actions {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+%markup-comment-override {
+  .markup-comment {
+    background: #fbfbfb;
+    box-shadow: 0 2px 8px 0 rgba(213, 213, 220, 0.4);
+
+    .comment-content-body .comment-text .read-more-less-btn {
+      background: linear-gradient(
+          to right,
+          rgba(246, 244, 246, 0.8) 0%,
+          rgba(246, 244, 246, 1) 100%
+      );
+    }
+  }
+}
+
+// Content Comment Component Styles
+.content-comment-component {
+  background: $white;
+  border-radius: $radius-size;
+  width: $content-comment-component-width;
+  max-height: inherit;
+  box-shadow: 0 2px 12px 0 rgba(213, 213, 220, 0.2);
+  position: relative;
+
+  &.no-comments {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  &.expanded {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    max-height: inherit;
+    box-shadow: 0 8px 12px 0 rgba(47, 47, 54, 0.2);
+
+    .icon {
+      &:before {
+        color: #8169ea;
+      }
+    }
+  }
+
+  &:not(.no-comments) {
+    .comment-list-wrapper {
+      @extend %show-scrollbar-on-hover;
+      position: relative;
+      overflow-y: auto;
+      max-height: 50vh;
+      padding: 15px 15px 0 15px;
+    }
+
+    .add-comment-wrapper {
+      padding: 10px 30px;
+    }
+  }
+
+  .icon {
+    font-size: 10px;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    width: 340px;
+    text-align: center;
+  }
+
+  @extend %comment-btn-override;
+  @extend %add-comment-overrides;
+  @extend %markup-comment-override;
+}

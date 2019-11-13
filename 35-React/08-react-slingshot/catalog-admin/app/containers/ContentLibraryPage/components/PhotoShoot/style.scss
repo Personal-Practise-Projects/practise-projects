@@ -1,0 +1,793 @@
+.photo-shoot-component {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+
+  .photos {
+    text-align: center;
+    margin-left: auto;
+    position: relative;
+    margin-right: auto;
+
+    .masonry {
+      justify-content: space-evenly;
+      padding-bottom: 70px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .overall {
+        left: auto;
+        top: 0px;
+        opacity: 1;
+        transition-property: opacity, transform;
+        transition-duration: 0.15s;
+        transition-delay: 0ms;
+        transform: translate3d(0px, 0px, 0px);
+        min-height: 150px;
+        width: 300px;
+        margin-bottom: 40px;
+        overflow: hidden;
+        margin: 1em;
+        display: inline-table;
+        &:hover {
+          .image-info {
+            transform: scale(1.15);
+            transition: transform 0.2s ease-in;
+          }
+        }
+      }
+      .photo-detail {
+        opacity: 1;
+
+        .overlay {
+          width: 300px;
+
+          .overlay-items {
+            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            text-align: left;
+            padding-left: 6px;
+            padding-right: 6px;
+            opacity: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: inline-flex;
+            justify-content: space-between;
+
+            .text {
+              color: #fff;
+              max-width: 65%;
+              margin-top: 65px;
+
+              .category-section {
+                display: -webkit-box;
+              }
+              .price {
+                padding-left: 10px;
+                margin: 0;
+              }
+            }
+          }
+        }
+        .overlay:hover {
+          .overlay-items {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            background: linear-gradient(180deg, transparent, #000);
+            z-index: 1010;
+          }
+        }
+
+        .image-info {
+          width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+          display: block !important;
+          max-width: 100%;
+          height: auto;
+          cursor: pointer;
+          border: none;
+        }
+        .button-list {
+          display: inline-grid;
+          flex-direction: column;
+          padding-top: 10px;
+
+          .view-large {
+            border-radius: 50%;
+            // background-color: #000;
+            // color: #fff;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            text-align: initial;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            background: url('../../images/icons/icon-zoom.svg') 50% no-repeat
+              #fff;
+
+            .large-hover-text {
+              display: none;
+              border-radius: 2px;
+              color: #fff;
+              width: max-content;
+              background-color: #000;
+              font-size: 14px;
+              line-height: 18px;
+              position: absolute;
+              min-width: 90px;
+              padding: 4px 8px;
+              bottom: 6.8em;
+              right: 3em;
+            }
+            &:hover {
+              .large-hover-text {
+                display: block;
+              }
+            }
+          }
+          .view-details {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            text-align: initial;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            background: url('../../images/buttonKey/eye.svg') 50% no-repeat #000;
+            // background-color: #000;
+            // color: #fff;
+
+            .details-hover-text {
+              display: none;
+              border-radius: 2px;
+              color: #fff;
+              width: max-content;
+              background-color: #000;
+              font-size: 14px;
+              line-height: 18px;
+              position: absolute;
+              min-width: 90px;
+              padding: 4px 8px;
+              bottom: 3.8em;
+              right: 3em;
+            }
+            &:hover {
+              .details-hover-text {
+                display: block;
+              }
+            }
+          }
+          .download {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            background: url('../../images/buttonKey/download-icon-default.svg')
+              50% no-repeat #000;
+
+            .download-hover-text {
+              display: none;
+              border-radius: 2px;
+              color: #fff;
+              width: max-content;
+              background-color: #000;
+              font-size: 14px;
+              line-height: 18px;
+              position: absolute;
+              min-width: 90px;
+              padding: 4px 8px;
+              bottom: 0.9em;
+              right: 3em;
+            }
+            &:hover {
+              .download-hover-text {
+                display: block;
+              }
+            }
+          }
+          .add-to-cart {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            background: url('../../images/icons/icon-shopping-cart.svg') 50%
+              no-repeat #fff;
+
+            .content {
+              content: 'Add to cart';
+            }
+            .add-to-cart-hover-text {
+              display: none;
+              border-radius: 2px;
+              color: #fff;
+              width: max-content;
+              background-color: #000;
+              font-size: 14px;
+              line-height: 18px;
+              position: absolute;
+              min-width: 90px;
+              padding: 4px 8px;
+              bottom: 0.9em;
+              right: 3em;
+            }
+            &:hover {
+              .add-to-cart-hover-text {
+                display: block;
+                content: 'Add to cart';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bg {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    pointer-events: auto;
+    z-index: 1100;
+  }
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1010;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    max-width: 100vw;
+    max-height: 90vh;
+    margin-top: 40px;
+
+    .lightbox-image {
+      width: auto;
+      height: 100%;
+      border-radius: 0;
+    }
+    .lightbox-overlay-items {
+      opacity: 1;
+      color: #fff;
+      padding: 24px;
+      min-height: 115px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(180deg, transparent, #000);
+      align-items: flex-end;
+      justify-content: space-between;
+      display: flex;
+      .lightbox-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .lightbox-download {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 0;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 50%;
+          text-align: initial;
+          background-color: #000;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          background: url('../../images/buttonKey/download-icon-default.svg')
+            50% no-repeat #000;
+
+          .download-hover-text {
+            display: none;
+            border-radius: 2px;
+            color: #fff;
+            width: max-content;
+            background-color: #000;
+            font-size: 14px;
+            line-height: 18px;
+            position: absolute;
+            min-width: unset;
+            padding: 4px 8px;
+            bottom: 4emem;
+            left: unset;
+          }
+          &:hover {
+            .download-hover-text {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // this is the shaded background
+  .popup {
+    max-height: 100vh;
+    cursor: default;
+    z-index: 1010;
+    pointer-events: auto;
+  }
+
+  .detail-lightbox {
+    z-index: 6666;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    max-height: 90vh;
+  }
+
+  .detail-page {
+    display: flex;
+    color: #fff;
+    max-height: 85vh;
+    align-items: stretch;
+    background-color: #000;
+    position: relative;
+    z-index: 1200;
+    // max-width: 80vw;
+
+    .left-part {
+      min-width: 25vw;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+
+      .content-wrapper {
+        position: relative;
+
+        .content-vignette {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        .detail-image {
+          max-height: 85vh;
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+          border-style: none;
+        }
+      }
+    }
+    .right-part {
+      position: relative;
+      min-width: 25vw;
+      max-width: 40vw;
+      padding: 32px 40px;
+      padding-left: 32px;
+
+      .content-header {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #2e2e2f;
+
+        .production-title {
+          color: #9ea2a7;
+          font-size: 12px;
+          line-height: 14px;
+          display: block;
+        }
+
+        .production-category {
+          margin: 0;
+          color: #fff;
+          font-size: 22px;
+          line-height: 28px;
+          font-weight: 500;
+          font-family: 'Rubik', sans-serif;
+
+          .production-id {
+            font-size: 14px;
+            line-height: 18px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+          }
+        }
+        .production-price {
+          margin: 0;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 600;
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+      }
+      .content-scroll {
+        margin-right: -16px;
+        max-height: calc(100% - 154px);
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        overflow-y: scroll;
+
+        .content {
+          position: static;
+          max-height: none;
+
+          .content-body {
+            padding: 40px 0;
+            padding-right: 32px;
+
+            .content-spec {
+              min-height: 48px;
+              padding-left: 60px;
+              margin-bottom: 30px;
+              position: relative;
+              align-items: center;
+              display: flex;
+
+              .content-spec-text {
+                margin-top: -2px;
+                color: #b4b7bc;
+                font-size: 16px;
+                line-height: 20px;
+                word-break: break-all;
+                display: inline-block;
+
+                .content-spec-title {
+                  color: #fff;
+                  font-weight: 600;
+                  font-family: 'Source Sans Pro', sans-serif;
+                }
+              }
+
+              .spec-1 {
+                background: url('../../images/icons/icon-products.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+              .spec-2 {
+                background: url('../../images/icons/icon-notes.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+              .spec-3 {
+                background: url('../../images/icons/icon-props.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+              .spec-4 {
+                background: url('../../images/icons/icon-reference-links.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .download-page {
+    display: flex;
+    color: #000;
+    max-height: 85vh;
+    align-items: stretch;
+    background-color: #fff;
+    position: relative;
+    z-index: 1200;
+    .download-left-part {
+      min-width: 25vw;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+
+      .download-wrapper {
+        position: relative;
+
+        .download-vignette {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        .download-image {
+          max-height: 85vh;
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+          border-style: none;
+        }
+      }
+    }
+    .download-right-part {
+      position: relative;
+      min-width: 25vw;
+      max-width: 40vw;
+      padding: 32px 40px;
+      padding-left: 32px;
+
+      .download-header {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #2e2e2f;
+
+        .download-title {
+          color: #9ea2a7;
+          font-size: 12px;
+          line-height: 14px;
+          display: block;
+        }
+
+        .download-category {
+          margin: 0;
+          color: #000;
+          font-size: 22px;
+          line-height: 28px;
+          font-weight: 500;
+          font-family: 'Rubik', sans-serif;
+        }
+      }
+      .download-scroll {
+        margin-right: -16px;
+        max-height: calc(100% - 154px);
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        overflow-y: scroll;
+
+        .download-content {
+          position: static;
+          max-height: none;
+
+          .download-content-body {
+            padding: 40px 0;
+            padding-right: 32px;
+
+            .download-content-spec {
+              min-height: 48px;
+              padding-left: 60px;
+              margin-bottom: 30px;
+              position: relative;
+              align-items: center;
+              display: flex;
+
+              .download-content-spec-text {
+                margin-top: -2px;
+                color: #b4b7bc;
+                font-size: 16px;
+                line-height: 20px;
+                word-break: break-all;
+                display: inline-block;
+
+                .download-content-spec-title {
+                  color: #000;
+                  font-weight: 600;
+                  font-family: 'Source Sans Pro', sans-serif;
+                }
+              }
+
+              .spec-1 {
+                background: url('../../images/icons/icon-products.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+              .spec-2 {
+                background: url('../../images/icons/icon-notes.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+              .spec-3 {
+                background: url('../../images/icons/icon-props.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+              .spec-4 {
+                background: url('../../images/icons/icon-reference-links.svg');
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 50%;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .icon-link {
+      text-align: center;
+      justify-content: center;
+      background: url('../../images/icons/icon-link.svg') 50% no-repeat;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      // position: absolute;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 400;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .input-fields {
+      background-color: #b4b7bc;
+      border-radius: 5px;
+      border: 1px solid #000;
+    }
+  }
+
+  .download-button-section {
+    bottom: 0;
+    right: 40px;
+    position: absolute;
+    // left: 40px;
+    min-height: 103px;
+    padding: 32px 0;
+    .download-button {
+      font-size: 16px;
+      line-height: 11px;
+      padding: 14px 32px;
+      background: linear-gradient(225deg, #ba6dff, #5849ff);
+      color: #fff;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+      min-width: 110px;
+      outline: 0;
+      border: 0;
+      border-radius: 5px;
+    }
+  }
+
+  .close-button {
+    top: 32px;
+    z-index: 7777;
+    width: 20px;
+    right: 32px;
+    height: 20px;
+    position: fixed;
+    cursor: pointer;
+    background: url('../../images/buttonKey/cross-white.svg') 50% no-repeat;
+    background-size: cover;
+  }
+  .prev-button {
+    left: -48px;
+    border-top-right-radius: 900px;
+    border-bottom-right-radius: 900px;
+    top: 50%;
+    width: 80px;
+    z-index: 7777;
+    height: 110px;
+    opacity: 0.2;
+    position: fixed;
+    cursor: pointer;
+    margin-top: -55px;
+    background-color: #fff;
+    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    animation: slider 0.5s linear;
+
+    &:before {
+      left: 50%;
+      margin-left: -16px;
+      background: url('../../images/icons/icon-lightbox-previous.svg') 50%
+        no-repeat;
+      background-size: cover;
+      width: 24px;
+      height: 42px;
+      top: 32%;
+      content: ' ';
+      display: block;
+      position: absolute;
+      box-sizing: inherit;
+    }
+    &:hover {
+      transition: 0.6s;
+      left: 0px;
+    }
+  }
+  .next-button {
+    right: -48px;
+    border-top-left-radius: 900px;
+    border-bottom-left-radius: 900px;
+    top: 50%;
+    width: 80px;
+    z-index: 7777;
+    height: 110px;
+    opacity: 0.2;
+    position: fixed;
+    cursor: pointer;
+    margin-top: -55px;
+    background-color: #fff;
+    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      right: 50%;
+      margin-right: -16px;
+      background: url('../../images/icons/icon-lightbox-next.svg') 50% no-repeat;
+      background-size: cover;
+      width: 24px;
+      height: 42px;
+      top: 32%;
+      content: ' ';
+      display: block;
+      position: absolute;
+      box-sizing: inherit;
+    }
+    &:hover {
+      transition: 0.6s;
+      right: 0px;
+    }
+  }
+}

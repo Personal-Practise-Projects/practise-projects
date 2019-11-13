@@ -1,0 +1,172 @@
+.time-line-component {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 34px;
+  padding: 4px;
+  margin: 0 auto;
+  width: fit-content;
+  justify-content: space-between;
+  border-radius: 26px;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  position: relative;
+
+  &:before {
+    content: '';
+    top: 16px;
+    left: 12px;
+    right: 12px;
+    height: 0;
+    z-index: 10;
+    display: block;
+    margin: 0 auto;
+    width: 72.5%;
+    position: absolute;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+  }
+  // this will line all the numbers horizontally
+  .time-line {
+    display: contents;
+  }
+
+  .stage {
+    z-index: 11;
+    min-width: 95px;
+    margin-top: 2px;
+    position: relative;
+    display: inline-block;
+  }
+  .number-part-active {
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #f5904e;
+    border: 1px solid #f5904e;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  .number-part-inactive {
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #6bebb6;
+    border: 1px solid #6bebb6;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  .title-part {
+    display: block;
+    max-width: 95px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #6f757f;
+    padding: 0;
+    min-height: 0px;
+  }
+  .description {
+    display: none;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .stage:hover .description {
+    display: block;
+    background: #fff;
+    z-index: 999;
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    width: 305px;
+    padding: 16px 24px;
+    border-radius: 5px;
+    transform: translate(-50%);
+    box-shadow: 0 10px 20px 0 rgba(91, 116, 141, 0.2);
+    text-align: left;
+  }
+
+  .timeline-header {
+    margin-bottom: 6px;
+    align-items: center;
+    display: flex;
+
+    .timeline-header-title {
+      color: #203149;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+  }
+  .timeline-content-unordered {
+    padding: 0;
+    padding-left: 18px;
+    margin-bottom: 4px;
+  }
+  .timeline-content-list {
+    margin-bottom: 12px;
+    color: #6f757f;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .step-image-1 {
+    background: url('../../images/timelineIconSteps/icon-tooltip-step1.svg') 50%
+      no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+  .step-image-2 {
+    background: url('../../images/timelineIconSteps/icon-tooltip-step2.svg') 50%
+      no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+  .step-image-3 {
+    background: url('../../images/timelineIconSteps/icon-tooltip-step3.svg') 50%
+      no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+  .step-image-4 {
+    background: url('../../images/timelineIconSteps/icon-tooltip-step4.svg') 50%
+      no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+  .step-image-5 {
+    background: url('../../images/timelineIconSteps/icon-tooltip-step5.svg') 50%
+      no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    display: inline-block;
+  }
+}

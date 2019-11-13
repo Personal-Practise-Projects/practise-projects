@@ -1,0 +1,44 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+
+// Variables
+$image-select-component-size-sm: 140px;
+
+// Overrides
+%pill-override {
+  .pill-with-icon-and-text-component {
+    margin-right: 10px;
+  }
+}
+
+%image-select-override {
+  .image-select-component {
+    display: inline-block;
+    width: 120px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+
+    .image-wrapper {
+      .lightbox-image {
+        height: inherit;
+      }
+    }
+  }
+}
+
+// Component Styles
+.choice-section-component {
+  @extend %pill-override;
+  @extend %image-select-override;
+  margin-bottom: 22px;
+
+  & > .title {
+    display: block;
+    @include font_property($sourceSans, 14px, 18px, '', $secondary-font-color);
+  }
+
+  & > .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

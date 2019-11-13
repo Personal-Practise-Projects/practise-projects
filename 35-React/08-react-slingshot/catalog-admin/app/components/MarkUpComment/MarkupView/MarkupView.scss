@@ -1,0 +1,30 @@
+.comment-view {
+  line-height: 0px;
+
+  .comment-button {
+    padding: 0px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .comment-icon {
+    background: url("../../../images/Icons/comment-icon.svg");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      background: url("../../../images/Icons/comment-icon-active.svg");
+      background-size: contain;
+    }
+
+    &.active {
+      background: url("../../../images/Icons/comment-icon-active.svg");
+      background-size: contain;
+    }
+  }
+}

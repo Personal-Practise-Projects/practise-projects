@@ -1,0 +1,165 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+@import '../../../../containers/ShotsPage/styles/partials/overrides';
+
+// Overrides
+%section-view-component-override {
+  .section-view-component {
+    margin-bottom: 20px;
+
+    .section-title {
+      display: block;
+      margin-bottom: 6px;
+      text-transform: capitalize;
+      @include font_property(
+        $sourceSans,
+        14px,
+        18px,
+        400,
+        $secondary-font-color
+      );
+    }
+
+    .dropdown-trigger {
+      line-height: 28px;
+    }
+
+    .searchable-dropdown {
+      .dropdown-drawer {
+        top: unset;
+        margin-top: -4px;
+      }
+    }
+  }
+}
+
+%color-tooltip-component-override {
+  .color-tooltip {
+    &-drawer {
+      h4 {
+        margin-bottom: 12px;
+        @include font_property(
+          $sourceSans,
+          14px,
+          18px,
+          600,
+          $primary-font-color
+        );
+      }
+    }
+  }
+}
+
+%choice-section-component-override {
+  .choice-section-component {
+    @extend %cropping-styles;
+    background: #fbfafb;
+    margin: 14px -32px;
+    padding: 22px 32px;
+
+    & > .title {
+      @include font_property($sourceSans, 16px, 12px, 600, $primary-font-color);
+      display: block;
+      margin-bottom: 18px;
+    }
+  }
+}
+
+%add-more-items-override {
+  .add-more-items {
+    margin-bottom: 20px;
+  }
+}
+
+%warning-icon-override {
+  .icon-wrapper {
+    background: #faefda;
+    @include font_property($sourceSans, 12px, 15px, '', #2f2f36);
+    padding: 5px 12px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: -18px;
+    width: fit-content;
+    margin-bottom: 16px;
+
+    .icon-wrap {
+      display: inherit;
+      margin-right: 8px;
+    }
+  }
+}
+
+%image-select-component-override {
+  .image-select-component {
+    .image-wrapper {
+      width: fit-content;
+    }
+  }
+}
+
+
+// ReadOnly State Overrides
+%image-select-component-override-readonly {
+  .image-select-component {
+    @extend %cropping-styles-readonly;
+  }
+}
+
+%image-wrapper-override {
+  .image-wrapper {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+%cropping-styles-readonly {
+  %wide{
+    height: 196px;
+    width: 385px;
+  }
+
+  &.wide {
+    @extend %image-wrapper-override;
+    width: 385px;
+    //height: 196px;
+
+    .image {
+      width: 385px;
+      height: 196px;
+    }
+  }
+
+  &.tall {
+    @extend %image-wrapper-override;
+    width: 244px;
+    //height: 428px;
+
+    .image {
+      width: 244px;
+      height: 428px;
+    }
+  }
+
+  &.vertical {
+    @extend %image-wrapper-override;
+    width: 122px;
+    //height: 191px;
+
+    .image {
+      width: 122px;
+      height: 191px;
+    }
+  }
+
+  &.square {
+    @extend %image-wrapper-override;
+    width: 120px;
+    //height: 120px;
+
+    .image {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}

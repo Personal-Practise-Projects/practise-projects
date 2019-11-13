@@ -1,0 +1,157 @@
+.ship-product-component-page {
+  padding-left: 80px;
+  padding-right: 80px;
+  height: 70vh; // scrolling will be shown if it goes over this height
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+
+  .component-page {
+    text-align: center;
+    margin: 0 auto;
+    width: 680px;
+
+    .component-text {
+      padding: 40px;
+      background-color: hsla(0, 0%, 100%, 0.6);
+    }
+    .component-title {
+      margin-bottom: 24px;
+      text-align: center;
+
+      .description-line {
+        color: #6f757f;
+        font-size: 14px;
+        line-height: 18px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+        display: block;
+      }
+      .address-line {
+        max-width: 275px;
+        color: #203149;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 600;
+        font-family: 'Source Sans Pro', sans-serif;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    .component-image {
+      margin-bottom: 54px;
+      .step-image {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        border-style: none;
+      }
+    }
+    .heading-component {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-family: 'Rubik', sans-serif;
+    }
+    .component-body {
+      width: 340px;
+      margin-right: auto;
+      margin-left: auto;
+
+      .extra-component-body {
+        display: grid;
+        .details-actions {
+          cursor: pointer;
+          color: #5547e4;
+          width: fit-content;
+          margin-bottom: 24px;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 600;
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+        .submit-button {
+          font-size: 16px;
+          line-height: 11px;
+          padding: 14px 32px;
+          border-radius: 5px;
+          background: linear-gradient(225deg, #ba6dff, #5849ff);
+          color: #fff;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 600;
+          min-width: 110px;
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+      .input-field {
+        margin-bottom: 38px;
+        position: relative;
+      }
+    }
+  }
+}
+.form-description {
+  margin-bottom: 10px;
+  position: relative;
+
+  .product-section {
+    display: grid;
+    margin-bottom: 10px;
+  }
+  .tracking-section {
+    margin-bottom: 10px;
+  }
+
+  .text-field-label {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+    color: #6f757f;
+    letter-spacing: 0.34px;
+    font-family: 'Source Sans Pro', sans-serif;
+    float: left;
+    justify-content: space-between;
+    display: flex;
+
+    .remove-actions {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      color: #5547e4;
+      width: fit-content;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  }
+
+  .trackingNumber {
+    width: 340px;
+    border: none;
+    color: #203149;
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 5px;
+    height: 37px;
+    padding: 0 10px;
+    letter-spacing: 0.34px;
+    outline: medium none;
+    background-color: #fff !important;
+    clear: left;
+    cursor: text;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #cacfd7;
+    font-weight: 400;
+  }
+}

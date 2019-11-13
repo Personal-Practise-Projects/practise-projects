@@ -1,0 +1,29 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.empty-content {
+  height: 100%;
+  padding: 5em 0px;
+  &-illustration {
+    width: 142px;
+    height: 105px;
+    margin: 0px auto;
+    margin-bottom: 6px;
+    background: url('../../../images/content-widget/mapping-empty.svg') center
+      no-repeat;
+    background-size: cover;
+  }
+  &-title {
+    margin-bottom: 6px;
+    @include font_property($sourceSans, 20px, 26px, 600, $primary-font-color);
+  }
+  &-description {
+    max-width: 300px;
+    margin: 0px auto;
+    @include font_property($sourceSans, 16px, 20px, 400, $secondary-font-color);
+  }
+
+}
+.on-drop-hover {
+  border: 2px dashed $focused-state;
+}

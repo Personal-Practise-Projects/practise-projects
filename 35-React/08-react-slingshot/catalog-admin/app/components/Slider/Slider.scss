@@ -1,0 +1,87 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+@import '../../styles/Partials';
+@import '../../styles/Overrides';
+
+// Overrides
+%owl-carousel-override {
+  .owl-carousel {
+    position: unset;
+
+    .owl-stage {
+      display: flex;
+
+      .owl-item {
+        width: auto !important;
+      }
+    }
+
+    .owl-nav {
+      display: flex;
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 34px;
+      justify-content: space-between;
+
+      .icon {
+        font-size: 12px;
+        display: block;
+        color: #8169ea;
+      }
+
+      :nth-child(1) {
+        .icon {
+          font-size: 11px;
+        }
+      }
+
+      .disabled {
+        cursor: not-allowed;
+
+        .icon {
+          color: #80838f;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+.slider-component {
+  position: relative;
+  margin-bottom: 40px;
+
+  & > .heading {
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+  }
+
+  @extend %owl-carousel-override;
+
+  .slider {
+    .slide {
+      .lightbox-image {
+        margin-bottom: 10px;
+        background: #e3dee6;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+
+      .default-image {
+        background: #e3dee6;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: $radius-size;
+      }
+
+      @extend %read-more-override;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.photoshoot-component-page {
+  padding-top: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  .component-page {
+    text-align: center;
+
+    .component-image {
+      margin-bottom: 24px;
+      .step-image {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        border-style: none;
+      }
+    }
+    .heading-component {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-family: 'Rubik', sans-serif;
+    }
+    .component-body-text {
+      max-width: 350px;
+      margin: 0 auto 32px;
+      letter-spacing: 0.3px;
+      font-size: 16px;
+      line-height: 22px;
+      color: #6f757f;
+    }
+  }
+}

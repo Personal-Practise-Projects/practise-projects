@@ -1,0 +1,199 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Overrides
+%select-item-component-overrides {
+  & > .select-item-component {
+    padding-left: 8px;
+    border-left: 1px solid #e3dee6;
+    margin-left: 8px;
+
+    .checkbox-view-component {
+      margin: 0;
+
+      .label {
+        color: #8169ea;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.subheader-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.title {
+    min-height: 72px;
+    padding: 32px 40px 4px 40px;
+    background-color: #f0edf1;
+
+    .title-left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      & > .wrapper {
+        margin: 0 24px 0 0;
+
+        & > .title {
+          @include font_property(
+              $sourceSans,
+              22px,
+              28px,
+              600,
+              $primary-font-color
+          );
+        }
+
+        & > .meta-info {
+          @extend %select-item-component-overrides;
+          display: flex;
+          align-items: center;
+
+          .subheading {
+            @include font_property(
+                $sourceSans,
+                12px,
+                15px,
+                600,
+                $secondary-font-color
+            );
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .secondary-cta {
+        height: 32px;
+        width: fit-content;
+        border: 1px solid #8169ea;
+        border-radius: 5px;
+        line-height: 7px;
+        padding: auto 18px;
+        margin-right: 24px;
+      }
+    }
+
+    .title-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      & > :nth-child(n):not(:last-child) {
+        margin-right: 16px;
+      }
+
+      .create-area {
+        margin-top: 0;
+
+        .btn-link {
+          padding: 6px 0;
+        }
+
+        input {
+          padding: 6px 92px 6px 20px;
+        }
+
+        .btn-cancel-row {
+          padding: 6px 20px;
+        }
+      }
+
+      a {
+        color: $primary-highlight-color;
+
+        &:hover {
+          color: $primary-highlight-color;
+        }
+      }
+
+      .secondary-cta {
+        border: 0;
+        padding: 8px 0;
+        margin-right: 16px;
+      }
+
+      .searchable-dropdown {
+        min-width: 200px;
+      }
+
+      .btn-toggle-search {
+        padding: 6px;
+      }
+
+      .input-field {
+        padding: 6px 12px;
+      }
+
+      .icon-search {
+        @include font_property('', 16px, 1, '', '');
+
+        &::before {
+          color: $primary-highlight-color;
+        }
+      }
+
+      // Styling for Production Calender Header
+      .date {
+        @include font_property($sourceSans, 20px, 25px, 600, #2f2f36);
+        margin: 0 14px 0 0;
+
+        .input-wrapper {
+          margin: 0;
+
+          .input-label {
+            display: inline-block;
+          }
+
+          .react-datepicker-popper {
+            z-index: 5;
+          }
+
+          .schedule-date-trigger {
+            @include font_property($sourceSans, 20px, 25px, 600, #2f2f36);
+          }
+        }
+      }
+
+      .calendar-toggle {
+        background: $white;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .btn-primary {
+          border: none;
+          @include font_property(
+              $sourceSans,
+              '16px',
+              '',
+              '',
+              $secondary-font-color
+          );
+          background: transparent;
+
+          &:active {
+            background: transparent;
+            border: none;
+            color: $secondary-font-color;
+          }
+
+          &:active:focus {
+            box-shadow: none;
+          }
+
+          &.active {
+            background: $fadeBlueGradient;
+            @include font_property($sourceSans, '16px', '', '', $white);
+            z-index: $zIndexNone;
+
+            &:focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

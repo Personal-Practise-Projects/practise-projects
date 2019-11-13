@@ -1,0 +1,181 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+@import '../../../../styles/SharedSnippets.scss';
+
+// Variables
+$IMG_SIZE: 180px;
+$SPACE_20: 20px;
+$IMG_CONTAINER_SIZE: $IMG_SIZE + 2 * $SPACE_20;
+
+// Colors Array
+$colors: (
+  grey:(
+    dark: #E3DEE6,
+    base: #F0EDF1,
+    light: #FBFAFB
+  )
+);
+
+// Functions
+@function color($color, $tone: 'base') {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+.photo-version {
+  border-radius: $radius-size;
+  width: fit-content;
+  height: $IMG_CONTAINER_SIZE;
+  margin-top: 10px;
+
+  &-empty {
+    @extend .photo-version;
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  &-thumb {
+    width: $IMG_SIZE;
+    min-width: $IMG_SIZE;
+    height: $IMG_SIZE;
+    margin: $SPACE_20;
+
+    .on-drop-hover {
+      border: 2px dashed $focused-state;
+    }
+
+    .download-overlay {
+      flex-direction: column;
+      border-radius: $radius-size;
+      background-color: rgba(0, 0, 0, 0.6);
+      @include element_position(absolute, '', '', '', '');
+
+      .lightbox-launcher {
+        margin-bottom: 4px;
+      }
+
+      .content-id {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+        color: $white;
+        @include element_position(absolute, 8px, '', '', 8px);
+      }
+    }
+
+    .content-card {
+      margin: 0;
+      padding: 0;
+      height: $IMG_SIZE;
+      width: fit-content;
+      background-color: transparent;
+    }
+
+    .content-card-cancel {
+      @extend %content-card-cancel;
+    }
+
+    .content-card-thumbnail {
+      width: $IMG_SIZE;
+      height: $IMG_SIZE;
+      border-radius: $radius-size;
+      object-fit: contain;
+      background-color: $white;
+    }
+
+    .download-overlay {
+      flex-direction: column;
+      border-radius: $radius-size;
+      background-color: rgba(0, 0, 0, 0.6);
+      @include element_position(absolute, '', '', '', '');
+
+      .lightbox-launcher {
+        margin-bottom: 4px;
+      }
+    }
+
+    .circular-progress {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &-uploading {
+    width: $IMG_CONTAINER_SIZE;
+    height: $IMG_CONTAINER_SIZE;
+  }
+
+  &-status {
+    margin-left: $SPACE_20;
+    min-width: $IMG_CONTAINER_SIZE;
+  }
+
+}
+
+.input-upload {
+  height: $IMG_SIZE;
+  width: fit-content;
+
+  &-label {
+    width: $IMG_SIZE;
+    height: $IMG_SIZE;
+    cursor: pointer;
+    background-color: $white;
+    border: 1px dashed #b9bdcc;
+  }
+
+  &-input {
+    width: 0;
+    height: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+  }
+
+  .upload-icon {
+    width: 55px;
+    height: 41px;
+    background: url('../../../../images/content-widget/upload-cloud.svg') center no-repeat;
+  }
+}
+
+.version-cta {
+  font-size: 13px;
+  width: fit-content;
+  margin-top: 0;
+  margin-left: 24px;
+  padding: 0;
+  padding-bottom: 4px;
+  border: none;
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.edit-content-variant-component {
+  display: inline-flex;
+  margin-bottom: 16px;
+
+  .original-image {
+    background-color: color(grey, dark);
+  }
+
+  .edited-versions {
+    background-color: color(grey);
+
+    .edited-version {
+      display: flex;
+
+      .comments-section {
+        width: 100%;
+        height: inherit;
+        background-color: color(grey, light);
+        padding: 0 30px;
+        margin-bottom: -30px;
+        position: relative;
+      }
+    }
+  }
+}
+

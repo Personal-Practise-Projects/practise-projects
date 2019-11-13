@@ -1,0 +1,9 @@
+.droppable-swimlane {
+  opacity: 0.3;
+  border: 2px dashed #737682;
+  &-block {
+    opacity: 0.3;
+    border: 2px dashed rgba(234, 8, 0, 0.79);
+  }
+}
+

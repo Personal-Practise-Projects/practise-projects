@@ -1,0 +1,26 @@
+@import '../../styles/Variables';
+
+//Different States
+%hover-state {
+  &:hover {
+    .icon-delete {
+      display: block;
+    }
+  }
+}
+
+.shot-list-component {
+  .table-row {
+    @extend %hover-state;
+  }
+
+  .icon-delete {
+    display: none;
+    color: $subheading-color;
+    font-size: 16px;
+
+    &:hover {
+      color: $primary-highlight-color;
+    }
+  }
+}

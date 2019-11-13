@@ -1,0 +1,115 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins.scss';
+
+#talent-page {
+  margin-left: -56px;
+  display: grid;
+  height: 100vh;
+  overflow-y: scroll;
+  background: $white;
+
+  .talent-header {
+    margin-top: 32px;
+    text-align: center;
+
+    .header-logo {
+      margin-bottom: 10px;
+      height: 18px;
+      max-width: 137px;
+    }
+
+    .title {
+      @include font_property($sourceSans, 18px, '', '', #63636f);
+      margin-bottom: 0;
+      min-height: auto;
+
+      &-heading {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .title {
+    background: $white;
+    padding: 0 85px;
+
+    @include respond-to(mobile) {
+      margin-bottom: -25px;
+      padding: 0;
+      justify-content: center !important;
+    }
+
+    &-left {
+      h3 {
+        margin-right: 12px;
+      }
+
+      span {
+        @include font_property(
+          $sourceSans,
+          14px,
+          18px,
+          600,
+          $secondary-font-color
+        );
+        background-color: #f0edf1;
+        height: 30px;
+        width: 30px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .talent-grid {
+    margin: 0 85px 50px 85px;
+
+    @include respond-to(mobile) {
+      margin: 0;
+      padding: 0 30px;
+    }
+
+    &.less-than-3-models {
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -28px;
+
+        @include respond-to(mobile) {
+          margin: auto;
+        }
+
+        .card {
+          margin: 28px;
+          width: 100%;
+          max-width: 400px;
+
+          @include respond-to(mobile) {
+            margin: 0 10px 20px 10px;
+          }
+        }
+      }
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+      grid-gap: 55px;
+
+      @include respond-to(mobile) {
+        grid-template-columns: none;
+        justify-content: center;
+        margin: auto;
+        padding: 20px 0;
+      }
+
+      .card {
+        @include respond-to(mobile) {
+          width: 100%;
+          max-width: 400px;
+        }
+      }
+    }
+  }
+}

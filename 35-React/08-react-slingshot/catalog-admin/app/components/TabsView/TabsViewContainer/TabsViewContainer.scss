@@ -1,0 +1,16 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.tabs-content {
+  z-index: 10;
+  margin-top: -1px;
+  overflow: hidden;
+  border: 1px solid #f0edf1;
+  height: calc(100% - 40px);
+  background-color: #fbfafb;
+  border-radius: 0px 5px 5px 5px;
+  &-wrapper {
+    height: 100%;
+    padding: 32px;
+  }
+}

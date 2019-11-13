@@ -1,0 +1,452 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Star Schedule Page Backbone Styling
+
+.schedule {
+  &-page {
+    height: 100%;
+    border-radius: $radius-size;
+    background-color: $white;
+  }
+
+  &-drawer {
+    z-index: 50;
+    background-color: $white;
+    border-top-left-radius: $radius-size;
+    border-bottom-left-radius: $radius-size;
+    box-shadow: 8px 4px 14px 0 rgba(62, 53, 104, 0.06);
+    @include element_position(absolute, 0px, '', 0px, 0px);
+  }
+}
+
+// Start Production Calendar Styling
+
+.schedule-calendar {
+  height: 100%;
+  //padding-top: 60px;
+  border-top-right-radius: $radius-size;
+  border-bottom-right-radius: $radius-size;
+}
+
+.calendar {
+  &-header {
+    z-index: 15;
+    padding: 20px 40px;
+    padding-left: 90px;
+    background-color: #fbfafb;
+    border-top-right-radius: $radius-size;
+    @include element_position(absolute, 0px, 0px, '', 0px);
+
+    .input-wrapper {
+      margin-bottom: 0px;
+    }
+
+    label {
+      display: none !important;
+    }
+
+    .schedule-date {
+      line-height: 1;
+    }
+  }
+
+  &-content {
+    max-height: 100%;
+    overflow-y: auto; // Enable only vertical scroll in the outermost container
+    overflow-x: hidden;
+    border-bottom-right-radius: $radius-size;
+  }
+
+  &-timezone {
+    width: 68px;
+    height: 60px;
+    z-index: 20;
+    padding-left: 24px;
+    padding-right: 12px;
+    border-right: 1px solid #f0edf1;
+    border-bottom: 1px solid #f0edf1;
+    @include element_position(absolute, 0px, '', '', 0px);
+
+    .icon-schedule {
+      font-size: 14px;
+
+      &::before {
+        color: $secondary-font-color;
+      }
+    }
+
+    .timezone {
+      @include font_property(
+          $sourceSans,
+          12px,
+          16px,
+          400,
+          $secondary-font-color
+      );
+    }
+  }
+
+  &-timeframes {
+    padding-top: 28px;
+    margin-bottom: -28px;
+    background-color: #fbfafb;
+    border-right: 1px solid #f0edf1;
+
+    .timeframe {
+      margin-top: -8px;
+      min-height: 140px;
+      padding: 0px 24px;
+      padding-right: 12px;
+      @include font_property($sourceSans, 14px, 1, 400, #b9bdcc);
+    }
+  }
+
+  &-timeslots {
+    width: 100%;
+    overflow-x: auto;
+    padding: 28px 0px;
+    overflow-y: hidden;
+
+    .timeslot {
+      padding: 6px 8px;
+      min-width: 1000em; // Pre-set to arbitary value to avoid lane collapse
+      min-height: 132px;
+      align-items: center;
+      justify-content: flex-start;
+      border-bottom: 1px solid #f0edf1;
+
+      &:first-of-type {
+        border-top: 1px solid #f0edf1;
+      }
+    }
+
+    .schedule-card {
+      margin: 0px;
+      min-width: 280px;
+      margin-right: 12px;
+    }
+  }
+}
+
+.search-global {
+  display: flex;
+}
+
+// Weekly Calender View Styling
+
+.schedule-page {
+  overflow: hidden;
+}
+
+.single-view-wrapper {
+  &.schedule-expanded {
+    padding-left: calc(25%);
+    transition: padding-left linear 0.3s;
+    @media only screen and (max-width: 1440px) {
+      padding-left: 330px;
+    }
+  }
+
+  &.schedule-collapsed {
+    padding-left: 40px;
+    transition: padding-left linear 0.3s;
+  }
+}
+
+.schedule-calendar {
+  overflow: scroll;
+  background-color: $white;
+  border-radius: 3px;
+}
+
+.calendar-wrapper {
+  display: grid;
+  grid-template-columns: 70px auto;
+}
+
+.timeframes-wrapper {
+  display: grid;
+  grid-template-rows: 70px auto;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+
+  .pst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid #f0edf1;
+    border-width: 0px 1px 1px 0px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fbfafb;
+    color: $secondary-font-color;
+    z-index: 6;
+
+    .icon-schedule {
+      margin-bottom: 6px;
+    }
+
+    span {
+      @include font_property(
+          $sourceSans,
+          12px,
+          15px,
+          '',
+          $secondary-font-color
+      );
+    }
+  }
+
+  .timeframes {
+    display: grid;
+    grid-template-rows: repeat(24, 150px);
+    background: #fbfafb;
+
+    .timeframe {
+      text-align: center;
+      @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+    }
+  }
+}
+
+// Common Styles
+.days-wrapper {
+  display: grid;
+
+  .day-wrapper {
+    .header {
+      position: sticky;
+      top: 0;
+      display: grid;
+      place-items: center;
+      height: 70px;
+      background: #fbfafb;
+      z-index: 2;
+
+      h3 {
+        @include font_property($sourceSans, 22px, '', 600, $primary-font-color);
+      }
+
+      p {
+        @include font_property($sourceSans, 14px, 0px, '', #63636f);
+      }
+    }
+
+    .day-view {
+      display: grid;
+      grid-template-rows: repeat(24, 150px);
+      grid-template-columns: 1fr;
+      min-width: 300px;
+      padding-top: 8px;
+    }
+  }
+}
+
+// Day View Styles
+.single-view {
+  .days-wrapper {
+    grid-template-columns: repeat(1, 100%);
+
+    .day-wrapper {
+      .header {
+        .back-to-weekview {
+          position: absolute;
+          left: 13px;
+          top: 50%;
+          transform: translateY(-50%);
+          @include font_property(
+              $sourceSans,
+              14px,
+              18px,
+              600,
+              $primary-highlight-color
+          );
+          cursor: pointer;
+
+          .icon-arrow-left:before {
+            color: $primary-highlight-color;
+            font-size: 11px;
+            margin-right: 8px;
+          }
+        }
+      }
+
+      .day-view {
+        border: solid #f0edf1;
+        border-width: 0px 1px;
+
+        .timeslot {
+          border: solid #f0edf1;
+          border-width: 0px 0px 1px 0px;
+
+          &:first-child {
+            border-top: 1px solid #f0edf1;
+          }
+
+          .schedule-card {
+            margin: 10px;
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Week View Styles
+.week-view {
+  .timeframes-wrapper {
+    .timeframes {
+      grid-template-rows: repeat(24, 162px);
+    }
+  }
+
+  .days-wrapper {
+    grid-template-columns: repeat(7, auto);
+    min-width: 300px;
+
+    .day-wrapper {
+      cursor: pointer;
+
+      &:hover {
+        .header {
+          h3 {
+            color: #8169ea;
+          }
+
+          p {
+            color: #8169ea;
+          }
+        }
+
+        .day-view {
+          background-color: #f7f5ff;
+        }
+      }
+
+      .day-view {
+        border: 1px solid #f0edf1;
+        border-width: 0px 1px 0px 0px;
+        grid-template-rows: repeat(24, 162px);
+        min-width: 240px;
+
+        .timeslot {
+          flex-direction: column;
+          border: 1px solid #f0edf1;
+          border-width: 0px 0px 1px 0px;
+          position: relative;
+
+          &:first-child {
+            border-top: 1px solid #f0edf1;
+          }
+
+          .schedule-card {
+            border-radius: 3px;
+            background-color: #ffffff;
+            padding: 8px 25px 8px 10px;
+            width: fit-content;
+            height: fit-content;
+            margin: 4px;
+            min-width: 150px;
+
+            .shot-meta {
+              margin-bottom: 0;
+
+              h3 {
+                @include font_property($sourceSans, 14px, '', 600, #2f2f36);
+              }
+
+              span {
+                @include font_property($sourceSans, 12px, '', '', #80838f);
+                margin: 0;
+              }
+            }
+          }
+
+          .view-more-trigger {
+            margin: 4px;
+            @include font_property($sourceSans, 14px, '', 600, #2f2f36);
+            text-align: left;
+            border-radius: 5px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              margin-right: 4px;
+              background: $fadeBlueGradient;
+            }
+
+            &:hover {
+              background-color: darken(#f7f5ff, 5%);
+            }
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// TODO: Improve the implementation of this file later
+
+//Overrides
+%subheader-component-override {
+  & > .subheader-component {
+    .title-right {
+      .date {
+        .input-label {
+          display: none;
+        }
+      }
+
+      & > .icon-wrapper {
+        width: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .icon {
+          color: $secondary-font-color;
+          font-size: 14px;
+          cursor: pointer;
+
+          &:hover:before {
+            color: $primary-highlight-color;
+          }
+
+          &.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Different States
+%bulk-action-state {
+  .bulk-action {
+    .select-item-component {
+      display: block;
+    }
+  }
+}
+
+// Page related styles
+#schedule-page {
+  @extend %subheader-component-override;
+
+  .production-calendar {
+    @extend %bulk-action-state;
+  }
+}

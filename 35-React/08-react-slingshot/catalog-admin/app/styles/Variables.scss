@@ -1,0 +1,84 @@
+// Define Global Use Variables
+$sourceSans: 'Source Sans Pro', sans-serif;
+
+// Define Global Use Colors
+$white: #ffffff;
+$off-white: rgba(250, 250, 250, 0.96);
+$black: #000000;
+
+// Define Theme Specific Colors
+$primary-highlight-color: #8169ea;
+
+// Define Theme Font Colors
+$primary-red: #f26565;
+$primary-green: #5de5ac;
+$primary-yellow: #ffcd6f;
+$primary-orange: #888a92;
+$primary-font-color: #2f2f36;
+$secondary-font-color: #80838f;
+$ternary-font-color: #878a96;
+
+$subheading-color: #63636f;
+
+// Define Theme Specific Gradients
+$fadeBlueGradient: linear-gradient(135deg, #8169ea 0%, #6349d6 100%);
+$fadeBlueGradientReversed: linear-gradient(135deg, #6349d6 0%, #8169ea 100%);
+
+// Define Theme Sizing Values
+$radius-sm-size: 3px;
+$radius-size: 5px;
+$radius-pill: 10px;
+
+// Z-Indexes
+$zIndexMax: 1024;
+$zIndexXLarge: 512;
+$zIndexLarge: 256;
+$zIndexXMedium: 128;
+$zIndexMedium: 64;
+$zIndexSmall: 32;
+$zIndexXSmall: 16;
+$zIndexMini: 8;
+$zIndexXMini: 4;
+$zIndexMicro: 2;
+$zIndexNano: 1;
+$zIndexNone: 0;
+
+// Form Field States
+$initial-state: #dfe1ea;
+$focused-state: #8169ea;
+$unfocused-state: #80838f;
+$hover-state: #f0edfa;
+
+$shadow: rgba(129, 105, 234, 0.2);
+
+// Responsive Break Points for different device widths
+$tablet: 768px;
+$desktop: 1280px;
+$widescreen: 1440px;
+$fullhd: 1920px;
+
+// Responsive Break Points for different device heights
+$desktop-small: 700px;
+$desktop-medium: 800px;
+$desktop-large: 1080px;
+
+// Shots Status Colors
+$shot-status-colors: (
+  backlog: #63636f,
+  product-pending: #a6a6b3,
+  creative: #eb86b9,
+  creative-review: #c89797,
+  bundling: #c7aa9b,
+  spilled: #f26565,
+  scheduled: #ee8663,
+  photoshoot: #f4be3f,
+  captured: #bcbb88,
+  editing: #b789c0,
+  review: #9cbfc9,
+  done: #46d4a2,
+);
+
+// Shots Status Color Function
+@function shot-status-color($color) {
+  @return map-get($shot-status-colors, $color);
+}

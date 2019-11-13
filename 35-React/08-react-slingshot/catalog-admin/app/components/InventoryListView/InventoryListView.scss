@@ -1,0 +1,24 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.inventory-lists {
+  height: 100%;
+
+  &-content {
+    height: 100%;
+  }
+
+  &-header {
+    margin-bottom: 10px;
+
+    .searchable-dropdown {
+      max-width: 200px;
+    }
+
+    .dropdown-trigger {
+      box-shadow: none;
+      padding-right: 32px;
+      border: 1px solid #eeebf0;
+    }
+  }
+}

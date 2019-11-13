@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>user-placeholder</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="New-Library-Flow-3-1st-july" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="All-the-illustrations" transform="translate(-169.000000, -4777.000000)">
+            <g id="Group-8">
+                <g id="Group-7" transform="translate(169.000000, 4777.000000)">
+                    <g id="profile-placeholder">
+                        <g id="user-placeholder">
+                            <circle id="Oval-8" fill="#E9EEF3" cx="32" cy="32" r="32"></circle>
+                            <path d="M27.7419355,32.2580645 L36.2580645,32.2580645 C40.5338174,32.2580645 44,35.7242471 44,40 L44,48.516129 L20,48.516129 L20,40 C20,35.7242471 23.4661826,32.2580645 27.7419355,32.2580645 Z" id="Rectangle-9" fill="#948BEC" fill-rule="nonzero"></path>
+                            <circle id="Oval-6" fill="#6BEBB6" cx="32.3870968" cy="22.9677419" r="6.96774194"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

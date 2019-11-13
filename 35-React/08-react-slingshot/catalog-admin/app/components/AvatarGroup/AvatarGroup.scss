@@ -1,0 +1,26 @@
+@import '../../styles/Variables.scss';
+
+.avatar-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: $zIndexMicro;
+
+  .avatar-image {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.active {
+      border: 2px solid $focused-state;
+      padding: 2px;
+      box-sizing: content-box;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

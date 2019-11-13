@@ -1,0 +1,27 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+@import '../../../styles/Partials';
+@import '../../../styles/Overrides';
+// Import Partials
+@import './partials/overrides';
+@import './partials/common';
+@import './partials/states';
+
+// Production View Page Styles
+#production-view-page {
+  @extend %subheader-component-override;
+  @extend %image-select-component-override;
+
+  .custom-accordion-wrapper {
+
+    @extend %bulk-action-state;
+    overflow: auto;
+    height: 80vh;
+    padding: 20px 40px 40px 40px;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

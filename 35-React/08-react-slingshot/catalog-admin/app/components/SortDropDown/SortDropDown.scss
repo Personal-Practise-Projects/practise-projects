@@ -1,0 +1,74 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+
+//Overrides
+.menu-dropdown-overrides {
+  & > .menu-dropdown {
+    .dropdown-trigger {
+      @include font_property(
+        $sourceSans,
+        14px,
+        18px,
+        600,
+        $primary-highlight-color
+      );
+      border: none;
+      background-color: transparent;
+      padding: 6px;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &.expanded-dropdown {
+      .dropdown-trigger {
+        box-shadow: none;
+      }
+    }
+
+    .dropdown-item.active {
+      background-color: $primary-highlight-color;
+    }
+
+    .dropdown-drawer {
+      border: none;
+      border-radius: 5px;
+      padding: 6px 0;
+      max-height: unset;
+      box-shadow: 0 2px 16px 0 rgba(213,213,220,0.6);
+      right: -16px;
+      left: unset;
+      top: 28px;
+
+      .dropdown-item {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.sort-dropdown-component {
+  @extend .menu-dropdown-overrides;
+  display: flex;
+  align-items: center;
+
+  .header-sort-title {
+    @include font_property(
+      $sourceSans,
+      14px,
+      18px,
+      '',
+      $primary-highlight-color
+    );
+    margin: 0;
+  }
+
+  & > .header-sort-icon {
+    width: 15px;
+    height: 15px;
+    background: url('../../images/Icons/sort-blueicon.svg') center no-repeat;
+    cursor: pointer;
+    outline: none;
+  }
+}

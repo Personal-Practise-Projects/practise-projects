@@ -8,7 +8,10 @@
 - [How do you clone an Array of Objects in Javascript?](https://stackoverflow.com/questions/597588/how-do-you-clone-an-array-of-objects-in-javascript)
 - [Array Flat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
 - [Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+- [Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
 
 ### React References
 - [React With Contentful](https://www.youtube.com/results?search_query=react+with+contentful)
 - [In-Depth React Tutorial: Build a Hotel Reservation Site (with Contentful and Netlify)](https://www.youtube.com/watch?v=LXJOvkVYQqA)
+- [TODO not recognized in JSX comments](https://youtrack.jetbrains.com/issue/WEB-23401)
+

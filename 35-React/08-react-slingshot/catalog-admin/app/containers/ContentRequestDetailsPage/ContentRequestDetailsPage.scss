@@ -1,0 +1,23 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.request-page {
+  height: 100%;
+  .shots-page-table {
+    max-height: calc(100% - 44px);
+  }
+  .table-body {
+    @media only screen and (max-width: 1400px) {
+      max-height: 37.5vh;
+    }
+    @media only screen and (min-width: 1401px) and (max-width: 1650px) {
+      max-height: 53.5vh;
+    }
+    @media only screen and (min-width: 1651px) and (max-width: 1920px) {
+      max-height: 58vh;
+    }
+    @media only screen and (min-width: 1921px) {
+      max-height: 70vh;
+    }
+  }
+}

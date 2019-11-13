@@ -1,0 +1,18 @@
+// Variables
+$mark-photoshoot-as-done: #b9bdcc;
+$photoshoot-done: #6bebb6;
+
+// Common Styles
+%common-heading {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+}
+
+%common-btn-styles {
+  margin-top: 0;
+  display: flex;
+  padding: 6px 14px;
+  width: unset;
+  border: none;
+}

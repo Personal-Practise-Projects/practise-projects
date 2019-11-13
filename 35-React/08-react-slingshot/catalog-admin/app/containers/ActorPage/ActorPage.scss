@@ -1,0 +1,12 @@
+// Overrides
+%side-drawer-override {
+  .section-view-component .input-wrapper {
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+#actor-page {
+  @extend %side-drawer-override;
+}

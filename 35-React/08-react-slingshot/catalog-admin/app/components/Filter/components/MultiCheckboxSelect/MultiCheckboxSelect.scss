@@ -1,0 +1,15 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+
+// Component Styles
+.multi-checkbox-select-component {
+  & > .title {
+    @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+    margin-bottom: 16px;
+  }
+
+  & > .wrapper {
+    display: grid;
+    grid-template-columns: 40% auto;
+  }
+}

@@ -1,0 +1,226 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+@import '../../styles/Partials';
+
+//Overrides
+%checkbox-view-component-override {
+  & > .checkbox-view-component {
+    margin: 0;
+
+    & > .checkbox {
+      border-radius: 3px 0;
+    }
+  }
+}
+
+%select-item-component-overrides {
+  & > .select-item-component {
+    @extend %checkbox-view-component-override;
+    display: none;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    margin: 0;
+    z-index: 1;
+  }
+}
+
+// Different States
+%hover-state {
+  &:hover {
+    background-color: $hover-state;
+
+    & > .select-item-component {
+      display: block;
+    }
+  }
+}
+
+%selected-state {
+  &.selected {
+    border: 1px solid $primary-highlight-color;
+
+    & > .status-light {
+      top: -1px;
+      bottom: 0;
+      left: -1px;
+    }
+
+    & > .select-item-component {
+      top: -1px;
+      left: -1px;
+    }
+  }
+}
+
+%zoomIn-override {
+  &.animated.zoomIn {
+    animation-duration: 0.3s;
+  }
+}
+
+// Generic Styles for Shot Card Component
+.shot-card-component {
+  @extend %select-item-component-overrides;
+  @extend %hover-state;
+  @extend %selected-state;
+  @extend %zoomIn-override;
+}
+
+// Old Styles for Shot Cards
+.schedule-card {
+  width: 100%;
+  cursor: pointer;
+  max-width: 360px;
+  padding: 14px 20px;
+  border-radius: $radius-size;
+  margin-bottom: 10px;
+  background-color: $white;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px 0 rgba(62, 53, 104, 0.1);
+
+  &:first-of-type {
+    margin-top: 10px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    border: 1px solid $primary-highlight-color;
+    //border-left: 2px solid transparent;
+    .status-light {
+      border-top-left-radius: $radius-sm-size;
+      border-bottom-left-radius: $radius-sm-size;
+      height: 100%;
+      left: 0;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5 !important;
+    animation-fill-mode: none !important;
+    cursor: not-allowed;
+    border-color: $white;
+  }
+
+  &.shot-card {
+    cursor: pointer;
+  }
+
+  .status-light {
+    width: 3px;
+    border-top-left-radius: $radius-size;
+    border-bottom-left-radius: $radius-size;
+    background-color: $secondary-font-color;
+    box-shadow: 0 0 10px 0 rgba(62, 53, 104, 0.1);
+    @include element_position(absolute, -2px, '', -2px, -2px);
+  }
+
+  .shot-meta {
+    max-width: 100%;
+    width: fit-content;
+    margin-bottom: 18px;
+
+    .shot-brand {
+      @extend %text-ellipses;
+      @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+
+      & > .icon-lock {
+        margin-left: 8px;
+        font-size: 14px;
+      }
+    }
+
+    .shot-number {
+      @include font_property(
+        $sourceSans,
+        12px,
+        16px,
+        400,
+        $secondary-font-color
+      );
+    }
+  }
+
+  &-profile {
+    margin-top: 4px;
+    margin-right: 4px;
+    top: 8px;
+    right: 10px;
+  }
+
+  .shot-config {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &-left {
+      .shot-category {
+        @include font_property(
+          $sourceSans,
+          12px,
+          16px,
+          600,
+          $primary-font-color
+        );
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        margin: 3px 0;
+
+        & > :nth-child(n):not(:last-child) {
+          margin-right: 6px;
+        }
+
+        .shot-setup {
+          @include font_property(
+            $sourceSans,
+            12px,
+            10px,
+            '',
+            $secondary-font-color
+          );
+        }
+        & > .vertical-separator{
+          height: 10px;
+          margin: 0;
+          background: #E4DEE7;
+          width: 1px;
+        }
+      }
+    }
+
+    &-right {
+      .shot-due {
+        padding: 2px 8px;
+        width: fit-content;
+        text-align: center;
+        border-radius: $radius-pill;
+        background-color: #f0edf1;
+        @include font_property(
+          $sourceSans,
+          12px,
+          16px,
+          600,
+          $primary-font-color
+        );
+      }
+    }
+  }
+}
+
+.droppable-card {
+  opacity: 0.3;
+  border: 2px dashed $secondary-font-color;
+}
+
+.position {
+  top: 3px;
+  right: 3px;
+}

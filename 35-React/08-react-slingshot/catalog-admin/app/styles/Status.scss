@@ -1,0 +1,60 @@
+@import '../styles/Variables';
+@import '../styles/Mixins';
+
+.status {
+  border-radius: 13px;
+  padding: 2px 10px;
+  @include font_property($sourceSans, 14px, 10px, '', $white);
+
+  &-backlog {
+    background-color: shot-status-color(backlog) !important;
+  }
+
+  &-product-pending {
+    background-color: shot-status-color(product-pending) !important;
+  }
+
+  &-creative {
+    background-color: shot-status-color(creative) !important;
+  }
+
+  &-creative-review {
+    background-color: shot-status-color(creative-review) !important;
+  }
+
+  &-bundling {
+    background-color: shot-status-color(bundling) !important;
+  }
+
+  &-spilled {
+    background-color: shot-status-color(spilled) !important;
+  }
+
+  &-scheduled {
+    background-color: shot-status-color(scheduled) !important;
+  }
+
+  &-photoshoot {
+    background-color: shot-status-color(photoshoot) !important;
+  }
+
+  &-captured {
+    background-color: shot-status-color(captured) !important;
+  }
+
+  &-editing {
+    background-color: shot-status-color(editing) !important;
+  }
+
+  &-review {
+    background-color: shot-status-color(review) !important;
+  }
+
+  &-done {
+    background-color: shot-status-color(done) !important;
+  }
+
+  &-default {
+    background-color: $primary-orange !important;
+  }
+}

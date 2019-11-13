@@ -1,0 +1,35 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+%common-styles {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  width: unset;
+  padding: 6px 14px;
+  display: inline-block;
+}
+
+// Different Views
+%photo-widget-cta-view {
+  &.photo-widget-cta {
+    @extend %common-styles;
+  }
+}
+
+%next-status-cta-view {
+  &.next-status-cta {
+    @extend %common-styles;
+  }
+}
+
+// Custom Button Component Styles
+.custom-button-component {
+  @extend %photo-widget-cta-view;
+  @extend %next-status-cta-view;
+  display: flex;
+  align-items: center;
+
+  & > .icon {
+    margin-right: 4px;
+  }
+}

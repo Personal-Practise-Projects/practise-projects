@@ -1,0 +1,64 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.notification {
+  padding: 14px;
+  border-radius: $radius-size;
+  margin-bottom: 8px;
+  &:hover {
+    background-color: #fbfafb;
+  }
+  .profile-wrapper {
+    margin-right: 12px;
+    .profile-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .notification-light {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px 0 rgba(255, 120, 120, 0.4);
+      @include element_position(absolute, 0px, -2px, '', '');
+    }
+    .red-light {
+      background-color: $primary-red;
+    }
+  }
+  .profile-name {
+    margin-right: 8px;
+    @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+  }
+  .profile-date {
+    @include font_property($sourceSans, 12px, 10px, 400, $secondary-font-color);
+  }
+  &-content {
+    display: block;
+    padding-left: 48px;
+    @include font_property($sourceSans, 14px, 18px, 400, $secondary-font-color);
+    .tag {
+      @include font_property(
+        $sourceSans,
+        14px,
+        18px,
+        800,
+        $secondary-font-color
+      );
+    }
+  }
+  &-unread {
+    background-color: #fbfafb;
+  }
+  .chip-display {
+    margin-top: 8px;
+    text-align: center;
+    padding: 4px 8px;
+    margin-left: 8px;
+    border-radius: 10px;
+    @include font_property($sourceSans, 12px, 14px, 600, $white);
+  }
+}

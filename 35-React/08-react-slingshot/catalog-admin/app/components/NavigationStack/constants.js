@@ -1,0 +1,2 @@
+export const ELEMENT_NO_FOUND_FUNCTION_DELAY = 1500;
+export const MAX_RETRY_ALLOWED = 20;

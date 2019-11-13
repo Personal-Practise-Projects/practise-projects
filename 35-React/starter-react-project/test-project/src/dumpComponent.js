@@ -140,7 +140,7 @@ const setData = (d, callback) => {
 	console.log('Copied', this.choices[0].checked);
 	this.refreshMultiSelectCheckbox = callback;
 };
-
+// TODO: OLD TASKS
 // TODO: 1.) Status Filter on Production View - IN REVIEW
 // TODO: 2.) Visual Improvements in Production View - DONE
 // TODO: 3.) Update Camera Angle Images - DONE
@@ -153,35 +153,236 @@ const setData = (d, callback) => {
 
 
 
+// TODO: NEW TASKS - 4th Nov 2019
+// TODO: 1.) Remove black bar at the bottom of the light box when viewing images by default, only show when hovering - IN REVIEW
+// TODO: 2.) Add Delete Icon Hover state - DONE
+// TODO: 3.) Check CopyToClipboard placement wherever it is used - DONE
+// TODO: 4.) Show shot comments in the production view
 
-// TODO: 8.) Side drawer scroll issue - IN PROGRESS
-
-{this.parsedProductList.length !== 0 && (
-	<Slider
-		title="Products"
-		slidesData={this.parsedProductList}
-		noOfSlides={1}
-		{...smallSlideConfig}
-	/>
-)}
+// TODO: 5.) Every time I click on a new shot and open to view contents, the sidebar defaults to different areas
 
 
-<ItemsRepeat items={slidesData}>
-	{(item, index) => (
-		<ImageWithText slide={item} width={width} height={height} />
-	)}
-</ItemsRepeat>
-
-
-	.slider-component .slider .slide .default-image {
-	background: #e3dee6;
-	height: 100%;
-	-o-object-fit: cover;
-	object-fit: cover;
-	-o-object-position: center;
-	object-position: center;
-	border-radius: 5px;
+const metaInfo = {
+	heading:'filename - heading',
+	subHeading:'filename - subHeading',
 }
 
-display: block;
-width: 100%;
+const ref = Object.assign(
+	{ src: this.props.url, errSrc: this.props.errSrc },
+	this.props.reference,
+);
+
+// TODO: need to do changes here
+
+{/* // TODO: need to do changes here */}
+
+
+export const SHOTS_DEFAULT_STATE = function() {
+	return {
+		shots: {
+			data: [],
+			brand_id: null,
+			title: '',
+		},
+		shotDict: {},
+	};
+};
+
+case FETCH_SHOTS:
+	state.shots = payload;
+state.shots.data = [...payload.data];
+state.shotDict = {};
+payload.data.map(shot => {
+	state.shotDict[shot.id] = shot;
+});
+return { ...state };
+
+// Ask its working
+export function buildPayLoad(payLoad) {
+	const deFlattenedObject = {};
+	Object.keys(payLoad).map((key, _) => {
+		if (key.indexOf('.') === -1) {
+			deFlattenedObject[key] = payLoad[key];
+		} else {
+			const fields = key.split('.');
+			const newObject = {};
+			deFlattenedObject[fields[0]] = newObject;
+			_buildJsonObject(newObject, fields.slice(1), payLoad[key]);
+		}
+	});
+	return deFlattenedObject;
+}
+
+eventListener = args => {
+	if (args.event === LOADER) {
+		this.setState({
+			showLoader: args.data,
+		});
+	}
+
+};
+
+// this.eventListener({ event: REFRESH });
+
+updateShotDetails(value, this.ref, this.eventListener, () => {
+	// TODO: 3.) need to do changes here - DONE
+	this.resetAndFetchProductionViewCards(
+		updateWithData ? updateWithData / 1000 : null,
+	);
+	callback();
+});
+
+// TODO: 1.) expandedState = false && status = CAPTURE | REVIEW | EDITING | DONE
+
+updateShotDetails(value, this.ref, this.eventListener, callback);
+
+let productionView = {
+	shots: [{}, {}, {}],
+	shotDict: {
+		1:{
+
+		}	,
+		2:{
+
+		}
+  }
+};
+
+const payload = {};
+shotsDict[payload.id] = payload;
+
+
+// state.brands = state.brands.map(brand => {
+//   if (payload.id === brand.id) {
+//     return payload;
+//   }
+//   return brand;
+// });
+state.brandsDict[payload.id] = payload;
+return { ...state };
+
+this.state = {
+	brandId,
+	brand: this.props.brandsDict[brandId],
+};
+
+static getDerivedStateFromProps(nextProps, prevState) {
+	const brandId = getParamForKeyFromUrl('brand');
+	const brand = nextProps.brandsDict[brandId];
+	if (prevState.brand !== brand) {
+		return { brandId, brand };
+	}
+	return {};
+}
+
+getExtraConfig = header => {
+	switch (header.uid) {
+		case '#move_status':
+			const nextStatus = SHOT_STATUS_NEXT_MAP[this.ref.shot_info.status];
+			return { readonly: !nextStatus };
+		case '#produced_content':
+			return {};
+		default:
+			return {};
+	}
+};
+
+
+{`${buildConditionalString(
+	'comment',
+	this.state.expandedClass,
+	this.state.open,
+)} ${accordionViewClass}`}
+
+classNames('comment', { this.state.expandedClass: true });
+
+
+className=classNames('comment', {
+	this.state.expandedClass: this.state.open,
+	'accordion-view': this.props.isExpandable
+});
+
+
+// TODO: # Catalog's New Website
+
+// TODO: 1) Setup new React Project -  3-4h (DONE)
+// TODO: 2) See all the designs and break it down into Components - 10-12h
+// TODO: 3) Setup best practises styling architecture - 6h - IN PROGRESS
+// TODO: 3.1) Create Global Variables for Colors & Fonts - 4h - IN PROGRESS
+// TODO: 3.2) Create Mixins for media queries -  6-8h
+// TODO: 3.3) Add Utility Classes - 6-8h
+
+// TODO: HOMEPAGE
+// TODO: 4) Create Responsive wireframe for HomePage with Dummy Content - 12-15h
+// TODO: 5) Replace Dummy Content with Real Content & Add Styles - 15h
+
+// TODO: Question: Need to ask Jacobo about the devices that we need to target - DONE
+
+// TODO: 1) new website
+// TODO: 1.1) share breakpoints with varsha
+// TODO: 1.1) create folders and add new files with mixins
+
+// TODO: 2) current stories
+// TODO: 2.1) complete my current story
+
+// TODO: 3) backlog gromming meeting
+// TODO: 3.1) read all the stories in the next sprint & write down the questions/answers to the problem statements.
+
+
+
+
+
+
+
+
+
+/*
+	Bootstrap Breakpoints
+	Mobile first - 576px, 768px, 992px, 1200px, 1408px, 1920px
+
+	Foundation Breakpoints
+	Mobile first - 40em, 64em
+
+	Bulma Breakpoints
+	Mobile first - 768px, 769px, 1024px, 1216px, 1408px
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

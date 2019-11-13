@@ -1,0 +1,247 @@
+// Load Icon Font Globally
+@font-face {
+  font-family: 'catalog-admin';
+  src: url('../fonts/catalog-admin.eot?jhz143');
+  src: url('../fonts/catalog-admin.eot?jhz143#iefix')
+      format('embedded-opentype'),
+    url('../fonts/catalog-admin.ttf?jhz143') format('truetype'),
+    url('../fonts/catalog-admin.woff?jhz143') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Define Usage Signature Globally
+i {
+  speak: none;
+  line-height: 1;
+  font-family: 'catalog-admin' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Define Custom Font Items
+.icon-done:before {
+  content: "\e93a";
+}
+.icon-copy:before {
+  content: "\e93b";
+  color: #63636f;
+}
+.icon-delete:before {
+  content: "\e93c";
+}
+.icon-clock:before {
+  content: "\e939";
+  color: #63636f;
+}
+.icon-lock:before {
+  content: "\e938";
+}
+.icon-calendar:before {
+  content: "\e936";
+  color: #b9bdcc;
+}
+.icon-filter:before {
+  content: "\e937";
+  color: #8169ea;
+}
+.icon-collaborators:before {
+  content: "\e900";
+}
+.icon-post-production-board:before {
+  content: "\e934";
+}
+.icon-pre-production-board:before {
+  content: "\e935";
+}
+.icon-age-adult:before {
+  content: "\e92e";
+}
+.icon-age-child:before {
+  content: "\e92f";
+}
+.icon-age-old:before {
+  content: "\e930";
+}
+.icon-gender-female:before {
+  content: "\e931";
+}
+.icon-gender-male:before {
+  content: "\e932";
+}
+.icon-gender-other:before {
+  content: "\e933";
+}
+.icon-chevron-double-down:before {
+  content: "\e92b";
+  color: #b9bdcc;
+}
+.icon-chevron-double-up:before {
+  content: "\e92c";
+  color: #b9bdcc;
+}
+.icon-exclamation-triangle:before {
+  content: "\e92d";
+  color: #ffc351;
+}
+.icon-review:before {
+  content: "\e92a";
+ }
+.icon-caret-right:before {
+  content: "\e929";
+}
+.icon-locked:before {
+  content: "\e927";
+  color: #8169ea;
+}
+.icon-unlocked:before {
+  content: "\e928";
+  color: #63636f;
+}
+.icon-production-view:before {
+  content: "\e926";
+  color: #fff;
+}
+.icon-download:before {
+  content: "\e924";
+  color: #fff;
+}
+.icon-zoom-in:before {
+  content: "\e925";
+  color: #fff;
+}
+.icon-arrow-down:before {
+  content: "\e923";
+  color: #8169ea;
+}
+.icon-cancel:before {
+  content: "\e920";
+  color: #fff;
+}
+.icon-retry:before {
+  content: "\e921";
+  color: #fff;
+}
+.icon-caret-left:before {
+  content: "\e922";
+}
+.icon-bell:before {
+  content: "\e91f";
+}
+.icon-caret-down:before {
+  content: "\e91d";
+  color: #80838f;
+}
+.icon-caret-up:before {
+  content: "\e91e";
+  color: #80838f;
+}
+.icon-inventory:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-lists:before {
+  content: "\e91b";
+  color: #fff;
+}
+.icon-arrow-right:before {
+  content: "\e91c";
+  color: #8169ea;
+}
+.icon-analytics:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-backlog:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-content:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-production-calendar:before {
+  content: "\e904";
+  color: #fff;
+}
+.icon-content-requests:before {
+  content: "\e905";
+  color: #fff;
+}
+.icon-locations:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-talent:before {
+  content: "\e908";
+  color: #fff;
+}
+.icon-checkmark:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-editing:before {
+  content: "\e90a";
+}
+.icon-thumbs-up:before {
+  content: "\e90c";
+}
+.icon-camera:before {
+  content: "\e90d";
+}
+.icon-search:before {
+  content: "\e90e";
+  color: #80838f;
+}
+.icon-arrow-left:before {
+  content: "\e90f";
+  color: #fff;
+}
+.icon-backlog-hamburger:before {
+  content: "\e910";
+  color: #fff;
+}
+.icon-circle-plus:before {
+  content: "\e911";
+  color: #8169ea;
+}
+.icon-vertical-hamburger:before {
+  content: "\e912";
+  color: #8169ea;
+}
+.icon-cross:before {
+  content: "\e913";
+}
+.icon-puzzle:before {
+  content: "\e914";
+  color: #80838f;
+}
+.icon-photo-default:before {
+  content: "\e915";
+  color: #80838f;
+}
+.icon-reference:before {
+  content: "\e916";
+  color: #80838f;
+}
+.icon-schedule:before {
+  content: "\e917";
+  color: #80838f;
+}
+.icon-compose:before {
+  content: "\e918";
+  color: #80838f;
+}
+.icon-crown:before {
+  content: "\e919";
+  color: #80838f;
+}
+.icon-comment:before {
+  content: "\e91a";
+  color: #80838f;
+}

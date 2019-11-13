@@ -1,0 +1,80 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.add-more-items {
+  .row-container {
+    margin-bottom: 16px;
+    .select-trigger{
+      margin-bottom: 0;
+    }
+  }
+
+  .input-field {
+    &:focus {
+      border: 1px solid $focused-state;
+    }
+  }
+
+  .btn-close {
+    padding: 4px;
+    outline: none;
+    @include font_property('', 11px, 1, '', $secondary-font-color);
+
+    &:focus,
+    &:active,
+    &:hover {
+      outline: none;
+    }
+
+    &:hover {
+      @include font_property('', '', '', '', $primary-highlight-color);
+    }
+  }
+
+  .btn-link {
+    display: flex;
+    padding: 4px 4px;
+    align-items: center;
+    @include font_property(
+        $sourceSans,
+        16px,
+        20px,
+        600,
+        $primary-highlight-color
+    );
+
+    i {
+      margin-right: 4px;
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  .child-parent {
+    margin-bottom: 20px;
+
+    .btn-close {
+      margin-left: 8px;
+    }
+
+    .select-trigger {
+      margin-bottom: 0;
+    }
+  }
+
+
+  .child-box {
+    width: 100%;
+  }
+
+}
+
+.help-text {
+  padding-left: 24px;
+  @include font_property($sourceSans, 12px, 16px, 400, $secondary-font-color);
+}

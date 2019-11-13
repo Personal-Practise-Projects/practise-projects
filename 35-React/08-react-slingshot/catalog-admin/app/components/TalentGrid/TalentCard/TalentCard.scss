@@ -1,0 +1,140 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins.scss';
+
+.card {
+  transition: transform 0.5s;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 26px 0 rgba(62, 53, 104, 0.1);
+  height: 730px;
+  overflow: hidden;
+  border: none;
+
+  @include respond-to(mobile) {
+    transition: none;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+
+    @include respond-to(mobile) {
+      transform: none;
+    }
+  }
+
+  .info {
+    padding: 1rem;
+  }
+
+  &-image {
+    width: 100%;
+    height: 426px;
+    line-height: 0;
+    object-fit: cover;
+  }
+
+  .no-image {
+    display: grid;
+    place-items: center;
+    height: 426px;
+
+    .card-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .overlay-wrapper {
+    position: relative;
+
+    .image-wrapper {
+      overflow: hidden;
+
+      .card-image {
+        transition: transform 0.2s ease-in;
+      }
+    }
+
+    &:hover {
+      .card-image {
+        transform: scale(1.15);
+
+        @include respond-to(mobile) {
+          transform: none;
+        }
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      &-metainfo {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, #000000 100%);
+
+        &:hover {
+          .talent-lightbox-launcher {
+            display: block;
+
+            @include respond-to(mobile) {
+              display: none;
+            }
+          }
+        }
+
+        .talent-lightbox-launcher {
+          display: none;
+          position: absolute;
+          width: 100%;
+          top: 0px;
+          left: 0px;
+          bottom: 0px;
+          background: rgba(0, 0, 0, 0.6);
+
+          .icon-zoom-in {
+            font-size: 22px;
+
+            &:hover {
+              &:before {
+                content: '';
+                display: block;
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+                background: url('../../../images/Icons/zoom-in-hover-icon.svg') center no-repeat;
+                background-size: contain;
+              }
+            }
+          }
+        }
+
+        &-talent {
+          align-self: flex-end;
+          z-index: $zIndexMicro;
+
+          .name {
+            @include font_property($sourceSans, 22px, 28px, 600, $white);
+          }
+
+          .age {
+            @include font_property($sourceSans, 14px, 14px, '', $white);
+            margin-bottom: 0;
+
+            &-title {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}

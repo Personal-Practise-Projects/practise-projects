@@ -1,0 +1,116 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Partials';
+@import '../../../styles/Mixins';
+
+// Import Partials
+@import './partials/overrides';
+@import './partials/states';
+
+// BulkUpdate Component Styles
+.bulk-update-container-component {
+  @include element_position(fixed, 0, 0, 0, 0);
+  z-index: $zIndexXLarge;
+
+  .bulk-update-overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .bulk-update-panel {
+    width: 35vw;
+    min-width: 350px;
+    background-color: $white;
+    @include element_position(absolute, 0, 0, 0, '');
+    @include respond-to(desktop) {
+      width: 35vw;
+    }
+    @include respond-to(widescreen) {
+      width: 28vw;
+    }
+  }
+
+  .animated {
+    animation-duration: 0.5s;
+  }
+}
+
+.bulk-update-panel {
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    min-height: 80px;
+    border-bottom: 1px solid #eeebf0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 34px;
+
+    .panel-close {
+      padding: 4px;
+      outline: none;
+      @include element_position(absolute, 24px, 24px, '', '');
+      @include font_property('', 16px, 1, '', $primary-font-color);
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .secondary-title {
+      @include font_property($sourceSans, 18px, 28px, 600, $primary-font-color);
+    }
+
+    .secondary-subtitle {
+      @include font_property($sourceSans, 12px, 15px, '', #63636f);
+    }
+  }
+
+  &-content {
+    @extend %edit-state;
+    @extend %readonly-state;
+
+    height: calc(100% - 170px);
+    overflow-x: auto;
+    padding: 0 34px;
+
+    .secondary-title {
+      @include font_property($sourceSans, 16px, '', 600, #2f2f36);
+      padding: 24px 0;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 90px;
+    padding: 24px 34px;
+
+    & > button:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    .primary-cta,
+    .ternary-cta {
+      width: auto;
+      padding: 10px 24px;
+    }
+
+    .primary-cta {
+      @extend %text-ellipses;
+    }
+  }
+}
+
+.bulk-update-section {
+  margin-bottom: 32px;
+
+  &-title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    @include font_property($sourceSans, 14px, 18px, 600, $secondary-font-color);
+  }
+}

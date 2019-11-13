@@ -1,0 +1,19 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Overrides
+%comment-history-component-override {
+  .comment-history {
+    margin-top: 24px;
+  }
+}
+
+.comment-section-component {
+  @extend %comment-history-component-override;
+
+  .title {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+  }
+}

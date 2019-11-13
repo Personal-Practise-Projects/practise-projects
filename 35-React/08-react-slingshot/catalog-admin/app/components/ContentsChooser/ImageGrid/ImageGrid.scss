@@ -1,0 +1,7 @@
+@import '../../../styles/Variables.scss';
+@import '../../../styles/Mixins.scss';
+
+.reference-message {
+  margin-bottom: 16px;
+  @include font_property($sourceSans, 16px, 20px, 400, $primary-font-color);
+}

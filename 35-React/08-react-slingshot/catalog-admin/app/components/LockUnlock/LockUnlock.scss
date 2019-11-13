@@ -1,0 +1,27 @@
+@import '../../styles/Variables.scss';
+
+// Overrides
+%user-info-component-overrides {
+  .user-info-component {
+    margin-top: 10px;
+  }
+}
+
+// Styling for lock-unlock Component
+.lock-unlock-component {
+  @extend %user-info-component-overrides;
+
+  .icon {
+    cursor: pointer;
+    transition: font-size 0.1s ease-in-out;
+
+    &:hover {
+      font-size: 18px;
+    }
+  }
+}
+
+
+
+
+

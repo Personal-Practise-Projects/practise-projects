@@ -1,0 +1,88 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+
+// Variables
+$image-size: 120px;
+
+// Overrides
+%lightbox-overrides {
+  .lightbox-image {
+    border: 2px solid transparent;
+
+    .image {
+      width: $image-size;
+      height: $image-size;
+      object-fit: cover;
+    }
+  }
+}
+
+// Different States
+%selected-state {
+  &.selected {
+    .image-wrapper {
+      position: relative;
+
+      .lightbox-image {
+        border: 2px solid $primary-highlight-color;
+
+        .download-overlay {
+          border-radius: 0;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        border-radius: $radius-size;
+      }
+
+      &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('../../images/content-widget/content-selected.svg') center no-repeat;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+%readonly-state {
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+// ImageSelect Component Styles
+.image-select-component {
+  @extend %selected-state;
+  @extend %readonly-state;
+  cursor: pointer;
+
+  .image-wrapper {
+    @extend %lightbox-overrides;
+    width: $image-size;
+    height: $image-size;
+    margin-bottom: 6px;
+    border-radius: $radius-size;
+    overflow: hidden;
+  }
+
+  & > .title {
+    @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+  }
+
+  & > .description {
+    @include font_property($sourceSans, 14px, 16px, '', $secondary-font-color);
+    margin-bottom: 0;
+  }
+}

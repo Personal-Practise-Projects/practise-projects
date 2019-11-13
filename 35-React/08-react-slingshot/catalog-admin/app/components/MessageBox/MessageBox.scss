@@ -1,0 +1,25 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.message {
+  &-pill {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 12px 24px;
+    padding-right: 48px;
+    white-space: nowrap;
+    border-radius: 100px;
+    text-overflow: ellipsis;
+    @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+    .btn {
+      padding: 0px;
+      transform: translateY(-50%);
+      @include element_position(absolute, 50%, 18px, '', '');
+      @include font_property('', 12px, 1, '', $secondary-font-color);
+    }
+  }
+  &-error {
+    background-color: #fff3f3;
+    @include font_property('', '', '', '', $primary-red);
+  }
+}

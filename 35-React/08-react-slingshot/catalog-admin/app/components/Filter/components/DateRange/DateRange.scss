@@ -1,0 +1,30 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+
+// Generic Styles for Date Range Component
+.date-range-component {
+  & > .title {
+    @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+    margin-bottom: 16px;
+  }
+
+  & > .wrapper {
+    display: flex;
+
+    & > .input-wrapper {
+      width: 200px;
+      margin-right: 20px;
+
+      .react-datepicker__input-container input {
+        cursor: pointer;
+        background-image: url('../../../../images/Icons/calendar-icon.svg');
+        background-position: right 5% bottom 50%;
+
+        &:disabled {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

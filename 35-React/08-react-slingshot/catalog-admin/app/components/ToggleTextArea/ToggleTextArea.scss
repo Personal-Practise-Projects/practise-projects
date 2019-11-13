@@ -1,0 +1,33 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+@import '../../styles/Partials';
+
+// Overrides
+%read-only-state {
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+.edit-text-link-component {
+  @extend %read-only-state;
+  padding: 10px 0;
+  margin-top: 4px;
+
+  .other-option-cta {
+    @include font_property(
+      $sourceSans,
+      14px,
+      12px,
+      600,
+      $primary-highlight-color
+    );
+    cursor: pointer;
+  }
+
+  .other-option-textarea {
+    @extend %text-area;
+  }
+}

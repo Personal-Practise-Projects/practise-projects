@@ -1,0 +1,179 @@
+@import './Variables';
+
+// Mixin for Font Properties
+@mixin font_property(
+  $fontFace,
+  $fontSize,
+  $fontLineHeight,
+  $fontWeight,
+  $fontColor
+) {
+  // Optional Param - Font Family
+  @if $fontFace != '' {
+    font-family: $fontFace;
+  }
+  // Optional Param - Font Size
+  @if $fontSize != '' {
+    font-size: $fontSize;
+  }
+  // Optional Param - Line Height
+  @if $fontLineHeight != '' {
+    line-height: $fontLineHeight;
+  }
+  // Optional Param - Font Weight
+  @if $fontWeight != '' {
+    font-weight: $fontWeight;
+  }
+  // Optional Param - Font Color
+  @if $fontColor != '' {
+    color: $fontColor;
+  }
+}
+
+// Mixin for Element Positioning
+@mixin element_position(
+  $positionType,
+  $postionTop,
+  $positionRight,
+  $positionBottom,
+  $positionLeft
+) {
+  // Required Param - Position Type ['absolute', 'relative', 'fixed', 'static', 'sticky']
+  position: $positionType;
+  // Optional Param - Top
+  @if $postionTop != '' {
+    top: $postionTop;
+  }
+  // Optional Param - Right
+  @if $positionRight != '' {
+    right: $positionRight;
+  }
+  // Optional Param - Bottom
+  @if $positionBottom != '' {
+    bottom: $positionBottom;
+  }
+  // Optional Param - Left
+  @if $positionLeft != '' {
+    left: $positionLeft;
+  }
+}
+
+// TODO: refactor this mixin
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $tablet - 1px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (min-width: $tablet + 1px) {
+      @content;
+    }
+  } @else if $media == tablet-only {
+    @media only screen and (min-width: $tablet + 1px) and (max-width: $desktop - 1px) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: $desktop + 1px) {
+      @content;
+    }
+  } @else if $media == desktop-small {
+    @media only screen and (max-width: $desktop) {
+      @content;
+    }
+  } @else if $media == desktop-only {
+    @media only screen and (min-width: $desktop + 1px) and (max-width: $widescreen - 1px) {
+      @content;
+    }
+  } @else if $media == widescreen-small {
+    @media only screen and (max-width: $widescreen - 1px) {
+      @content;
+    }
+  } @else if $media == widescreen {
+    @media only screen and (min-width: $widescreen + 1px) {
+      @content;
+    }
+  } @else if $media == widescreen-only {
+    @media only screen and (min-width: $widescreen + 1px) and (max-width: $fullhd - 1px) {
+      @content;
+    }
+  } @else if $media == fullhd {
+    @media only screen and (min-width: $fullhd + 1px) {
+      @content;
+    }
+  }
+}
+
+// Respond to Different Widths - Breakpoint Sequence Small Screen First
+@mixin respond-to-small-screen($media) {
+  @if $media == tablet {
+    @media only screen and (min-width: $tablet - 1px) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (min-width: $desktop - 1px) {
+      @content;
+    }
+  } @else if $media == widescreen {
+    @media only screen and (min-width: $widescreen - 1px) {
+      @content;
+    }
+  } @else if $media == fullhd {
+    @media only screen and (min-width: $fullhd - 1px) {
+      @content;
+    }
+  }
+}
+
+// Respond to Different Widths - Breakpoint Sequence Large Screen First
+@mixin respond-to-large-screen($media) {
+  @if $media == fullhd {
+    @media only screen and (max-width: $fullhd) {
+      @content;
+    }
+  } @else if $media == widescreen {
+    @media only screen and (max-width: $widescreen) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media only screen and (max-width: $desktop) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (max-width: $tablet) {
+      @content;
+    }
+  }
+}
+
+// Respond to Different Heights
+@mixin respond-to-height($media) {
+  @if $media == desktop-small {
+    @media only screen and (max-height: $desktop-small) {
+      @content;
+    }
+  } @else if $media == desktop-medium {
+    @media only screen and (max-height: $desktop-medium) {
+      @content;
+    }
+  } @else if $media == desktop-large {
+    @media only screen and (max-height: $desktop-large) {
+      @content;
+    }
+  }
+}
+
+// SubHeader Mixin for ordering inside components
+@mixin ordering-subheader($bulk-update-order: 1, $filter-order: 0, $search-order: 3, $datepicker-order: 2) {
+  .bulk-action-button-component {
+    order: $bulk-update-order;
+  }
+  .filter-component {
+    order: $filter-order;
+  }
+  .search-component{
+    order: $search-order;
+  }
+  .datepicker-component{
+    order: $datepicker-order;
+  }
+}

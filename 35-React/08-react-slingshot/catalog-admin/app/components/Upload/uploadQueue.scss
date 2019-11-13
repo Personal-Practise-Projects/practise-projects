@@ -1,0 +1,195 @@
+@import '../../styles/Mixins.scss';
+@import '../../styles/Variables.scss';
+
+.upload-queue {
+  bottom: 0;
+  max-height: 414px;
+  position: absolute;
+  right: 15px;
+  width: 380px;
+  z-index: 252;
+}
+
+.queue-empty-message {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.queue-header {
+  background-color: #564984;
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  height: 48px;
+
+  .queue-status {
+    color: $white;
+    line-height: 5px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .queue-right-widget {
+    display: flex;
+    margin-right: 15px;
+    margin-top: 15px;
+    position: absolute;
+    right: 0;
+
+    .queue-minimize-icon{
+      margin-right: 20px;
+    }
+  }
+}
+
+.queue-filelist {
+  background-color: $white;
+  max-height: calc(414px - 48px);
+  overflow-y: scroll;
+
+  .queue-file {
+    display: flex;
+    padding: 18px 20px;
+    position: relative;
+    transition: all 0.2s;
+    align-items: center;
+
+    &:hover {
+      background: #f0edf1;
+    }
+
+    .queue-file-preview {
+      height: 20px;
+      width: 20px;
+      align-self: start;
+    }
+
+    .queue-file-info {
+      margin-left: 20px;
+
+      .primary-info {
+        @include font_property(
+            $sourceSans,
+            16px,
+            12px,
+            600,
+            $primary-font-color
+        );
+      }
+
+      .secondary-info {
+        overflow: hidden;
+        padding: 5px 15px 0px 0px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 214px;
+        @include font_property(
+            $sourceSans,
+            12px,
+            '',
+            '',
+            $secondary-font-color
+        );
+      }
+    }
+
+    .queue-file-progress {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #dfe1ea;
+      position: relative;
+      margin-left: auto;
+      display: grid;
+      place-items: center;
+
+      i {
+        font-size: 9px;
+      }
+    }
+
+    &.queue-file-progress-done {
+      .queue-file-progress {
+        background-color: #6bebb6;
+        border: 2px solid #6bebb6;
+        box-shadow: 0 2px 5px 0 rgba(3, 196, 105, 0.2);
+
+        i {
+          padding-top: 4px;
+        }
+      }
+    }
+
+    &.queue-file-progress-waiting {
+      .queue-file-progress {
+        overflow: auto;
+
+        &:hover{
+          border: none;
+        }
+
+        .icon-cross {
+          position: absolute;
+          background: #8169ea;
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          color: $white;
+        }
+
+      }
+    }
+
+    &.queue-file-progress-uploading {
+      cursor: pointer;
+
+      .queue-file-preview {
+        opacity: 0.4;
+      }
+
+      .queue-file-progress {
+        border: none;
+        overflow: auto;
+
+        .icon-cross {
+          position: absolute;
+          background: #8169ea;
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          color: $white;
+          &:before{
+            padding-top: 2px;
+          }
+        }
+
+        .CircularProgressbar-path {
+          stroke: #6bebb6;
+          stroke-width: 12;
+        }
+
+        .CircularProgressbar-trail {
+          stroke: #dfe1ea;
+          stroke-width: 12;
+        }
+      }
+    }
+
+    &.queue-file-progress-failed {
+      cursor: pointer;
+      background: #f0edf1;
+
+      i {
+        font-size: 12px;
+      }
+
+      .queue-file-progress {
+        background-color: #8169ea;
+        border: 2px solid #8169ea;
+      }
+    }
+  }
+}

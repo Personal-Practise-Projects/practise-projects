@@ -1,0 +1,9 @@
+export const SHOT_CONTENT = 'shots:contents';
+export const SHOT_PRODUCED_CONTENT = 'shots:producedContents';
+export const SHOT_EDITED_CONTENT = 'shots:editedContents';
+export const SHOT_REFERENCES_IMAGES = 'shots:referenceImages';
+export const ACTOR_IMAGES = 'actor:images';
+export const LOCATION_IMAGES = 'location:images';
+export const PROP_IMAGES = 'prop:images';
+export const PRODUCT_IMAGES = 'product:images';
+export const BRAND_REFERENCES = 'brand:referenceFiles';

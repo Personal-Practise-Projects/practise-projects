@@ -1,0 +1,41 @@
+.brand-guideline {
+  .reference-area {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .add-area {
+      margin-top: 20px;
+    }
+  }
+  .file {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 20px auto;
+    align-items: center;
+    padding: 6px 18px;
+
+    &:hover {
+      border-radius: 5px;
+      background-color: #f3f0f5;
+    }
+
+    &-icon {
+      width: 12px;
+      margin-right: 8px;
+    }
+
+    &-link {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-name {
+      color: #8169ea;
+      font-family: 'Source Sans Pro';
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+    }
+  }
+}

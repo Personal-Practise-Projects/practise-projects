@@ -1,0 +1,64 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Icon Navigation Component Styles
+.icon-navigation-component {
+  width: 52px;
+  padding-top: 14px;
+  background-color: $white;
+  border-right: 1px solid #ece7ef;
+  @include element_position(absolute, 99px, '', 0px, 0px);
+
+  .icon-navigation-item {
+    height: 52px;
+    color: #80838f;
+    @include font_property('', 18px, '', '', '');
+
+    &:active,
+    &:focus,
+    &:visited {
+      color: #80838f;
+    }
+
+    &:hover {
+      background-color: $primary-highlight-color;
+
+      i:before {
+        color: $white;
+      }
+    }
+  }
+
+  .icon-navigation-active {
+    color: $white;
+    fill: $white;
+    background: $fadeBlueGradient;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: $white;
+    }
+  }
+
+  .icon-compose {
+    font-size: 16px;
+  }
+
+  .icon-puzzle {
+    font-size: 20px;
+  }
+
+  .icon-reference {
+    font-size: 20px;
+  }
+
+  .icon-crown {
+    font-size: 18px;
+  }
+
+  .icon-photo-default {
+    font-size: 18px;
+  }
+}

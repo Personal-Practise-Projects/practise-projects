@@ -1,0 +1,84 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Overrides
+%subheader-component-override {
+  .subheader-component {
+    &.title {
+      padding-bottom: 12px;
+    }
+  }
+}
+
+#production-board-page {
+  @extend %subheader-component-override;
+
+  .production-board {
+    height: 100%;
+
+    &-title {
+      margin-bottom: 12px;
+
+      .production-board-heading {
+        margin: 0;
+        width: fit-content;
+        @include font_property(
+          $sourceSans,
+          22px,
+          18px,
+          600,
+          $primary-font-color
+        );
+      }
+
+      .production-board-summary {
+        @include font_property(
+          $sourceSans,
+          12px,
+          16px,
+          400,
+          $secondary-font-color
+        );
+      }
+    }
+
+    &-content {
+      @include element_position(absolute, 0px, 0px, 0px, 0px);
+    }
+
+    .vertical-swimlanes {
+      height: 100%;
+      margin: 0px -15px;
+      @media only screen and (max-width: 1440px) {
+        margin: 0px -8px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .kanban-expanded {
+    .shot-config {
+      display: block;
+    }
+
+    .shot-due {
+      margin-top: 6px;
+    }
+  }
+}
+
+// Additional Settings for Production Board Page
+.splitpage-expanded {
+  .production-board {
+    .vertical-swimlanes {
+      margin: 0 -8px;
+      transition: 0.35s margin ease-in-out;
+    }
+  }
+
+  .vertical-swimlane {
+    margin: 0 8px;
+    transition: 0.35s margin ease-in-out;
+  }
+}

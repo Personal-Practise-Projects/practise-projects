@@ -1,0 +1,394 @@
+@import './Variables.scss';
+@import './SharedSnippets.scss';
+
+.minimized-widget {
+  z-index: 100;
+  min-width: 20vw;
+  max-width: 530px;
+  padding: 10px 16px;
+  background-color: #564984;
+  border-top-left-radius: $radius-size;
+  border-top-right-radius: $radius-size;
+  @include element_position(fixed, '', 10px, 0px, '');
+
+  &-title {
+    max-width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include font_property($sourceSans, 18px, 24px, 600, $white);
+  }
+
+  &-action {
+    border: 0;
+    padding: 4px;
+    margin-right: 12px;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    .widget-icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.content-widget {
+  display: block;
+  z-index: $zIndexXMedium;
+  padding: 32px;
+  border-radius: $radius-size;
+  background-color: white;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.6);
+  @include element_position(fixed, 3%, 2%, 3%, 5%);
+}
+
+.widget-header {
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 10px;
+
+  h4 {
+    @include font_property($sourceSans, 18px, 24px, 600, $primary-font-color);
+  }
+}
+
+.widget-wrapper {
+  width: 100%;
+  height: 100%;
+
+  &-actions {
+    @include element_position(absolute, 24px, 16px, '', '');
+  }
+
+  &-options {
+    background-color: $white;
+
+    button {
+      @include font_property($sourceSans, 16px, 20px, 400, $primary-font-color);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .tab-active {
+      border: 1px solid #f0edf1;
+      background-color: #fbfafb;
+      border-bottom: 1px solid transparent;
+      @include font_property('', '', '', 600, $primary-highlight-color);
+    }
+  }
+
+  &-content {
+    z-index: 1;
+    margin-top: -1px;
+    margin-bottom: 16px;
+    height: calc(100% - 143px);
+    background-color: #fbfafb;
+    border: 1px solid #f0edf1;
+    border-radius: 0 3px 3px 3px;
+    overflow: hidden;
+  }
+}
+
+.widget-wrapper-actions {
+  & > :nth-child(n):not(:last-child) {
+    margin-right: 14px;
+  }
+}
+
+.widget-tab {
+  z-index: 2;
+  padding: 12px 24px;
+  border-top-left-radius: $radius-size;
+  border-top-right-radius: $radius-size;
+}
+
+.widget-actions {
+  button {
+    margin: 0;
+    width: fit-content;
+  }
+
+  .secondary-cta {
+    margin-right: 24px;
+    border: 1px solid transparent;
+  }
+}
+
+.upload-area {
+  height: 100%;
+
+  .input-filedrop {
+    cursor: pointer;
+    min-height: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    input {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .filedrop {
+    &-description {
+      text-align: center;
+    }
+
+    &-illustration {
+      width: 190px;
+      height: 150px;
+      margin: 0 auto;
+      margin-bottom: 8px;
+      background: url('../images/content-widget/filedrop-illustration.svg') center no-repeat;
+      background-size: contain;
+    }
+
+    &-text {
+      margin-bottom: 2px;
+      @include font_property($sourceSans, 20px, 26px, 600, $primary-font-color);
+    }
+
+    &-text-secondary {
+      @include font_property(
+          $sourceSans,
+          16px,
+          20px,
+          400,
+          $secondary-font-color
+      );
+    }
+  }
+}
+
+.area-collapsed {
+  .content-progress {
+    display: block;
+  }
+
+  .input-filedrop {
+    height: 130px;
+    min-height: initial;
+  }
+
+  .filedrop-description {
+    display: flex;
+    text-align: left;
+    padding: 26px 0;
+    align-items: center;
+  }
+
+  .filedrop-illustration {
+    width: 100px;
+    height: 76px;
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+
+  .filedrop-text {
+    @include font_property('', 18px, 24px, '', '');
+
+    &-secondary {
+      @include font_property('', 14px, 18px, '', '');
+    }
+  }
+}
+
+.content-progress,
+.recent-uploads {
+  padding: 0 40px;
+}
+
+.content-progress {
+  padding-top: 40px;
+}
+
+.recent-uploads {
+  padding-top: 16px;
+  padding-bottom: 2em;
+}
+
+.content-card {
+  width: 288px;
+  height: 288px;
+  border-radius: $radius-size;
+  margin-right: 24px;
+  margin-bottom: 54px;
+  background-color: $white;
+
+  .no-thumbnail {
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 100%;
+    padding: 0 40%;
+    height: inherit;
+    display: block;
+  }
+
+  &-cancel {
+    @extend %content-card-cancel;
+
+    z-index: $zIndexMini;
+  }
+
+  &-thumbnail {
+    width: 288px;
+    height: 288px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    border-radius: $radius-size;
+    object-fit: contain;
+  }
+
+  &-filename {
+    @include font_property($sourceSans, 16px, 20px, 400, $primary-font-color);
+  }
+
+  &-selected {
+    .content-card-overlay {
+      display: flex;
+    }
+  }
+
+  &-overlay {
+    display: none;
+    cursor: pointer;
+    border-radius: $radius-size;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 2px solid $primary-highlight-color;
+    @include element_position(absolute, 0px, 0px, 0px, 0px);
+
+    .checkmark-selected {
+      width: 32px;
+      height: 32px;
+      background: url('../images/content-widget/content-selected.svg') center no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.circular-progress {
+  z-index: 5;
+  border-radius: $radius-size;
+  background-color: rgba(0, 0, 0, 0.6);
+  @include element_position(absolute, 0px, 0px, 0px, 0px);
+
+  .CircularProgressbar {
+    width: 48px;
+    height: 48px;
+
+    &-path {
+      stroke: $primary-green !important;
+    }
+
+    &-text {
+      fill: $primary-green !important;
+      @include font_property(
+          $sourceSans !important,
+          22px !important,
+          18px !important,
+          600 !important,
+          ''
+      );
+    }
+  }
+}
+
+.warning {
+  border-radius: $radius-size;
+  background-color: rgba(0, 0, 0, 0.8);
+  @include element_position(absolute, 0px, 0px, 0px, 0px);
+
+  &-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    background: url('../images/content-widget/upload-failure.svg') center no-repeat;
+    background-size: cover;
+  }
+
+  &-message {
+    @include font_property($sourceSans, 14px, 18px, 400, $white);
+  }
+
+  &-action {
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+.content-overscroll {
+  overflow-y: auto;
+  max-height: calc(100% - 130px);
+}
+
+.mapping-overscroll {
+  height: 100%;
+  max-height: initial;
+
+  .recent-uploads {
+    padding: 40px;
+    padding-bottom: 12px;
+  }
+
+  .reference-message {
+    display: none;
+  }
+}
+
+.download-overlay {
+  @include element_position(absolute, 0px, 0px, 0px, 0px);
+
+  &-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    background-size: cover;
+    background: url('../images/content-widget/download-cloud.svg') center no-repeat;
+
+    &:hover {
+      background: url('../images/content-widget/download-cloud-hover.svg') center no-repeat;
+    }
+  }
+
+  &-message {
+    @include font_property($sourceSans, 14px, 18px, 400, $black);
+  }
+
+  &-action {
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+.zoom-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  background-size: cover;
+  background: url('../images/content-widget/zoom-in.svg') center no-repeat;
+
+  &:hover {
+    background: url('../images/content-widget/zoom-in-hover.svg') center no-repeat;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

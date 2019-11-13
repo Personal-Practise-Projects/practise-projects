@@ -1,0 +1,38 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+@import '../../../../styles/Partials';
+
+// Component Styles
+.titled-description-icon-component {
+  margin-bottom: 40px;
+  margin-right: 40px;
+  min-width: fit-content;
+  max-width: 300px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    & > .title {
+      @include font_property(
+        $sourceSans,
+        14px,
+        14px,
+        '',
+        $secondary-font-color
+      );
+      margin-left: 8px;
+    }
+  }
+
+  & > .description {
+    @extend %nextline;
+    @include font_property($sourceSans, 18px, 23px, '', $primary-font-color);
+  }
+}

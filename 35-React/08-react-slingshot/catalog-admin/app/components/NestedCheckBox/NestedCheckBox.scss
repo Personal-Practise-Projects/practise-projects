@@ -1,0 +1,43 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+//Overrides
+%icon-overrides {
+  .icon {
+    font-size: 10px;
+    margin-right: 8px;
+
+    &.open {
+      transform: rotate(90deg);
+      display: inline-block;
+    }
+  }
+}
+
+.nested-checkbox {
+  @extend %icon-overrides;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 16px;
+
+  & > .heading {
+    @include font_property($sourceSans, 14px, 18px, 800, $primary-font-color);
+    margin-bottom: 12px;
+    cursor: pointer;
+    border-radius: $radius-sm-size;
+  }
+
+  & > .wrapper {
+    margin-left: 24px;
+  }
+
+  .input-wrapper {
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+
+  .section-container {
+    margin-bottom: 8px;
+  }
+}

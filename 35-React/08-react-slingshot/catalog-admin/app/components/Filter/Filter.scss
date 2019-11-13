@@ -1,0 +1,179 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+
+// Generic Styles for Filter Component
+.filter-component {
+  position: relative;
+
+  & > .filter-cta {
+    position: relative;
+    color: $primary-highlight-color;
+    cursor: pointer;
+
+    & > .filter-count {
+      @include font_property($sourceSans, 12px, 16px, 600, $white);
+      @include element_position(absolute, -10px, -12px, '', '');
+      width: 20px;
+      height: 20px;
+      display: flex;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-highlight-color;
+    }
+  }
+
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    z-index: $zIndexXMedium;
+    height: 60vh;
+    width: 60vw;
+    max-width: 700px;
+    max-height: 400px;
+    border-radius: $radius-size;
+    background-color: $white;
+    box-shadow: 0 4px 20px 0 rgba(62, 53, 104, 0.1);
+    user-select: none;
+
+    & > .filter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid #eeebf0;
+
+      & > .left {
+        display: flex;
+        align-items: center;
+
+        & > .heading {
+          @include font_property(
+            $sourceSans,
+            18px,
+            23px,
+            600,
+            $primary-font-color
+          );
+          margin-right: 8px;
+        }
+
+        & > .sub-heading {
+          @include font_property(
+            $sourceSans,
+            12px,
+            15px,
+            '',
+            $subheading-color
+          );
+        }
+      }
+
+      & > .right {
+        & > .clear-all {
+          @include font_property($sourceSans, 14px, 18px, 600, #5547e4);
+          cursor: pointer;
+        }
+      }
+    }
+
+    & > .filter-body {
+      display: flex;
+      height: 100%;
+
+      & > .filter-options {
+        width: 200px;
+        background-color: #f0edf1;
+        border-radius: 0 0 0 $radius-size;
+
+        & > .filter-option {
+          @include font_property(
+            $sourceSans,
+            14px,
+            18px,
+            600,
+            $subheading-color
+          );
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 10px 0 24px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $primary-highlight-color;
+            color: $white;
+
+            .clear {
+              display: block;
+            }
+          }
+
+          &.active {
+            background-color: #8169ea;
+            color: $white;
+
+            .clear {
+              display: block;
+            }
+          }
+
+          & > .wrapper {
+            display: flex;
+
+            & > .title {
+              margin-right: 8px;
+            }
+
+            & > .count {
+              height: 20px;
+              width: 20px;
+              background-color: $white;
+              display: grid;
+              place-items: center;
+              border-radius: 50%;
+              @include font_property(
+                $sourceSans,
+                12px,
+                15px,
+                600,
+                $secondary-font-color
+              );
+            }
+          }
+
+          & > .clear {
+            @include font_property($sourceSans, 12px, 15px, '', $white);
+            display: none;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .right-panel {
+        position: relative;
+        width: 100%;
+        background: $white;
+
+        & > .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          padding: 0 24px;
+          height: 20%;
+          align-items: center;
+
+          & > .cta {
+            width: fit-content;
+            padding: 8px 30px;
+          }
+        }
+      }
+    }
+  }
+}

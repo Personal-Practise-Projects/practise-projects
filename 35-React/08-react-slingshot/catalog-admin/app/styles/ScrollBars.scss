@@ -1,0 +1,14 @@
+// Global Scrollbars Styling
+::-webkit-scrollbar {
+  width: 6px; // Set 6px for Vertical Scrollbars
+  height: 6px; // Set 6px for Horizontal Scrollbars
+  &-button {
+    display: none; // Hide the Navigation Buttons
+  }
+  &-thumb {
+    background-color: #e3dee6; // Set the Slider Color
+  }
+  &-track {
+    background-color: transparent; // Set the Track Color
+  }
+}

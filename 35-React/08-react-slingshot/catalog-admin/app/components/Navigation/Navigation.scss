@@ -1,0 +1,158 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.navigation-component {
+  @include element_position(fixed, 0px, '', 0px, 0px);
+  width: 56px;
+  z-index: 125;
+  height: 100%;
+  background-color: #564984;
+
+  a {
+    width: 100%;
+    outline: none;
+    color: $white;
+    display: block;
+    text-decoration: none;
+  }
+
+  .navigation {
+    &-wrapper {
+      height: 100%;
+
+      .app-logo {
+        padding: 16px 0 36px 0;
+        display: block;
+        height: 28px;
+        width: 28px;
+        margin: 0 auto;
+        box-sizing: content-box;
+      }
+    }
+
+    &-option {
+      height: 56px;
+      cursor: pointer;
+
+      @include respond-to-height(desktop-small){
+        height: 50px;
+      }
+
+      &:hover {
+        .navigation-icon {
+          @include font_property('', '', '', '', $primary-highlight-color);
+        }
+      }
+
+      .icon-lists {
+        @include font_property('', 16px, '', '', '');
+      }
+
+      // For Handling Dropdown Overflowing the Screen on Low-res Systems
+      @media only screen and (max-width: 1650px) {
+        &:last-of-type {
+          .navigation-submenu {
+            @include element_position(absolute, initial, '', 0px, '');
+          }
+        }
+      }
+    }
+
+    &-icon {
+      @include font_property('', 20px, 1, '', $white);
+
+      &:hover {
+        @include font_property('', '', '', '', $primary-highlight-color);
+      }
+
+      &:hover + .navigation-tooltip {
+        display: inline-block;
+      }
+    }
+
+    &-tooltip {
+      display: none;
+      padding: 4px 12px;
+      width: fit-content;
+      border-radius: $radius-size;
+      white-space: nowrap;
+      background-color: $white;
+      box-shadow: 0 0 8px 0 rgba(62, 53, 104, 0.16);
+      @include element_position(absolute, 16px, '', '', 60px);
+      @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+
+      &:after {
+        top: 50%;
+        width: 0;
+        height: 0;
+        right: 100%;
+        content: ' ';
+        margin-top: -4px;
+        position: absolute;
+        pointer-events: none;
+        border: 4px solid transparent;
+        border-right-color: $white;
+      }
+    }
+
+    &-collapsed {
+      .navigation-submenu {
+        display: none;
+      }
+    }
+
+    &-expanded {
+      .navigation-submenu {
+        display: inline-block;
+      }
+    }
+
+    &-submenu {
+      overflow-y: auto;
+      padding: 6px 0;
+      min-width: 100px;
+      max-height: 150px;
+      border-radius: $radius-size;
+      background-color: $white;
+      box-shadow: 0 2px 16px 0 rgba(213, 213, 220, 0.6);
+      @include element_position(absolute, 12px, '', '', 60px);
+
+      &-item {
+        padding: 8px 22px;
+        @include font_property($sourceSans, 14px, 18px, 400, $primary-font-color);
+
+        &:hover {
+          background-color: $primary-highlight-color;
+          @include font_property('', '', '', 600, $white);
+        }
+      }
+    }
+
+    &-active {
+      .navigation-option {
+        width: 66px;
+        padding-right: 10px;
+        background-color: $white;
+        border-radius: 0 15px 15px 0;
+        box-shadow: 0 4px 8px 0 rgba(62, 53, 104, 0.2);
+      }
+
+      .navigation-icon {
+        &:before {
+          color: $primary-highlight-color
+        }
+      }
+
+      .navigation-tooltip {
+        @include element_position('', '', '', '', 70px);
+      }
+    }
+
+    &-active-link {
+      .navigation-submenu-item {
+        background-color: $primary-highlight-color;
+        @include font_property('', '', '', 600, $white);
+      }
+    }
+  }
+}

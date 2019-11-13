@@ -70,8 +70,8 @@ Syntax highlighting
 ### Git Issues
 
 - [Trying to pull files from my Github repository: “refusing to merge unrelated histories”](https://stackoverflow.com/questions/38255655/trying-to-pull-files-from-my-github-repository-refusing-to-merge-unrelated-his/40959920)
-
 - [remove .git/index.lock': Permission denied](https://stackoverflow.com/questions/14127255/remove-git-index-lock-permission-denied)
+- [Setting your commit email address](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-in-git) 
 
 ---
 

@@ -1,0 +1,42 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+
+// Import Partials
+@import './overrides';
+
+// Different States
+%edit-state {
+  &.edit-state {
+    @extend %section-view-component-override;
+    @extend %color-tooltip-component-override;
+    @extend %choice-section-component-override;
+    @extend %add-more-items-override;
+    @extend %image-select-component-override;
+  }
+}
+
+%readonly-state {
+  &.readonly-state {
+    @extend %warning-icon-override;
+    @extend %color-tooltip-component-override;
+    @extend %image-select-component-override-readonly;
+
+    .image-select-wrapper {
+      background: #fbfafb;
+      margin: 14px -34px;
+      padding: 22px 34px;
+
+      & > .title {
+        @include font_property(
+          $sourceSans,
+          16px,
+          12px,
+          600,
+          $primary-font-color
+        );
+        display: block;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}

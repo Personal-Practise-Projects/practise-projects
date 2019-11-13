@@ -1,0 +1,20 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+.schedule-date-trigger {
+  border: 0;
+  padding: 0px;
+  cursor: pointer;
+  @include font_property(
+    $sourceSans,
+    16px,
+    20px,
+    600,
+    $primary-highlight-color
+  );
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}

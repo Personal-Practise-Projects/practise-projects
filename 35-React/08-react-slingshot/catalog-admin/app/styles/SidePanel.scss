@@ -1,0 +1,215 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.splitpage-drawer {
+  animation-duration: 0.5s;
+  background-color: $white;
+  border-top-left-radius: $radius-size;
+  @include element_position(absolute, 0px, 0px, 0px, '');
+  &-body {
+    overflow-y: auto;
+    padding: 24px 32px 2.5em 80px;
+    scroll-behavior: smooth;
+    height: calc(100% - 100px);
+  }
+  &-header {
+    height: 99px;
+    padding: 16px 40px;
+    border-bottom: 1px solid #ece7ef;
+    h4 {
+      @include font_property($sourceSans, 18px, 24px, 600, $primary-font-color);
+    }
+    .shot-brand {
+      @include font_property($sourceSans, 14px, 18px, 400, $primary-font-color);
+    }
+    .dropdown-trigger {
+      border: none;
+      box-shadow: none;
+      width: fit-content;
+      padding: 0 16px 0 0;
+      @include font_property(
+        $sourceSans,
+        14px,
+        18px,
+        400,
+        $secondary-font-color
+      );
+      &::after {
+        right: 4px;
+      }
+
+      &[disabled] {
+        opacity: 0.9;
+        pointer-events: none;
+      }
+    }
+    .dropdown-drawer {
+      top: 24px;
+      width: fit-content;
+    }
+    .dropdown-item {
+      word-wrap: initial;
+      word-break: keep-all;
+    }
+    .vertical-separator {
+      width: 1px;
+      height: 12px;
+      opacity: 0.9;
+      margin: 0 8px;
+      background-color: #eeebf0;
+    }
+    .shot-status {
+      padding: 3px 16px 3px 8px;
+      border-radius: 8.5px;
+      @include font_property($sourceSans, 12px, 14px, 600, $white);
+      &::after {
+        border-top: 4px solid $white;
+      }
+    }
+    .btn-dropdown-trigger {
+      padding: 4px 8px;
+      @include font_property('', 14px, 1, '', $secondary-font-color);
+    }
+    .btn-close {
+      padding: 4px;
+      outline: none;
+      margin-left: 16px;
+      @include font_property('', 14px, 1, '', $secondary-font-color);
+      &:focus,
+      &:active,
+      &:hover {
+        outline: none;
+      }
+      &:hover {
+        @include font_property('', '', '', '', $primary-highlight-color);
+      }
+    }
+  }
+  .header-right {
+    padding: 8px 0 0 0px;
+    .dropdown-trigger {
+      padding: 4px 4px;
+      @include font_property('', 16px, 1, '', '');
+      &::after {
+        content: initial;
+      }
+    }
+    .dropdown-drawer {
+      right: 0;
+      left: initial;
+      min-width: 100px;
+    }
+  }
+}
+// Overrides for React Datepicker & React Date-Time Picker
+.react-datepicker {
+  border: 0 !important;
+  border-radius: $radius-size !important;
+  box-shadow: 0 0 22px 0 rgba(213, 213, 220, 0.5);
+  @include font_property(
+    $sourceSans !important,
+    14px !important,
+    18px !important,
+    400,
+    $primary-font-color !important
+  );
+  &-wrapper {
+    width: 100%;
+  }
+  &__header {
+    background-color: $white !important;
+    border-bottom: 1px solid #ece7ef !important;
+  }
+  &__input-container {
+    width: 100%;
+    input {
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: $radius-size;
+      background-color: $white;
+      border: 1px solid #dfe1ea;
+      @include font_property($sourceSans, 16px, 20px, 400, $primary-font-color);
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+  &__close-icon {
+    width: 18px !important;
+    right: 12px !important;
+    height: 18px !important;
+    &::after {
+      padding: 0 !important;
+      width: 18px !important;
+      height: 18px !important;
+      font-size: 16px !important;
+      color: $primary-font-color !important;
+      background-color: transparent !important;
+    }
+  }
+  &__current-month {
+    @include font_property(
+      $sourceSans,
+      16px !important,
+      20px !important,
+      600 !important,
+      $primary-font-color !important
+    );
+  }
+  &__navigation--previous {
+    border-right-color: $primary-highlight-color !important;
+  }
+  &__navigation--next {
+    border-left-color: $primary-highlight-color !important;
+  }
+  &__day-names {
+    @include font_property(
+      $sourceSans,
+      14px !important,
+      18px !important,
+      600 !important,
+      $primary-font-color
+    );
+  }
+  &-popper{
+    z-index: $zIndexMax;
+  }
+  &-popper[data-placement^='bottom'] &__triangle,
+  &-popper[data-placement^='bottom'] &__triangle::before {
+    border-bottom-color: $white !important;
+  }
+  &__day:hover {
+    color: $primary-font-color !important;
+    background-color: #f0edf1 !important;
+  }
+  &__day--selected,
+  &__day--in-selecting-range,
+  &__day--in-range {
+    background-color: $primary-highlight-color !important;
+  }
+  &__day--selected:hover,
+  &__day--in-selecting-range:hover,
+  &__day--in-range:hover {
+    color: $white !important;
+    background-color: $primary-highlight-color !important;
+  }
+  &__day--keyboard-selected {
+    background-color: $primary-highlight-color !important;
+  }
+  &__time-container {
+    border-left: 1px solid #ece7ef !important;
+  }
+  &__time-container &__time &__time-box ul.react-datepicker__time-list {
+    li.react-datepicker__time-list-item:hover {
+      color: $primary-font-color !important;
+      background-color: #f0edf1 !important;
+    }
+    li.react-datepicker__time-list-item--selected {
+      color: $white !important;
+      background-color: $primary-highlight-color !important;
+    }
+  }
+}

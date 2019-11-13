@@ -1,0 +1,11 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+
+.hotspot-wrapper {
+  .dropdown-options {
+    padding: 8px 0px;
+    .active-item .param-name {
+      color: $white;
+    }
+  }
+}

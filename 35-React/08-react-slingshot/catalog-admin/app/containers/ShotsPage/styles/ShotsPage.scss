@@ -1,0 +1,29 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+
+// Import Partials
+@import './partials/overrides';
+
+#shot-page {
+  @extend %subheader-override;
+
+  .shots-page-table {
+    // Override for Specific Table Type
+    .table-header, .table-body {
+      .table-row {
+        cursor: pointer;
+
+        .table-column {
+          &:first-child {
+            width: fit-content;
+            padding: 0 30px;
+          }
+
+          &:nth-child(2) {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}

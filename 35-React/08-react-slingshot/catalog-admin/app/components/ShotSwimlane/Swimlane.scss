@@ -1,0 +1,117 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+//Overrides
+%select-item-component-overrides {
+  & > .select-item-component {
+    display: none;
+  }
+}
+
+%shot-card-component-overrides {
+  .shot-card-component {
+    @extend %select-item-component-overrides;
+    max-width: unset;
+  }
+}
+
+// Different States
+%bulk-action-state {
+  &.bulk-action {
+    .select-item-component {
+      display: block;
+    }
+  }
+}
+
+.vertical-swimlane {
+  @extend %bulk-action-state;
+  @extend %shot-card-component-overrides;
+
+  width: 100%;
+  margin: 0 15px;
+  border-radius: $radius-size;
+  background-color: $white;
+  @media only screen and (max-width: 1440px) {
+    margin: 0px 8px;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 20px 0 rgba(62, 53, 104, 0.1);
+  }
+}
+
+.swimlane-content {
+  overflow-y: auto;
+  padding: 8px 16px;
+  @include element_position(absolute, 60px, 0px, 0px, 0px);
+  @media only screen and (max-width: 1440px) {
+    padding: 0px 16px;
+  }
+
+  .schedule-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.swimlane-empty {
+  height: 100%;
+  pointer-events: none;
+
+  &-illustration {
+    width: 90px;
+    height: 64px;
+    margin: 0px auto;
+    margin-bottom: 12px;
+    background: url('../../images/kanban-board/swimlane-empty.svg') center
+      no-repeat;
+    background-size: cover;
+  }
+
+  &-text {
+    max-width: 160px;
+    text-align: center;
+    @include font_property($sourceSans, 14px, 18px, 600, $primary-font-color);
+  }
+}
+
+.swimlane-header {
+  height: 60px;
+  padding: 14px 28px;
+  background-color: #fbfafb;
+  border-radius: $radius-size $radius-size 0px 0px;
+  @media only screen and (max-width: 1919px) {
+    padding: 20px 16px;
+  }
+
+  &-title {
+    & > :nth-of-type(n):not(:last-child) {
+      margin-right: 8px;
+    }
+
+    .header-title {
+      @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+    }
+  }
+
+  &-count {
+    .swimlane-count {
+      height: 20px;
+      padding: 5px;
+      border-radius: $radius-pill;
+      background-color: #f0edf1;
+      @include font_property(
+        $sourceSans,
+        14px,
+        18px,
+        600,
+        $secondary-font-color
+      );
+    }
+  }
+
+  .icon-selection {
+    @include font_property('', 18px, 1, '', '');
+  }
+}

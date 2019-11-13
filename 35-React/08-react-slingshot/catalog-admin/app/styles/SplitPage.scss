@@ -1,0 +1,55 @@
+.splitpage-wrapper {
+  min-height: calc(100vh - 128px);
+}
+
+// Toggle Experience Classes
+
+// Toggle Collapsed
+.splitpage-collapsed {
+  .splitpage-drawer {
+    width: 0px;
+    display: none;
+  }
+}
+
+// Toggle Expanded
+.splitpage-expanded {
+  .splitpage-board {
+    padding: 0px 40px;
+    padding-right: calc(30vw + 10px);
+    @media only screen and (max-width: 1440px) {
+      padding-right: calc(35vw + 10px);
+    }
+  }
+  .splitpage-drawer {
+    width: 30vw;
+    display: block;
+    @media only screen and (max-width: 1440px) {
+      width: 35vw;
+    }
+  }
+}
+
+.splitpage-board {
+  padding: 0px 40px;
+  transition: padding-right ease 0.3s;
+  @include element_position(absolute, 0px, 0px, 18px, 0px);
+}
+
+// Additional Container for Widget
+.splitpage-content {
+  min-height: 100%;
+}
+
+// Utility Classes for SplitPage
+.splitpage-heightened {
+  .splitpage-content {
+    height: 100%;
+    min-height: initial;
+  }
+}
+.splitpage-noicons {
+  .splitpage-drawer-body {
+    padding-left: 40px;
+  }
+}

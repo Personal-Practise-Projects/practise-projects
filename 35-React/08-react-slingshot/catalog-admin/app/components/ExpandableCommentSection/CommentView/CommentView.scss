@@ -1,0 +1,102 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+@import '../../../styles/Partials';
+@import '../../../styles/Overrides';
+
+// Local Variables
+$user-image-size: 36px;
+
+// CommentView Component Styles
+.comment-view-component {
+  padding: 8px;
+  margin-bottom: 4px;
+  border-radius: $radius-size;
+
+  .comment {
+    display: inline-flex;
+
+    &:nth-child(n) {
+      margin-bottom: 0;
+    }
+
+    &-image {
+      .image {
+        width: $user-image-size;
+        height: $user-image-size;
+        border-radius: 50%;
+      }
+    }
+
+    &-content {
+      margin-left: 12px;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+
+        .left {
+          display: flex;
+          align-items: baseline;
+
+          .name {
+            @include font_property($sourceSans, 16px, 12px, 600, #2f2f36);
+            margin-right: 6px;
+          }
+
+          .date {
+            @include font_property($sourceSans, 12px, 10px, '', #80838f);
+          }
+        }
+
+        .right {
+        }
+      }
+
+      &-body {
+        .comment-text {
+          @include font_property($sourceSans, 14px, 18px, '', #80838f);
+          margin-bottom: 0;
+          //@extend %read-more-override;
+
+          &.read-more {
+            @extend %block-ellipsis;
+            -webkit-line-clamp: 2;
+            position: relative;
+
+            .read-more-less-btn {
+              top: 19px;
+              right: 0;
+              position: absolute;
+            }
+          }
+
+          .read-more-less-btn {
+            @include font_property(
+              $sourceSans,
+              14px,
+              18px,
+              600,
+              $primary-highlight-color !important
+            );
+            cursor: pointer;
+            background: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0.8) 0%,
+              rgba(255, 255, 255, 1) 5%
+            );
+            padding: 0 10px;
+          }
+
+          .tag {
+            color: $primary-highlight-color;
+
+            &:before {
+              content: '@';
+            }
+          }
+        }
+      }
+    }
+  }
+}

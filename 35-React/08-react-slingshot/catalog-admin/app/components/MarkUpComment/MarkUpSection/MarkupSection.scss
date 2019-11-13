@@ -1,0 +1,110 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+@import '../../../styles/Partials';
+
+// Overrides
+%add-comment-overrides {
+  .add-comment {
+    &-actions {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.marker-container {
+  @extend %add-comment-overrides;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .mark-up-section {
+    width: inherit;
+    height: inherit;
+    cursor: crosshair;
+  }
+
+  .marker {
+    @include font_property($sourceSans, 18px, '', 600, $white);
+    position: absolute;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    height: 38px;
+    width: 38px;
+    background-color: #f44d4d;
+    box-shadow: 0 2px 6px 0 rgba(62, 53, 104, 0.3);
+    border-radius: 50%;
+    cursor: move;
+    opacity: 0.65;
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 0.95;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .comment-section {
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 0 0 26px 0 rgba(62, 53, 104, 0.1);
+    z-index: 1;
+    padding: 30px 30px 20px 30px;
+    position: absolute;
+    margin-left: -38px;
+    margin-top: 30px;
+    width: 400px;
+    cursor: default;
+
+    &:first-of-type {
+      margin-top: 30px;
+    }
+
+    &:before {
+      top: -15px;
+      left: 30px;
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 8px solid transparent;
+      border-bottom: 8px solid #fefefe;
+    }
+
+    h4 {
+      @include font_property($sourceSans, 18px, 20px, 500, #2f2f36);
+      margin-bottom: 16px;
+    }
+
+    .comment-history {
+      @extend %show-scrollbar-on-hover;
+      max-height: 300px;
+      margin-bottom: 10px;
+      overflow: auto;
+
+      .comment-body {
+        @include font_property($sourceSans, 16px, 20px, 400, #2f2f36);
+      }
+    }
+  }
+
+  .comment-tooltip {
+    position: absolute;
+    width: max-content;
+    background-color: rgba(44, 49, 53, 0.7);
+    border-radius: $radius-sm-size;
+    box-shadow: 0 4px 3px rgba(50, 50, 50, 0.2);
+    padding: 4px 10px;
+    z-index: $zIndexXMedium;
+    display: none;
+    font-size: 12px;
+    color: $white;
+
+    &.show {
+      display: block;
+    }
+  }
+}

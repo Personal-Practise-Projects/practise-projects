@@ -1,0 +1,178 @@
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixins.scss';
+
+// Overrides
+%status-color-pills-override {
+  .status {
+    color: $white;
+    width: fit-content;
+  }
+}
+
+.table {
+  min-width: 100%;
+  width: fit-content;
+  margin-bottom: 0px;
+  color: $primary-font-color;
+
+  &-title {
+    width: fit-content;
+    margin-bottom: 24px;
+    @include font_property($sourceSans, 28px, 36px, 600, $primary-font-color);
+  }
+
+  &-flexible {
+    width: 100%;
+    border-radius: $radius-size;
+  }
+
+  &-horizontal-scroll {
+    overflow: hidden;
+    overflow-x: auto;
+  }
+
+  &-vertical-scroll {
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  &-header {
+    .table-row {
+      cursor: initial;
+      border-radius: $radius-size $radius-size 0 0;
+      background-color: #e3dee6 !important;
+      box-shadow: 0 2px 6px 0 rgba(213, 213, 220, 0.5);
+    }
+
+    .table-column {
+      cursor: initial;
+      padding: 16px 20px;
+      @include font_property($sourceSans, 16px, 20px, 600, $primary-font-color);
+    }
+  }
+
+  &-body {
+    max-height: 80vh;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    background-color: $white;
+    border-bottom: 1px solid #f0edf1;
+    border-radius: 0px 0px $radius-size $radius-size;
+    box-shadow: 0 2px 16px 0 rgba(213, 213, 220, 0.3);
+    @media only screen and (max-width: 1440px) {
+      max-height: 68vh;
+    }
+
+    .table-row {
+      &:hover {
+        background-color: $hover-state;
+      }
+    }
+  }
+
+  &-row {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #eeebf0;
+
+    &:nth-child(odd) {
+      background-color: #fbfafb;
+    }
+
+    &:nth-child(even) {
+      background-color: $white;
+    }
+
+    &:last-of-type {
+      border-bottom: 0px;
+    }
+  }
+
+  &-column {
+    width: 250px;
+    display: flex;
+    cursor: pointer;
+    padding: 18px 20px;
+    align-items: center;
+    justify-content: flex-start;
+    @extend %status-color-pills-override;
+
+    span {
+      width: 100%;
+      display: block;
+      min-height: 14px;
+      word-break: break-all;
+      @include font_property($sourceSans, 14px, 18px, 400, #63636f);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .searchable-dropdown {
+      z-index: initial;
+
+      .dropdown-trigger {
+        z-index: 10;
+        box-shadow: none;
+        @include font_property($sourceSans, 14px, 18px, 400, #63636f);
+      }
+
+      .dropdown-drawer {
+        z-index: 15;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    &:first-of-type {
+      width: 150px;
+      padding-left: 40px;
+    }
+
+    &:last-of-type {
+      padding-right: 40px;
+    }
+  }
+
+  // Extra Large Columns
+  .large-column {
+    width: 350px;
+  }
+
+  // Medium Columns
+  .medium-column {
+    width: 200px;
+  }
+
+  // Small Columns
+  .small-column {
+    width: 100px;
+  }
+
+  // For Hiding the Column Completely
+  .no-show {
+    display: none !important;
+  }
+
+  // For No Results Row
+  .empty-row {
+    min-height: 300px;
+    text-align: center;
+  }
+}
+
+.shots-page-table {
+  .active-row {
+    position: relative;
+    background-color: $hover-state;
+
+    &:before {
+      content: '';
+      width: 4px;
+      height: 100%;
+      background: $focused-state;
+      position: absolute;
+    }
+  }
+}

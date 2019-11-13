@@ -1,0 +1,17 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+
+.counter-info-component {
+  display: flex;
+  align-items: flex-end;
+
+  & > .icon {
+    margin-right: 4px;
+    @include font_property($sourceSans, 11px, 10px, '', $secondary-font-color);
+    position: relative;
+    top: 1px;
+  }
+  & > .text {
+    @include font_property($sourceSans, 12px, 10px, '', $secondary-font-color);
+  }
+}

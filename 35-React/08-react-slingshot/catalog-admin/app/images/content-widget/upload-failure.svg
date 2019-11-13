@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>trayagain-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="trayagain-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-3.000000, -3.000000)">
+            <path d="M20,4 C11.164,4 4,11.164 4,20 C4,28.836 11.164,36 20,36 C28.836,36 36,28.836 36,20 C36,11.164 28.836,4 20,4 Z" id="Path" fill="#C8BDF7" fill-rule="nonzero"></path>
+            <path d="M20,31 C18.2189873,31 17,29.6933735 17,28 C17,26.2578313 18.2702532,25 20,25 C21.828481,25 23,26.2578313 23,28 C23,29.6951807 21.828481,31 20,31 Z" id="Path" fill="#FFFFFF"></path>
+            <path d="M20.8385,22.9201926 C20.48,24.1426926 19.3505,24.1636926 18.974,22.9201926 C18.5405,21.4861926 17,16.0426926 17,12.5071926 C17,7.84219257 22.8365,7.81969257 22.8365,12.5071926 C22.835,16.0636926 21.212,21.6481926 20.8385,22.9201926 Z" id="Path" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

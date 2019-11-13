@@ -1,0 +1,21 @@
+@import '../../../../styles/Variables';
+@import '../../../../styles/Mixins';
+@import '../../../../styles/Overrides';
+
+.notes-component {
+  margin-bottom: 20px;
+
+  & > .heading {
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    @include font_property(
+        $sourceSans,
+        14px,
+        18px,
+        600,
+        $primary-font-color
+    );
+  }
+
+  @extend %read-more-override;
+}

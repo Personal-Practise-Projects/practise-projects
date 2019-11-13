@@ -1,0 +1,264 @@
+.mark-as-done-cta {
+  @extend %common-btn-styles;
+  background: $markasdone-cta;
+  border-radius: $radius-size;
+  margin-left: 10px;
+  @include font_property($sourceSans, 16px, 20px, 600, $white);
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-image: url('../../images/Icons/production-view/mark-as-done-icon.svg');
+  }
+
+  &[disabled] {
+    // TODO: 1.) need to do changes here
+    background: $markasdone-cta-active;
+    //display: none;
+  }
+}
+
+
+&.photoshoot-done {
+  background: none;
+  font-size: 0;
+  padding: 0;
+  opacity: 1;
+
+  & > .icon {
+    font-size: 30px;
+    margin: 0;
+    color: $photoshoot-done;
+  }
+}
+
+
+.order#{$infix}-first {
+  order: -1;
+}
+
+.order#{$infix}-last {
+  order: $columns + 1;
+}
+
+@for $i from 0 through $columns {
+  .order#{$infix}-#{$i} {
+    order: $i;
+  }
+}
+
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    .col#{$infix},
+    .col#{$infix}-auto {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%; // Reset earlier grid tiers
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      .order#{$infix}-first {
+        order: -1;
+      }
+
+      .order#{$infix}-last {
+        order: $columns + 1;
+      }
+
+      @for $i from 0 through $columns {
+        .order#{$infix}-#{$i} {
+          order: $i;
+        }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Returns the value in a map associated with the given key. If the map
+ * doesn't have such a key, returns `null`.
+ *
+ * @example
+ * map-get(("foo": 1, "bar": 2), "foo") => 1
+ * map-get(("foo": 1, "bar": 2), "bar") => 2
+ * map-get(("foo": 1, "bar": 2), "baz") => null
+ * @overload map_get($map, $key)
+ * @param $map [Sass::Script::Value::Map]
+ * @param $key [Sass::Script::Value::Base]
+ * @return [Sass::Script::Value::Base] The value indexed by `$key`, or `null`
+ * if the map doesn't contain the given key
+ * @raise [ArgumentError] if `$map` is not a map
+ */
+@function map_get($map, $key) { /* stub */
+}
+
+
+/**
+ * Merges two maps together into a new map. Keys in `$map2` will take
+ * precedence over keys in `$map1`.
+ *
+ * This is the best way to add new values to a map.
+ *
+ * All keys in the returned map that also appear in `$map1` will have the
+ * same order as in `$map1`. New keys from `$map2` will be placed at the end
+ * of the map.
+ *
+ * Like all map functions, `map-merge()` returns a new map rather than
+ * modifying its arguments in place.
+ *
+ * @example
+ * map-merge(("foo": 1), ("bar": 2)) => ("foo": 1, "bar": 2)
+ * map-merge(("foo": 1, "bar": 2), ("bar": 3)) => ("foo": 1, "bar": 3)
+ * @overload map_merge($map1, $map2)
+ * @param $map1 [Sass::Script::Value::Map]
+ * @param $map2 [Sass::Script::Value::Map]
+ * @return [Sass::Script::Value::Map]
+ * @raise [ArgumentError] if either parameter is not a map
+ */
+@function map_merge($map1, $map2) { /* stub */
+}
+
+
+/**
+ * Returns a list of all keys in a map.
+ *
+ * @example
+ * map-keys(("foo": 1, "bar": 2)) => "foo", "bar"
+ * @overload map_keys($map)
+ * @param $map [Map]
+ * @return [List] the list of keys, comma-separated
+ * @raise [ArgumentError] if `$map` is not a map
+ */
+@function map_keys($map) { /* stub */
+}
+
+/**
+ * Returns a list of all values in a map. This list may include duplicate
+ * values, if multiple keys have the same value.
+ *
+ * @example
+ * map-values(("foo": 1, "bar": 2)) => 1, 2
+ * map-values(("foo": 1, "bar": 2, "baz": 1)) => 1, 2, 1
+ * @overload map_values($map)
+ * @param $map [Map]
+ * @return [List] the list of values, comma-separated
+ * @raise [ArgumentError] if `$map` is not a map
+ */
+@function map_values($map) { /* stub */
+}
+
+$order-array: (
+  'bulk-update-order': 2,
+  'filter-order': 1,
+  'search-order': 3
+);
+
+@mixin ordering-subheader($arr: $order-array) {
+
+  @for $i from 0 through length($arr) {
+    map-keys($arr)
+  }
+  .bulk-update-container-component {
+    order: $bulk-update-order;
+  }
+  .filter-component {
+    order: $filter-order;
+  }
+  .search-component {
+    order: $search-order;
+  }
+}
+
+
+.download-component {
+  @include element_position(absolute, '', 10px, 10px, '');
+  display: inline-block;
+  //&:hover {
+  //  transform: scale(1.1);
+  //  transition-timing-function: ease-in-out;
+  //  transition: 0.2s;
+  //}
+}
+
+
+.download-overlay {
+  flex-direction: column;
+  border-radius: $radius-size;
+  background-color: rgba(0, 0, 0, 0.6);
+  @include element_position(absolute, '', '', '', '');
+
+  .lightbox-launcher {
+    margin-bottom: 4px;
+  }
+
+  .content-id {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: $white;
+    @include element_position(absolute, 8px, '', '', 8px);
+  }
+}
+
+.download-overlay {
+  flex-direction: column;
+  border-radius: $radius-size;
+  background-color: rgba(0, 0, 0, 0.6);
+  @include element_position(absolute, '', '', '', '');
+
+  .lightbox-launcher {
+    margin-bottom: 4px;
+  }
+}
+

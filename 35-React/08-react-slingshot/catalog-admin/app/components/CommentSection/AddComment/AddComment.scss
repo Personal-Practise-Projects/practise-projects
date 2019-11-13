@@ -1,0 +1,41 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+@import '../../../styles/Partials';
+
+// Overrides
+%btn-overrides {
+  .primary-cta,
+  .secondary-cta {
+    padding: 6px 16px;
+    width: fit-content;
+    @include font_property('', 14px, 18px, '', '');
+  }
+
+  .secondary-cta {
+    padding: 6px 24px;
+    border: 1px solid transparent;
+  }
+}
+
+
+// AddComment Component Styles
+.add-comment {
+  @extend %btn-overrides;
+
+  &-textarea {
+    @extend %text-area;
+  }
+
+  &-actions{
+    margin-top: 8px;
+  }
+}
+
+.comment-area {
+  &-cta {
+    margin: 0;
+    padding: 8px 16px;
+    width: fit-content;
+    @include font_property('', 14px, 18px, '', '');
+  }
+}
