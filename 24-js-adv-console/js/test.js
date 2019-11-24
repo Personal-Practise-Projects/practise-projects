@@ -1,22 +1,30 @@
-url = "http://127.0.0.1:8000/media/thumbnails/contents/original/374/840/480x/Kubo_MS_2.jpg"
-var filename =url.substring(url.lastIndexOf('/')+1);
-console.log('filename: ', filename);
+// url = "https://staging-catalog-contents.catalog.cc/media/catalog/contents/raw/374/840/416/file_name.jpg";
+url = "https://staging-catalog-contents.catalog.cc/media/thumbnails/contents/original/catalog/374/840/raw/480x/1573686884477438_file_name.CR2";
+// url = "https://staging-catalog-contents.catalog.cc/media/thumbnails/contents/original/catalog/374/840/480x/1573686912283629_file_name.png";
 
 
-function getFileName() {
-//this gets the full url
-	var url = document.location.href;
+function getFileName(url) {
 	console.log('url: ', url);
-//this removes the anchor at the end, if there is one
-	url = url.substring(0, (url.indexOf("#") == -1) ? url.length : url.indexOf("#"));
-	console.log('url- #', url.indexOf("#") == -1);
-//this removes the query after the file name, if there is one
-url = url.substring(0, (url.indexOf("?") == -1) ? url.length : url.indexOf("?"));
-//this removes everything before the last slash in the path
-url = url.substring(url.lastIndexOf("/") + 1, url.length);
-console.log('url: ', url);
-//return
-return url;
+	// this removes everything before the last slash in the path
+	url = url.substring(url.lastIndexOf("/") + 1, url.length);
+	console.log('url: ', url);
+	let index = url.indexOf('_') + 1;
+	url = url.slice(index);
+	console.log('url: ', url);
+	return url;
 }
 
-getFileName();
+getFileName(url);
+
+
+function getFileNameFromUrl(url) {
+	// removes everything before the last slash in the url
+	return url.substring(url.lastIndexOf("/") + 1);
+}
+
+function removeTimestampFromFileName(url) {
+	// removes everything before the first underscore in the filename
+	return url.substring(url.indexOf('_') + 1);
+}
+
+
